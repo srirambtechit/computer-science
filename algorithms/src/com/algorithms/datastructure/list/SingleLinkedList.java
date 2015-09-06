@@ -319,8 +319,8 @@ public class SingleLinkedList {
 
     public String toString() {
 	if (head == null)
-	    return "";
-	return head.toString();
+	    return "[]";
+	return "[" + head.toString() + "]";
     }
 
 }

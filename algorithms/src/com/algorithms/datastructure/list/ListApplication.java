@@ -6,12 +6,12 @@ public class ListApplication {
 
     public static void main(String[] args) {
 	SingleLinkedList list = new SingleLinkedList();
-	list.add(1);
-	list.add(2);
-	list.add(3);
-	list.add(4);
-	list.add(5);
-	list.add(6);
+	list.add(81);
+	list.add(42);
+	list.add(53);
+	list.add(44);
+	list.add(25);
+	list.add(76);
 
 	System.out.println(list);
 

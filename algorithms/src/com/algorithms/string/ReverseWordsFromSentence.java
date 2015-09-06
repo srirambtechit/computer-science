@@ -1,7 +1,5 @@
 package com.algorithms.string;
 
-import java.util.Arrays;
-
 /**
  * <pre>
  * 	Reverse the input word by word at odd positions in given sentence.

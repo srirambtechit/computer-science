@@ -3,45 +3,48 @@ package com.algorithms.datastructure;
 public class MyApp {
 
     public static void main(String[] args) {
-	// MySet set = new MySet();
-	// System.out.println(set);
-	// for (int i = 120; i < 150; i++) {
-	// add(set, i);
-	// }
-	// for (int i = 120; i < 150; i++) {
-	// add(set, i);
-	// }
-
-	// MyMinStack stack = new MyMinStack();
-	// System.out.println(stack);
-	// for (int i = 0; i < 13; i++) {
-	// add(stack, (int) (Math.random() * 100));
-	// }
-	//
-	// for (int i = 0; i < 13; i++) {
-	// remove(stack);
-	// }
-
-	// MyStack<Integer> stack1 = new MyStack<>();
-	// System.out.println(stack1);
-	// for (int i = 0; i < 13; i++) {
-	// add(stack1, (int) (Math.random() * 100));
-	// }
-
-	//
-	// for (int i = 0; i < 13; i++) {
-	// remove(stack);
-	// }
-
-	MyNewMinStack<Integer> stack1 = new MyNewMinStack<>();
-	System.out.println(stack1);
-	for (int i = 0; i < 13; i++) {
-	    add(stack1, (int) (Math.random() * 100));
+	MySet set = new MySet();
+	System.out.println(set);
+	for (int i = 120; i < 150; i++) {
+	    add(set, i);
+	}
+	for (int i = 120; i < 150; i++) {
+	    add(set, i);
 	}
 
-	System.out.println(stack1);
+	MyMinStack stack = new MyMinStack();
+	System.out.println(stack);
 	for (int i = 0; i < 13; i++) {
-	    remove(stack1);
+	    add(stack, (int) (Math.random() * 100));
+	}
+
+	for (int i = 0; i < 13; i++) {
+	    remove(stack);
+	}
+
+	{
+	    MyStack<Integer> stack1 = new MyStack<>();
+	    System.out.println(stack1);
+	    for (int i = 0; i < 13; i++) {
+		add(stack1, (int) (Math.random() * 100));
+	    }
+
+	    for (int i = 0; i < 13; i++) {
+		remove(stack);
+	    }
+	}
+
+	{
+	    MyNewMinStack<Integer> stack1 = new MyNewMinStack<>();
+	    System.out.println(stack1);
+	    for (int i = 0; i < 13; i++) {
+		add(stack1, (int) (Math.random() * 100));
+	    }
+
+	    System.out.println(stack1);
+	    for (int i = 0; i < 13; i++) {
+		remove(stack1);
+	    }
 	}
     }
 

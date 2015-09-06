@@ -3,7 +3,7 @@ package com.algorithms.random;
 import java.util.Random;
 
 public class RandomNumberGenerator {
-    
+
     // 0 to Integer.MAX_VALUE -1
     private final int random = new Random().nextInt(Integer.MAX_VALUE);
 

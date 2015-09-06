@@ -79,13 +79,12 @@ public class Bitwise {
     }
 
     /**
+     * <pre>
+     * @param n       - number to be used
+     * @param intSize - size of integer type
+     * @param k       - no of highest bits
+     * </pre>
      * 
-     * @param n
-     *            - number to be used
-     * @param intSize
-     *            - size of integer type
-     * @param k
-     *            - no of highest bits
      * @return
      */
     public int hightestBitOfN(int n, int intSize, int k) {

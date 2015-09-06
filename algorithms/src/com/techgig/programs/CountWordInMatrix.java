@@ -8,7 +8,7 @@ public class CountWordInMatrix {
     }
 
     public static int wordCount(int size, String[] data, String searchWord) {
-
+	System.out.println("\nInput string is " + searchWord);
 	if (searchWord.length() != size) {
 	    System.out.println("Occured at 0 times");
 	    return 0;
@@ -110,7 +110,7 @@ public class CountWordInMatrix {
 	    count++;
 	}
 
-	System.out.printf("Occurred at %d times", count);
+	System.out.printf("Occurred at %d times%n", count);
 
 	return count;
     }

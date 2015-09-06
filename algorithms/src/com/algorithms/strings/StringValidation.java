@@ -4,7 +4,7 @@ package com.algorithms.strings;
  * Count occurrence of "ABA" in the given input string. Input string will only
  * have A and B. should not use substring() method in String class
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class StringValidation {

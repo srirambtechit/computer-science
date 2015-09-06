@@ -21,7 +21,7 @@ import java.util.Map;
  * both John Walker and Walker John should work in O(1). Tried using a hashmap, but search would be O(2).
  * </pre>
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class EfficientSearch {

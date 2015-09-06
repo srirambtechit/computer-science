@@ -10,7 +10,7 @@ import java.util.Random;
  * randomly but it does not repeat the songs. You can assume random function
  * rand() is available
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class MusicPlayer {

@@ -3,10 +3,10 @@ package com.realtime.game.algorithm;
 import java.util.Arrays;
 
 /**
- * Given a 9×9 sudoku we have to evaluate it for its correctness. We have to
+ * Given a 9ï¿½9 sudoku we have to evaluate it for its correctness. We have to
  * check both the sub matrix correctness and the whole sudoku correctness.
  * 
- * @author ltadmin
+ * @author Sriram
  *
  */
 public class SudokuCorrectnessChecker {

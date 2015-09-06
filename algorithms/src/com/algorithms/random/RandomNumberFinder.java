@@ -4,7 +4,7 @@ package com.algorithms.random;
  * Find the randomly generated number. You can make use of
  * RandomNumberGenerator.checkNumber() method
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class RandomNumberFinder {

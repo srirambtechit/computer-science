@@ -17,7 +17,7 @@ import java.util.Arrays;
  * Should display the numbers based on increasing order.
  * </pre>
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class NumbersAndWeights {

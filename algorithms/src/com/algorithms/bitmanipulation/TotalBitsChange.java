@@ -6,7 +6,7 @@ package com.algorithms.bitmanipulation;
  * method should accept two different integer as input. For example, if your
  * method is passed the integers 12 and 16 then your method should return 3
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class TotalBitsChange {

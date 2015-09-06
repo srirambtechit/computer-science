@@ -14,7 +14,7 @@ package com.interview.algorithms;
  * P          M
  * </pre>
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class PrintCrossStructure {

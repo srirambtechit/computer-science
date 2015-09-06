@@ -5,7 +5,7 @@ package com.algorithms.strings;
  * program and its complexity to uncompress the string. i.e. a3b6c4 which
  * uncompressed as aaabbbbbbcccc
  * 
- * @author ltadmin
+ * @author sriram
  *
  */
 public class ExapndingCompressedString {

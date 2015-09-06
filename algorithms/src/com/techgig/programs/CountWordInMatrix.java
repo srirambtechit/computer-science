@@ -3,6 +3,7 @@ package com.techgig.programs;
 public class CountWordInMatrix {
 
     public static void main(String[] args) {
+	wordCount(3, new String[] { "A#A#K", "A#S#K", "A#K#K" }, "ASK");
 	wordCount(3, new String[] { "A#A#K", "A#S#K", "A#K#K" }, "KMZ");
     }
 

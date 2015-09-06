@@ -317,6 +317,26 @@ public class SingleLinkedList {
 	}
     }
 
+    /**
+     * Write a RemoveDuplicates() function which takes a list sorted in
+     * increasing order and deletes any duplicate nodes from the list. Ideally,
+     * the list should only be traversed once.
+     */
+    public void removeDupsSortedList() {
+	if (head == null) {
+	    return;
+	}
+
+	LinkedListNode curr = head;
+	while (curr != null) {
+	    if (curr.next != null && curr.data.equals(curr.next.data)) {
+		curr.next = curr.next.next;
+	    } else {
+		curr = curr.next;
+	    }
+	}
+    }
+
     public String toString() {
 	if (head == null)
 	    return "[]";

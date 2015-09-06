@@ -17,6 +17,22 @@ public class ListApplication {
 
 	List<SingleLinkedList> lists = SingleLinkedList.frontBackSplit(list);
 	System.out.println(lists);
+
+	SingleLinkedList sortedList = new SingleLinkedList();
+	sortedList.add(1);
+	sortedList.add(2);
+	sortedList.add(2);
+	sortedList.add(3);
+	sortedList.add(5);
+	sortedList.add(7);
+	sortedList.add(7);
+	sortedList.add(7);
+	sortedList.add(9);
+
+	System.out.println("sortedList : " + sortedList);
+	sortedList.removeDupsSortedList();
+	System.out.println("sortedList : " + sortedList);
+
     }
 
 }

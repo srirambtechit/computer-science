@@ -32,7 +32,32 @@ public class ListApplication {
 	System.out.println("sortedList : " + sortedList);
 	sortedList.removeDupsSortedList();
 	System.out.println("sortedList : " + sortedList);
+	
+	
+	testMoveNode();
 
+    }
+
+    public static void testMoveNode() {
+	SingleLinkedList listOne = new SingleLinkedList();
+	listOne.add(1);
+	listOne.add(2);
+	listOne.add(3);
+
+	SingleLinkedList listTwo = new SingleLinkedList();
+	listTwo.add(5);
+	listTwo.add(6);
+	listTwo.add(7);
+	listTwo.add(9);
+	
+	System.out.println("listOne : " + listOne);
+	System.out.println("listTwo : " + listTwo);
+	
+	SingleLinkedList.moveNode(listOne, listTwo);
+	
+	System.out.println("listOne : " + listOne);
+	System.out.println("listTwo : " + listTwo);
+	
     }
 
 }

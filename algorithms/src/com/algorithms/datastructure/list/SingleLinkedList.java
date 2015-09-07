@@ -337,6 +337,37 @@ public class SingleLinkedList {
 	}
     }
 
+    /**
+     * This is a variant on Push(). Instead of creating a new node and pushing
+     * it onto the given list, MoveNode() takes two lists, removes the front
+     * node from the second list and pushes it onto the front of the first. This
+     * turns out to be a handy utility function to have for several later
+     * problems. Both Push() and MoveNode() are designed around the feature that
+     * list operations work most naturally at the head of the list
+     * 
+     * @param listOne
+     * @param listTwo
+     */
+    public static void moveNode(SingleLinkedList listOne, SingleLinkedList listTwo) {
+
+	if (listOne == null || listTwo == null)
+	    throw new IllegalArgumentException("Input is null");
+
+	// Taking backup of listTwo's head node
+	LinkedListNode headTwo = listTwo.head;
+
+	// Removing listTwo's current head and making second node as head node
+	// of listTwo
+	listTwo.head = listTwo.head.next;
+
+	// Making listOne's head to point headTwo's next
+	headTwo.next = listOne.head;
+
+	// Setting headTwo as head node of listOne
+	listOne.head = headTwo;
+
+    }
+
     public String toString() {
 	if (head == null)
 	    return "[]";

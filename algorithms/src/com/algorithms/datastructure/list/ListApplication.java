@@ -5,6 +5,18 @@ import java.util.List;
 public class ListApplication {
 
     public static void main(String[] args) {
+
+	testFrontBackSplit();
+
+	testRemoveDupsSortedList();
+
+	testMoveNode();
+
+	testAlternateSplit();
+
+    }
+
+    public static void testAlternateSplit() {
 	SingleLinkedList list = new SingleLinkedList();
 	list.add(81);
 	list.add(42);
@@ -13,10 +25,28 @@ public class ListApplication {
 	list.add(25);
 	list.add(76);
 
-	System.out.println(list);
+	System.out.println("original : " + list);
+
+	List<SingleLinkedList> result = SingleLinkedList.alternateSplit(list);
+	System.out.println("subLists : " + result);
+    }
+
+    public static void testFrontBackSplit() {
+	SingleLinkedList list = new SingleLinkedList();
+	list.add(81);
+	list.add(42);
+	list.add(53);
+	list.add(44);
+	list.add(25);
+	list.add(76);
+
+	System.out.println("inputList     : " + list);
 
 	List<SingleLinkedList> lists = SingleLinkedList.frontBackSplit(list);
-	System.out.println(lists);
+	System.out.println("frontBackList : " + lists);
+    }
+
+    public static void testRemoveDupsSortedList() {
 
 	SingleLinkedList sortedList = new SingleLinkedList();
 	sortedList.add(1);
@@ -32,10 +62,6 @@ public class ListApplication {
 	System.out.println("sortedList : " + sortedList);
 	sortedList.removeDupsSortedList();
 	System.out.println("sortedList : " + sortedList);
-	
-	
-	testMoveNode();
-
     }
 
     public static void testMoveNode() {
@@ -49,15 +75,15 @@ public class ListApplication {
 	listTwo.add(6);
 	listTwo.add(7);
 	listTwo.add(9);
-	
+
 	System.out.println("listOne : " + listOne);
 	System.out.println("listTwo : " + listTwo);
-	
+
 	SingleLinkedList.moveNode(listOne, listTwo);
-	
+
 	System.out.println("listOne : " + listOne);
 	System.out.println("listTwo : " + listTwo);
-	
+
     }
 
 }

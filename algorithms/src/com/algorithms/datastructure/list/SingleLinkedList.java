@@ -345,27 +345,64 @@ public class SingleLinkedList {
      * problems. Both Push() and MoveNode() are designed around the feature that
      * list operations work most naturally at the head of the list
      * 
-     * @param listOne
-     * @param listTwo
+     * @param dest
+     * @param src
      */
-    public static void moveNode(SingleLinkedList listOne, SingleLinkedList listTwo) {
+    public static void moveNode(SingleLinkedList dest, SingleLinkedList src) {
 
-	if (listOne == null || listTwo == null)
+	if (dest == null || src == null)
 	    throw new IllegalArgumentException("Input is null");
 
+	if (src.head == null)
+	    throw new IllegalArgumentException("Source list is empty");
+
 	// Taking backup of listTwo's head node
-	LinkedListNode headTwo = listTwo.head;
+	LinkedListNode headTwo = src.head;
 
 	// Removing listTwo's current head and making second node as head node
 	// of listTwo
-	listTwo.head = listTwo.head.next;
+	src.head = src.head.next;
 
 	// Making listOne's head to point headTwo's next
-	headTwo.next = listOne.head;
+	headTwo.next = dest.head;
 
 	// Setting headTwo as head node of listOne
-	listOne.head = headTwo;
+	dest.head = headTwo;
 
+    }
+
+    private static void alternateSplit(SingleLinkedList original, SingleLinkedList listOne, SingleLinkedList listTwo) {
+	if (original == null || original.head == null) {
+	    return;
+	}
+	SingleLinkedList.moveNode(listOne, original);
+	SingleLinkedList.moveNode(listTwo, original);
+	alternateSplit(original, listOne, listTwo);
+    }
+
+    /**
+     * Write a function AlternatingSplit() which takes one list and divides up
+     * its nodes to make two smaller lists. The sublists should be made from
+     * alternating elements in the original list. So if the original list is {a,
+     * b, a, b, a}, then one sublist should be {a, a, a} and the other should be
+     * {b, b}. You may want to use MoveNode() as a helper. The elements in the
+     * new lists may be in any order (for some implementations, it turns out to
+     * be convenient if they are in the reverse order from the original list.)
+     * 
+     * @param original
+     * @return
+     */
+    public static List<SingleLinkedList> alternateSplit(SingleLinkedList original) {
+	if (original == null)
+	    throw new IllegalArgumentException("Input is null");
+
+	List<SingleLinkedList> subLists = new ArrayList<>();
+	SingleLinkedList listOne = new SingleLinkedList();
+	SingleLinkedList listTwo = new SingleLinkedList();
+	subLists.add(listOne);
+	subLists.add(listTwo);
+	alternateSplit(original, listOne, listTwo);
+	return subLists;
     }
 
     public String toString() {

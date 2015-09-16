@@ -433,6 +433,53 @@ public class SingleLinkedList {
 	return result;
     }
 
+    /**
+     * Write a SortedMerge() function which takes two lists, each of which is
+     * sorted in increasing order, and merges the two together into one list
+     * which is increasing order. SortedMerge() should return the new list. The
+     * new list should be made by splicing together the nodes of the first two
+     * lists (use MoveNode()). Ideally, Merge() should only make one pass
+     * through each list. Merge() is tricky to get right — it may be solved
+     * iteratively or recursively. There are many cases to deal with: either 'a'
+     * or 'b' may be empty, during processing either 'a' or 'b' may run out
+     * first, and finally there's the problem of starting the result list empty,
+     * and building it up while going through 'a' and 'b'.
+     * 
+     * @return
+     */
+    public static SingleLinkedList sortedMerge(SingleLinkedList sortedListOne, SingleLinkedList sortedListTwo) {
+	if (sortedListOne == null || sortedListTwo == null) {
+	    throw new IllegalArgumentException("Input is null");
+	}
+
+	SingleLinkedList result = new SingleLinkedList();
+
+	LinkedListNode nodeOne = sortedListOne.head;
+	LinkedListNode nodeTwo = sortedListTwo.head;
+	LinkedListNode resultNode = result.head;
+
+	while (nodeOne != null || nodeTwo != null) {
+	    Integer dataOne = null;
+	    Integer dataTwo = null;
+	    if (nodeOne != null) {
+		dataOne = nodeOne.data;
+	    }
+	    if (nodeTwo != null) {
+		dataTwo = nodeTwo.data;
+	    }
+	    if (resultNode == null) {
+		if (dataOne < dataTwo)
+		    result.add(dataOne);
+		else
+		    result.add(dataTwo);
+	    } else {
+
+	    }
+	}
+
+	return result;
+    }
+
     public String toString() {
 	if (head == null)
 	    return "[]";

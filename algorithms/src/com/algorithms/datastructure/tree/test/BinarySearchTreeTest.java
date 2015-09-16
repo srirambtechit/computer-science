@@ -31,6 +31,27 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    public void testHeightOfTree_NormalTree() {
+	System.out.println("Height of tree");
+	assertEquals("Height of tree", 4, treeWithData.height());
+    }
+
+    @Test
+    public void testHeightOfTree_emptyTree() {
+	System.out.println("Height of tree - empty tree");
+	BinarySearchTree bst = new BinarySearchTree();
+	assertEquals("Height of tree - empty tree", -1, bst.height());
+    }
+
+    @Test
+    public void testHeightOfTree_rootNode() {
+	System.out.println("Height of tree - root node alone");
+	BinarySearchTree bst = new BinarySearchTree();
+	bst.add(3);
+	assertEquals("Height of tree - root node alone", 0, bst.height());
+    }
+
+    @Test
     public void testDelete_treeWithData_7() {
 	System.out.println("Deleting element(10) from BST");
 	int size = treeWithData.size();

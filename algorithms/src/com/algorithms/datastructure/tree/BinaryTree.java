@@ -46,10 +46,22 @@ public class BinaryTree {
      * 
      * </pre>
      * 
+     * It returns height of tree (height of root node)
+     * 
      * @return
      */
     public int height() {
 	return height(root);
+    }
+
+    /**
+     * It returns height of a given node
+     * 
+     * @param node
+     * @return
+     */
+    public int heightOf(BinaryTreeNode node) {
+	return height(node);
     }
 
     private int height(BinaryTreeNode node) {
@@ -58,6 +70,34 @@ public class BinaryTree {
 	int leftHeight = height(node.left);
 	int rightHeight = height(node.right);
 	return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+    /**
+     * It returns depth of a tree. Nodes from the root to a leaf form a path.
+     * Depth of a binary tree is the maximum length of all paths.
+     * 
+     * @return
+     */
+    public int depth() {
+	return depth(root);
+    }
+
+    /**
+     * It returns depth of a given node
+     * 
+     * @param node
+     * @return
+     */
+    public int depthOf(BinaryTreeNode node) {
+	return depth(node);
+    }
+
+    private int depth(BinaryTreeNode node) {
+	if (node == null)
+	    return 0;
+	int left = depth(node.left);
+	int right = depth(node.right);
+	return left > right ? left + 1 : right + 1;
     }
 
     public String toString() {

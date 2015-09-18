@@ -30,6 +30,14 @@ public class BinarySearchTreeTest {
 	return treeWithData;
     }
 
+    private BinaryTreeNode getNode(int data) {
+	BinaryTreeNode node = null;
+	if (treeWithData != null) {
+	    
+	}
+	return node;
+    }
+
     @Test
     public void testHeightOfTree_NormalTree() {
 	System.out.println("Height of tree");

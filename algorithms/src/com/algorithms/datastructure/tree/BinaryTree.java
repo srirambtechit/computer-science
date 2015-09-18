@@ -97,7 +97,7 @@ public class BinaryTree {
 	    return 0;
 	int left = depth(node.left);
 	int right = depth(node.right);
-	return left > right ? left + 1 : right + 1;
+	return (left > right) ? (left + 1) : (right + 1);
     }
 
     public String toString() {

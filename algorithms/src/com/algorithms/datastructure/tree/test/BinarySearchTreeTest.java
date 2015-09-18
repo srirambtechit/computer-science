@@ -2,6 +2,8 @@ package com.algorithms.datastructure.tree.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Stack;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,11 +33,43 @@ public class BinarySearchTreeTest {
     }
 
     private BinaryTreeNode getNode(int data) {
-	BinaryTreeNode node = null;
+	Stack<BinaryTreeNode> stack = new Stack<>();
 	if (treeWithData != null) {
-	    
+	    stack.push(treeWithData.root);
+	    while (!stack.isEmpty()) {
+		BinaryTreeNode node = stack.pop();
+		if (node.data == data) {
+		    return node;
+		}
+		if (node.left != null) {
+		    stack.push(node.left);
+		}
+		if (node.right != null) {
+		    stack.push(node.right);
+		}
+	    }
 	}
-	return node;
+	return null;
+    }
+
+    @Test
+    public void testDepthOfNode() {
+	BinaryTreeNode node = getNode(14);
+	System.out.println("Depth of node : " + node);
+	int depth = treeWithData.depthOf(node);
+	assertEquals("Depth of node", 3, depth);
+    }
+
+    @Test
+    public void testDepthOfTree_emptyTree() {
+	int depth = emptyTree.depth();
+	assertEquals("Depth of emptyTree", 0, depth);
+    }
+
+    @Test
+    public void testDepthOfTree() {
+	int depth = treeWithData.depth();
+	assertEquals("Depth of tree", 5, depth);
     }
 
     @Test

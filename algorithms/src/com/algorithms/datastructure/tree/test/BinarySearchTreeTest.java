@@ -54,6 +54,16 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    public void testCopyTree() {
+	BinaryTree tree = new BinaryTree();
+	tree.root = new BinaryTreeNode(1, null, null);
+	tree.root.left = new BinaryTreeNode(2, null, null);
+	tree.root.right = new BinaryTreeNode(3, null, null);
+	BinaryTree copy = tree.copyTree();
+	assertEquals("tree Copy", tree.toString(), copy.toString());
+    }
+
+    @Test
     public void testDepthOfNode_1() {
 	BinaryTree tree = new BinaryTree();
 	tree.root = new BinaryTreeNode(1, null, null);

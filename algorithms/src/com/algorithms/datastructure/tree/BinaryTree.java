@@ -100,6 +100,20 @@ public class BinaryTree {
 	return (left > right) ? (left + 1) : (right + 1);
     }
 
+    public BinaryTree copyTree() {
+	BinaryTree tree = new BinaryTree();
+	tree.root = copyTree(root);
+	return tree;
+    }
+
+    private BinaryTreeNode copyTree(BinaryTreeNode node) {
+	if (node == null)
+	    return null;
+	BinaryTreeNode left = copyTree(node.left);
+	BinaryTreeNode right = copyTree(node.right);
+	return new BinaryTreeNode(node.data, left, right);
+    }
+
     public String toString() {
 
 	class PrintTree {

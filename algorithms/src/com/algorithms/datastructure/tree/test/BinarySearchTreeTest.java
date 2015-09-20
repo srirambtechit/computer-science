@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.algorithms.datastructure.tree.BinarySearchTree;
+import com.algorithms.datastructure.tree.BinaryTree;
 import com.algorithms.datastructure.tree.BinaryTreeNode;
 
 public class BinarySearchTreeTest {
@@ -50,6 +51,26 @@ public class BinarySearchTreeTest {
 	    }
 	}
 	return null;
+    }
+
+    @Test
+    public void testDepthOfNode_1() {
+	BinaryTree tree = new BinaryTree();
+	tree.root = new BinaryTreeNode(1, null, null);
+	tree.root.left = new BinaryTreeNode(2, null, null);
+	tree.root.right = new BinaryTreeNode(3, null, null);
+	tree.root.left.left = new BinaryTreeNode(4, null, null);
+	tree.root.left.right = new BinaryTreeNode(5, null, null);
+	tree.root.left.right.left = new BinaryTreeNode(6, null, null);
+	tree.root.left.right.right = new BinaryTreeNode(7, null, null);
+	System.out.println("My Tree");
+	System.out.println(tree);
+
+	System.out.println(tree.root.data + "; My Tree depth: " + tree.depth());
+	System.out.println(tree.root.left.left.data + "; My Tree depth: " + tree.depthOf(tree.root.left.left));
+	System.out.println(tree.root.left.data + "; My Tree depth: " + tree.depthOf(tree.root.left));
+	System.out.println(tree.root.left.right.data + "; My Tree depth: " + tree.depthOf(tree.root.left.right));
+	System.out.println(tree.root.left.right.left.data + "; My Tree depth: " + tree.depthOf(tree.root.left.right.left));
     }
 
     @Test

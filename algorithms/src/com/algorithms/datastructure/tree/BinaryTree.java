@@ -73,8 +73,8 @@ public class BinaryTree {
     }
 
     /**
-     * It returns depth of a tree. Nodes from the root to a leaf form a path.
-     * Depth of a binary tree is the maximum length of all paths.
+     * It returns depth of a tree. Nodes from the root to a that node form a
+     * path. Depth of a binary tree is the maximum length of all paths.
      * 
      * @return
      */

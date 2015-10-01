@@ -32,11 +32,18 @@ public class InsertionSort {
 
     }
 
+    private static void display(Integer[] dataSet) {
+	System.out.println("Insertion Sorting");
+	System.out.println(Arrays.toString(dataSet));
+	insertionSort(dataSet);
+	System.out.println(Arrays.toString(dataSet));
+	System.out.println();
+    }
+
     public static void main(String[] args) {
-	Integer[] data = { 6, 5, 3, 1, 8, 7, 2, 4 };
-	System.out.println(Arrays.toString(data));
-	insertionSort(data);
-	System.out.println(Arrays.toString(data));
+	display(new Integer[] { 6, 5, 3, 1, 8, 7, 2, 4 });
+	display(new Integer[] { 8, -1, 6, 0, 9, 4, 2, -57445, 3254, 245, 21017274 });
+	display(new Integer[] {});
     }
 
 }

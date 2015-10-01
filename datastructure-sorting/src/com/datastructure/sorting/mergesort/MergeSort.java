@@ -1,18 +1,6 @@
 package com.datastructure.sorting.mergesort;
 
-import java.util.Arrays;
-
 public class MergeSort {
-
-    public static void main(String[] args) {
-	int[] data = { 3, 2, 8, 1, 7, 9, 5, 0 };
-
-	System.out.println(Arrays.toString(data));
-
-	MergeSort.mergeSort(data);
-
-	System.out.println(Arrays.toString(data));
-    }
 
     public static void mergeSort(int[] data) {
 	if (data.length < 2) {

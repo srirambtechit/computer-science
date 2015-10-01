@@ -17,9 +17,9 @@ public class BubbleSort {
 	for (int i = 0; i < t.length; i++) {
 
 	    // below loop do the actual sorting
-	    for (int j = 0; j < t.length - 1; j++) {
-		if (t[j] > t[j + 1]) {
-		    SortingUtil.swap(t, j, j + 1);
+	    for (int j = 1; j < t.length; j++) {
+		if (t[j - 1] > t[j]) {
+		    SortingUtil.swap(t, j, j - 1);
 		}
 	    }
 	}
@@ -37,9 +37,9 @@ public class BubbleSort {
 
 	    // Below loop ensures that 1 element sorted and kept in last index
 	    // of array N, N-1, N-2 in each iteration of the loop
-	    for (int j = 0; j < i; j++) {
-		if (t[j] > t[j + 1]) {
-		    SortingUtil.swap(t, j, j + 1);
+	    for (int j = 1; j < i; j++) {
+		if (t[j - 1] > t[j]) {
+		    SortingUtil.swap(t, j, j - 1);
 		}
 	    }
 	}

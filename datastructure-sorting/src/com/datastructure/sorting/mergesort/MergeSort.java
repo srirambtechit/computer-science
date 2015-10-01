@@ -3,6 +3,18 @@ package com.datastructure.sorting.mergesort;
 import com.datastructure.sorting.util.SortingUtil;
 import com.datastructure.sorting.util.Type;
 
+/**
+ * <pre>
+ * 	Time 			Space 
+ * BC - O(n log n), O(n)	O(n)
+ * AC - O(n log n)		O(n)
+ * WC - O(n log n)		O(n)
+ * 
+ * </pre>
+ * 
+ * @author sriram
+ *
+ */
 public class MergeSort {
 
     public static void mergeSort(int[] data) {

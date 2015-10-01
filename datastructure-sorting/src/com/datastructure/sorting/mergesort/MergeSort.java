@@ -1,5 +1,8 @@
 package com.datastructure.sorting.mergesort;
 
+import com.datastructure.sorting.util.SortingUtil;
+import com.datastructure.sorting.util.Type;
+
 public class MergeSort {
 
     public static void mergeSort(int[] data) {
@@ -42,4 +45,9 @@ public class MergeSort {
 
     }
 
+    public static void main(String[] args) {
+	SortingUtil.display(new int[] { 6, 5, 3, 1, 8, 7, 2, 4 }, Type.Merge);
+	SortingUtil.display(new int[] { 8, -1, 6, 0, 9, 4, 2, -57445, 3254, 245, 21017274 }, Type.Merge);
+	SortingUtil.display(new int[] {}, Type.Merge);
+    }
 }

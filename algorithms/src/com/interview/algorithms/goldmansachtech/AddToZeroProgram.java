@@ -1,4 +1,4 @@
-package com.algorithms.goldmansachtech;
+package com.interview.algorithms.goldmansachtech;
 
 import java.util.Arrays;
 

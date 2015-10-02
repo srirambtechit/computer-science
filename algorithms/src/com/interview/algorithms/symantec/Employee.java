@@ -1,4 +1,4 @@
-package com.algorithms.symantec;
+package com.interview.algorithms.symantec;
 
 public class Employee {
     private String firstName;

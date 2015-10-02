@@ -1,4 +1,4 @@
-package com.algorithms.symantec;
+package com.interview.algorithms.symantec;
 
 import java.util.HashMap;
 import java.util.Map;

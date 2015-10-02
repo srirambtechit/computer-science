@@ -22,7 +22,7 @@ import java.util.Arrays;
  *
  */
 
-public class AddToZeroProgram {
+public class AddToZeroProblem {
 
     public static void main(String[] args) {
 	int[] data = { -4, 5, 2, -15, 7, -3, 2, 4 };

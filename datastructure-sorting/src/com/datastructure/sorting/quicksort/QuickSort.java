@@ -5,10 +5,12 @@ import com.datastructure.sorting.util.Type;
 
 /**
  * <pre>
- * 	Time 	Space 
- * BC - O(n)	O(1)
- * AC - O(n^2)	O(1)
- * WC - O(n^2)	O(1)
+ * Time:-
+ * 	BC - O(n log n)
+ * 	AC - O(n log n)
+ * 	WC - O(1/2 n^2)
+ * 
+ * Space   - O(n)
  * 
  * </pre>
  * 
@@ -18,6 +20,7 @@ import com.datastructure.sorting.util.Type;
 public class QuickSort {
 
     public static <T> void sort(Comparable<T>[] t) {
+	SortingUtil.shffle(t);
 	sort(t, 0, t.length - 1);
     }
 

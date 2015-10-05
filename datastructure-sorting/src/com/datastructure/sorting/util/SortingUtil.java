@@ -1,6 +1,7 @@
 package com.datastructure.sorting.util;
 
 import java.util.Arrays;
+import java.util.Random;
 
 import com.datastructure.sorting.bubblesort.BubbleSort;
 import com.datastructure.sorting.insertionsort.InsertionSort;
@@ -67,6 +68,14 @@ public class SortingUtil {
 	o[j] = t;
     }
 
+    public static <T> void shffle(Comparable<T>[] o) {
+	int size = o.length - 1;
+	for (int i = 0; i < o.length / 2; i++) {
+	    int index = new Random().nextInt(size);
+	    swap(o, i, index);
+	}
+    }
+
     public static void main(String[] args) {
 	System.out.println(less(new Integer[] { 1, 0 }, 0, 1)); // f
 	System.out.println(less(new Integer[] { 1, -1 }, 0, 1)); // f
@@ -83,7 +92,6 @@ public class SortingUtil {
 	System.out.println(greater(new Integer[] { -1, 1 }, 0, 1)); // f
 	System.out.println(greater(new Integer[] { 0, -1 }, 0, 1)); // t
 	System.out.println(greater(new Integer[] { 0, 1 }, 0, 1)); // f
-
     }
 
 }

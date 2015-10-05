@@ -20,7 +20,10 @@ import com.datastructure.sorting.util.Type;
 public class QuickSort {
 
     public static <T> void sort(Comparable<T>[] t) {
+
+	// To improve better performance
 	SortingUtil.shffle(t);
+
 	sort(t, 0, t.length - 1);
     }
 

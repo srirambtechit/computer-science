@@ -17,23 +17,23 @@ import com.datastructure.sorting.util.Type;
  */
 public class SelectionSort {
 
-    public static void sort(int[] t) {
-	for (int i = 0; i < t.length - 1; i++) {
+    public static <T> void sort(Comparable<T>[] dataSet) {
+	for (int i = 0; i < dataSet.length - 1; i++) {
 	    int min = i;
-	    for (int j = i + 1; j < t.length; j++) {
-		if (SortingUtil.less(t, j, min)) {
+	    for (int j = i + 1; j < dataSet.length; j++) {
+		if (SortingUtil.less(dataSet, j, min)) {
 		    min = j;
 		}
 	    }
-	    SortingUtil.swap(t, min, i);
+	    SortingUtil.swap(dataSet, min, i);
 	}
 
     }
 
     public static void main(String[] args) {
-	SortingUtil.display(new int[] { 6, 5, 3, 1, 8, 7, 2, 4 }, Type.Selection);
-	SortingUtil.display(new int[] { 8, -1, 6, 0, 9, 4, 2, -57445, 3254, 245, 21017274 }, Type.Selection);
-	SortingUtil.display(new int[] {}, Type.Selection);
+	SortingUtil.display(new Integer[] { 6, 5, 3, 1, 8, 7, 2, 4 }, Type.Selection);
+	SortingUtil.display(new Integer[] { 8, -1, 6, 0, 9, 4, 2, -57445, 3254, 245, 21017274 }, Type.Selection);
+	SortingUtil.display(new Integer[] {}, Type.Selection);
     }
 
 }

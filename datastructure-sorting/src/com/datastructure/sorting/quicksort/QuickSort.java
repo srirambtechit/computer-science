@@ -1,4 +1,4 @@
-package com.datastructure.sorting.selectionsort;
+package com.datastructure.sorting.quicksort;
 
 import com.datastructure.sorting.util.SortingUtil;
 import com.datastructure.sorting.util.Type;
@@ -15,19 +15,9 @@ import com.datastructure.sorting.util.Type;
  * @author sriram
  *
  */
-public class SelectionSort {
+public class QuickSort {
 
     public static void sort(int[] t) {
-	for (int i = 0; i < t.length - 1; i++) {
-	    int min = i;
-	    for (int j = i + 1; j < t.length; j++) {
-		if (SortingUtil.less(t, j, min)) {
-		    min = j;
-		}
-	    }
-	    SortingUtil.swap(t, min, i);
-	}
-
     }
 
     public static void main(String[] args) {

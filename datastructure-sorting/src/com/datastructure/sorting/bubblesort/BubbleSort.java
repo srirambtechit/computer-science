@@ -22,7 +22,7 @@ public class BubbleSort {
      * 
      * @param dataSet
      */
-    public static void bubbleSort(int[] dataSet) {
+    public static void sort(int[] dataSet) {
 
 	// extending the logic to N elements
 	for (int i = 0; i < dataSet.length; i++) {

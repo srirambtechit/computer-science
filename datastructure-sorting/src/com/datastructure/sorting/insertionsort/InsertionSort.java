@@ -17,7 +17,7 @@ import com.datastructure.sorting.util.Type;
  */
 public class InsertionSort {
 
-    public static void insertionSort(int[] t) {
+    public static void sort(int[] t) {
 
 	// Assuming first element in array is sorted, so start loop from 1
 	for (int i = 1; i < t.length; i++) {

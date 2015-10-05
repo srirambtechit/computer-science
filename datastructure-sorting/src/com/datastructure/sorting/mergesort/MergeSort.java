@@ -17,7 +17,7 @@ import com.datastructure.sorting.util.Type;
  */
 public class MergeSort {
 
-    public static void mergeSort(int[] data) {
+    public static void sort(int[] data) {
 	if (data.length < 2) {
 	    return;
 	}
@@ -29,8 +29,8 @@ public class MergeSort {
 	System.arraycopy(data, 0, leftList, 0, mid);
 	System.arraycopy(data, mid, rightList, 0, data.length - mid);
 
-	mergeSort(leftList);
-	mergeSort(rightList);
+	sort(leftList);
+	sort(rightList);
 	merge(leftList, rightList, data);
     }
 

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.datastructure.sorting.bubblesort.BubbleSort;
 import com.datastructure.sorting.insertionsort.InsertionSort;
 import com.datastructure.sorting.mergesort.MergeSort;
+import com.datastructure.sorting.quicksort.QuickSort;
 import com.datastructure.sorting.selectionsort.SelectionSort;
 
 public class SortingUtil {
@@ -34,21 +35,22 @@ public class SortingUtil {
     private static void doSort(int[] dataSet, Type type) {
 	switch (type) {
 	case Bubble:
-	    BubbleSort.bubbleSort(dataSet);
+	    BubbleSort.sort(dataSet);
 	    break;
 	case Bubble_Optimized:
 	    BubbleSort.bubbleSortOptimized(dataSet);
 	    break;
 	case Insertion:
-	    InsertionSort.insertionSort(dataSet);
+	    InsertionSort.sort(dataSet);
 	    break;
 	case Merge:
-	    MergeSort.mergeSort(dataSet);
+	    MergeSort.sort(dataSet);
 	    break;
 	case Selection:
-	    SelectionSort.selectionSort(dataSet);
+	    SelectionSort.sort(dataSet);
 	    break;
-	default:
+	case Quick:
+	    QuickSort.sort(dataSet);
 	    break;
 	}
     }

@@ -17,7 +17,7 @@ public class MergeSortTest {
 	int[] output = new int[input.length];
 	System.arraycopy(input, 0, output, 0, input.length);
 
-	MergeSort.mergeSort(output);
+	MergeSort.sort(output);
 	Arrays.sort(input);
 
 	assertArrayEquals("Both are equal", input, output);
@@ -30,7 +30,7 @@ public class MergeSortTest {
 	int[] output = new int[input.length];
 	System.arraycopy(input, 0, output, 0, input.length);
 
-	MergeSort.mergeSort(output);
+	MergeSort.sort(output);
 	Arrays.sort(input);
 
 	assertArrayEquals("Both are equal", input, output);
@@ -43,7 +43,7 @@ public class MergeSortTest {
 	int[] output = new int[input.length];
 	System.arraycopy(input, 0, output, 0, input.length);
 
-	MergeSort.mergeSort(output);
+	MergeSort.sort(output);
 	Arrays.sort(input);
 
 	assertArrayEquals("Both are equal", input, output);

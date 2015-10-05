@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.datastructure.sorting.bubblesort.BubbleSort;
 import com.datastructure.sorting.insertionsort.InsertionSort;
 import com.datastructure.sorting.mergesort.MergeSort;
+import com.datastructure.sorting.selectionsort.SelectionSort;
 
 public class SortingUtil {
 
@@ -12,6 +13,14 @@ public class SortingUtil {
 	int t = o[i];
 	o[i] = o[j];
 	o[j] = t;
+    }
+
+    public static boolean less(int[] o, int i, int j) {
+	return o[i] < o[j];
+    }
+
+    public static boolean greater(int[] o, int i, int j) {
+	return o[i] > o[j];
     }
 
     public static void display(int[] dataSet, Type type) {
@@ -35,6 +44,11 @@ public class SortingUtil {
 	    break;
 	case Merge:
 	    MergeSort.mergeSort(dataSet);
+	    break;
+	case Selection:
+	    SelectionSort.selectionSort(dataSet);
+	    break;
+	default:
 	    break;
 	}
     }

@@ -44,22 +44,22 @@ public class SortingUtil {
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static <T> boolean greater(Comparable c1, Comparable c2) {
-	return c1.compareTo(c2) == 1;
+	return c1.compareTo(c2) > 0;
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public static boolean greater(Comparable[] o, int i, int j) {
-	return o[i].compareTo(o[j]) == 1;
+	return o[i].compareTo(o[j]) > 0;
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static <T> boolean less(Comparable c1, Comparable c2) {
-	return c1.compareTo(c2) == -1;
+	return c1.compareTo(c2) < 0;
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static boolean less(Comparable[] o, int i, int j) {
-	return o[i].compareTo(o[j]) == -1;
+	return o[i].compareTo(o[j]) < 0;
     }
 
     public static <T> void swap(Comparable<T>[] o, int i, int j) {

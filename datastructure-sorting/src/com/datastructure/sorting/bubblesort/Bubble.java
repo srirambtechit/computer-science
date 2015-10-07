@@ -20,17 +20,17 @@ public class Bubble {
     /**
      * Basic algorithm
      * 
-     * @param dataSet
+     * @param a
      */
-    public static <T> void sort(Comparable<T>[] dataSet) {
+    public static <T> void sort(Comparable<T>[] a) {
 
 	// extending the logic to N elements
-	for (int i = 0; i < dataSet.length; i++) {
+	for (int i = 0; i < a.length; i++) {
 
 	    // below loop do the actual sorting
-	    for (int j = 1; j < dataSet.length; j++) {
-		if (SortingUtil.greater(dataSet, j - 1, j)) {
-		    SortingUtil.swap(dataSet, j, j - 1);
+	    for (int j = 1; j < a.length; j++) {
+		if (SortingUtil.greater(a[j - 1], a[j])) {
+		    SortingUtil.swap(a, j, j - 1);
 		}
 	    }
 	}
@@ -49,7 +49,7 @@ public class Bubble {
 	    // Below loop ensures that 1 element sorted and kept in last index
 	    // of array N, N-1, N-2 in each iteration of the loop
 	    for (int j = 1; j < i; j++) {
-		if (SortingUtil.greater(t, j - 1, j)) {
+		if (SortingUtil.greater(t[j - 1], t[j])) {
 		    SortingUtil.swap(t, j, j - 1);
 		}
 	    }

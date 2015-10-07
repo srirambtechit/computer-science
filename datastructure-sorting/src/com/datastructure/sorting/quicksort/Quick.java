@@ -61,11 +61,11 @@ public class Quick {
 
 	do {
 	    // Moving low pointer when it less than pivot
-	    while (SortingUtil.less(a, low, pivot))
+	    while (SortingUtil.less(a[low], a[pivot]))
 		low++;
 
 	    // Moving high pointer when it greater than pivot
-	    while (SortingUtil.greater(a, high, pivot))
+	    while (SortingUtil.greater(a[high], a[pivot]))
 		high--;
 
 	    // Crossed low and high pointer, exchange data

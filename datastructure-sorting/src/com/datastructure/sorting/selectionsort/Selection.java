@@ -17,15 +17,15 @@ import com.datastructure.sorting.util.Type;
  */
 public class Selection {
 
-    public static <T> void sort(Comparable<T>[] dataSet) {
-	for (int i = 0; i < dataSet.length - 1; i++) {
+    public static <T> void sort(Comparable<T>[] a) {
+	for (int i = 0; i < a.length - 1; i++) {
 	    int min = i;
-	    for (int j = i + 1; j < dataSet.length; j++) {
-		if (SortingUtil.less(dataSet, j, min)) {
+	    for (int j = i + 1; j < a.length; j++) {
+		if (SortingUtil.less(a[j], a[min])) {
 		    min = j;
 		}
 	    }
-	    SortingUtil.swap(dataSet, min, i);
+	    SortingUtil.swap(a, min, i);
 	}
 
     }

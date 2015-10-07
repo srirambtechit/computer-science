@@ -18,42 +18,42 @@ import com.datastructure.sorting.util.Type;
 public class Merge {
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <T> void sort(Comparable<T>[] dataSet) {
-	if (dataSet.length < 2) {
+    public static <T> void sort(Comparable<T>[] a) {
+	if (a.length < 2) {
 	    return;
 	}
 
-	int mid = dataSet.length / 2;
+	int mid = a.length / 2;
 	Comparable[] leftList = new Comparable[mid];
-	Comparable[] rightList = new Comparable[dataSet.length - mid];
+	Comparable[] rightList = new Comparable[a.length - mid];
 
-	System.arraycopy(dataSet, 0, leftList, 0, mid);
-	System.arraycopy(dataSet, mid, rightList, 0, dataSet.length - mid);
+	System.arraycopy(a, 0, leftList, 0, mid);
+	System.arraycopy(a, mid, rightList, 0, a.length - mid);
 
 	sort(leftList);
 	sort(rightList);
-	merge(leftList, rightList, dataSet);
+	merge(leftList, rightList, a);
     }
 
-    private static <T> void merge(Comparable<T>[] leftList, Comparable<T>[] rightList, Comparable<T>[] data) {
+    private static <T> void merge(Comparable<T>[] leftAux, Comparable<T>[] rightAux, Comparable<T>[] a) {
 	int i = 0;
 	int j = 0;
 	int k = 0;
 
-	while (i < leftList.length && j < rightList.length) {
-	    if (SortingUtil.less(leftList[i], rightList[j])) {
-		data[k++] = leftList[i++];
+	while (i < leftAux.length && j < rightAux.length) {
+	    if (SortingUtil.less(leftAux[i], rightAux[j])) {
+		a[k++] = leftAux[i++];
 	    } else {
-		data[k++] = rightList[j++];
+		a[k++] = rightAux[j++];
 	    }
 	}
 
-	while (i < leftList.length) {
-	    data[k++] = leftList[i++];
+	while (i < leftAux.length) {
+	    a[k++] = leftAux[i++];
 	}
 
-	while (j < rightList.length) {
-	    data[k++] = rightList[j++];
+	while (j < rightAux.length) {
+	    a[k++] = rightAux[j++];
 	}
 
     }

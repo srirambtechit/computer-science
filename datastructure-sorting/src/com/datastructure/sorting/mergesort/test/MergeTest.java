@@ -6,9 +6,9 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.datastructure.sorting.mergesort.MergeSort;
+import com.datastructure.sorting.mergesort.Merge;
 
-public class MergeSortTest {
+public class MergeTest {
 
     @Test
     public void testMergeSort_1() {
@@ -17,7 +17,7 @@ public class MergeSortTest {
 	Integer[] output = new Integer[input.length];
 	System.arraycopy(input, 0, output, 0, input.length);
 
-	MergeSort.sort(output);
+	Merge.sort(output);
 	Arrays.sort(input);
 
 	assertArrayEquals("Both are equal", input, output);
@@ -30,7 +30,7 @@ public class MergeSortTest {
 	Integer[] output = new Integer[input.length];
 	System.arraycopy(input, 0, output, 0, input.length);
 
-	MergeSort.sort(output);
+	Merge.sort(output);
 	Arrays.sort(input);
 
 	assertArrayEquals("Both are equal", input, output);
@@ -43,7 +43,7 @@ public class MergeSortTest {
 	Integer[] output = new Integer[input.length];
 	System.arraycopy(input, 0, output, 0, input.length);
 
-	MergeSort.sort(output);
+	Merge.sort(output);
 	Arrays.sort(input);
 
 	assertArrayEquals("Both are equal", input, output);

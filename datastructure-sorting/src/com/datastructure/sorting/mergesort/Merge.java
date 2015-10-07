@@ -15,7 +15,7 @@ import com.datastructure.sorting.util.Type;
  * @author sriram
  *
  */
-public class MergeSort {
+public class Merge {
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static <T> void sort(Comparable<T>[] dataSet) {

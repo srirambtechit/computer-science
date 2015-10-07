@@ -3,11 +3,11 @@ package com.datastructure.sorting.util;
 import java.util.Arrays;
 import java.util.Random;
 
-import com.datastructure.sorting.bubblesort.BubbleSort;
-import com.datastructure.sorting.insertionsort.InsertionSort;
-import com.datastructure.sorting.mergesort.MergeSort;
-import com.datastructure.sorting.quicksort.QuickSort;
-import com.datastructure.sorting.selectionsort.SelectionSort;
+import com.datastructure.sorting.bubblesort.Bubble;
+import com.datastructure.sorting.insertionsort.Insertion;
+import com.datastructure.sorting.mergesort.Merge;
+import com.datastructure.sorting.quicksort.Quick;
+import com.datastructure.sorting.selectionsort.Selection;
 
 public class SortingUtil {
 
@@ -22,22 +22,22 @@ public class SortingUtil {
     private static <T> void doSort(Comparable<T>[] dataSet, Type type) {
 	switch (type) {
 	case Bubble:
-	    BubbleSort.sort(dataSet);
+	    Bubble.sort(dataSet);
 	    break;
 	case Bubble_Optimized:
-	    BubbleSort.bubbleSortOptimized(dataSet);
+	    Bubble.bubbleSortOptimized(dataSet);
 	    break;
 	case Insertion:
-	    InsertionSort.sort(dataSet);
+	    Insertion.sort(dataSet);
 	    break;
 	case Merge:
-	    MergeSort.sort(dataSet);
+	    Merge.sort(dataSet);
 	    break;
 	case Selection:
-	    SelectionSort.sort(dataSet);
+	    Selection.sort(dataSet);
 	    break;
 	case Quick:
-	    QuickSort.sort(dataSet);
+	    Quick.sort(dataSet);
 	    break;
 	}
     }

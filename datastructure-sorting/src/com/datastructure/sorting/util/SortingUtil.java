@@ -47,19 +47,9 @@ public class SortingUtil {
 	return c1.compareTo(c2) > 0;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    public static boolean greater(Comparable[] o, int i, int j) {
-	return o[i].compareTo(o[j]) > 0;
-    }
-
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static <T> boolean less(Comparable c1, Comparable c2) {
 	return c1.compareTo(c2) < 0;
-    }
-
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static boolean less(Comparable[] o, int i, int j) {
-	return o[i].compareTo(o[j]) < 0;
     }
 
     public static <T> void swap(Comparable<T>[] o, int i, int j) {
@@ -74,24 +64,6 @@ public class SortingUtil {
 	    int index = new Random().nextInt(size);
 	    swap(o, i, index);
 	}
-    }
-
-    public static void main(String[] args) {
-	System.out.println(less(new Integer[] { 1, 0 }, 0, 1)); // f
-	System.out.println(less(new Integer[] { 1, -1 }, 0, 1)); // f
-	System.out.println(less(new Integer[] { -1, 0 }, 0, 1)); // t
-	System.out.println(less(new Integer[] { -1, 1 }, 0, 1)); // t
-	System.out.println(less(new Integer[] { 0, -1 }, 0, 1)); // f
-	System.out.println(less(new Integer[] { 0, 1 }, 0, 1)); // t
-
-	System.out.println();
-
-	System.out.println(greater(new Integer[] { 1, 0 }, 0, 1)); // t
-	System.out.println(greater(new Integer[] { 1, -1 }, 0, 1)); // t
-	System.out.println(greater(new Integer[] { -1, 0 }, 0, 1)); // f
-	System.out.println(greater(new Integer[] { -1, 1 }, 0, 1)); // f
-	System.out.println(greater(new Integer[] { 0, -1 }, 0, 1)); // t
-	System.out.println(greater(new Integer[] { 0, 1 }, 0, 1)); // f
     }
 
 }

@@ -2,14 +2,29 @@ package com.datastructure.stack;
 
 import java.util.Iterator;
 
-public class StackLinkedList<Item> implements Iterable<Item> {
+/**
+ * Stack - organize object in LIFO order
+ * Operations:-
+ * push - Add data to stack
+ * pop - Remove data from stack
+ * contains - Search element in stack
+ * iterate - object to traverse stack
+ * 
+ * @author sriram
+ *
+ * @param <Item>
+ */
+public class StackLinkedListImpl<Item> implements Iterable<Item> {
 
     private Node head;
+
+    private int size;
 
     public void push(Item item) {
 	Node node = new Node(item, null);
 	node.next = head;
 	head = node;
+	size++;
     }
 
     public Item pop() {
@@ -18,12 +33,26 @@ public class StackLinkedList<Item> implements Iterable<Item> {
 	Item item = head.data;
 	head.data = null;
 	head = head.next;
+	size--;
 	return item;
     }
-    
+
     public boolean contains(Item i) {
-	
+	Node t = head;
+	while (t != null) {
+	    if (i.equals(t.data))
+		return true;
+	    t = t.next;
+	}
 	return false;
+    }
+
+    public int size() {
+	return size;
+    }
+
+    public boolean isEmpty() {
+	return head == null;
     }
 
     public String toString() {

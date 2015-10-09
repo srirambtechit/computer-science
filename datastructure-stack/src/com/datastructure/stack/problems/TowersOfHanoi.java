@@ -19,7 +19,7 @@ public class TowersOfHanoi {
     }
 
     public static void main(String[] args) {
-	toh(3, 'A', 'B', 'C');
+	toh(4, 's', 't', 'd');
     }
 
 }

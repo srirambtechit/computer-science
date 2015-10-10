@@ -481,6 +481,13 @@ public class SingleLinkedList {
 	return result;
     }
 
+    /**
+     * Implement a function to check a linkedList is palindrome
+     * Time : O(n) Space: O(n)
+     * 
+     * @param list
+     * @return
+     */
     public static boolean isPalindrome(SingleLinkedList list) {
 	Stack<Integer> stack = new Stack<>();
 	LinkedListNode fast, slow;

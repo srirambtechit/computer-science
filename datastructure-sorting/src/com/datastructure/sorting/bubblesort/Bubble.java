@@ -40,17 +40,17 @@ public class Bubble {
     /**
      * It avoids already sorted element to check once again
      * 
-     * @param t
+     * @param a
      */
-    public static <T> void bubbleSortOptimized(Comparable<T>[] t) {
+    public static <T> void bubbleSortOptimized(Comparable<T>[] a) {
 
-	for (int i = t.length - 1; i >= 0; i--) {
+	for (int i = a.length - 1; i >= 0; i--) {
 
 	    // Below loop ensures that 1 element sorted and kept in last index
 	    // of array N, N-1, N-2 in each iteration of the loop
 	    for (int j = 1; j < i; j++) {
-		if (SortingUtil.greater(t[j - 1], t[j])) {
-		    SortingUtil.swap(t, j, j - 1);
+		if (SortingUtil.greater(a[j - 1], a[j])) {
+		    SortingUtil.swap(a, j, j - 1);
 		}
 	    }
 	}

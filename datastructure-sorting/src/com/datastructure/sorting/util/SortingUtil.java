@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 import com.datastructure.sorting.bubblesort.Bubble;
+import com.datastructure.sorting.heapsort.Heap;
 import com.datastructure.sorting.insertionsort.Insertion;
 import com.datastructure.sorting.mergesort.Merge;
 import com.datastructure.sorting.quicksort.Quick;
@@ -11,33 +12,36 @@ import com.datastructure.sorting.selectionsort.Selection;
 
 public class SortingUtil {
 
-    public static <T> void display(Comparable<T>[] dataSet, Type type) {
+    public static <T> void display(Comparable<T>[] a, Type type) {
 	System.out.println(type + " Sorting");
-	System.out.println(Arrays.toString(dataSet));
-	doSort(dataSet, type);
-	System.out.println(Arrays.toString(dataSet));
+	System.out.println(Arrays.toString(a));
+	doSort(a, type);
+	System.out.println(Arrays.toString(a));
 	System.out.println();
     }
 
-    private static <T> void doSort(Comparable<T>[] dataSet, Type type) {
+    private static <T> void doSort(Comparable<T>[] a, Type type) {
 	switch (type) {
 	case Bubble:
-	    Bubble.sort(dataSet);
+	    Bubble.sort(a);
 	    break;
 	case Bubble_Optimized:
-	    Bubble.bubbleSortOptimized(dataSet);
+	    Bubble.bubbleSortOptimized(a);
 	    break;
 	case Insertion:
-	    Insertion.sort(dataSet);
+	    Insertion.sort(a);
 	    break;
 	case Merge:
-	    Merge.sort(dataSet);
+	    Merge.sort(a);
 	    break;
 	case Selection:
-	    Selection.sort(dataSet);
+	    Selection.sort(a);
 	    break;
 	case Quick:
-	    Quick.sort(dataSet);
+	    Quick.sort(a);
+	    break;
+	case Heap:
+	    Heap.sort(a);
 	    break;
 	}
     }

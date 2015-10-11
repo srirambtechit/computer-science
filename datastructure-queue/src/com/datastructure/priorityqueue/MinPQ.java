@@ -4,20 +4,20 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 /**
- * MaximumPriorityQueue - root will be greater than its children
+ * MinimumPriorityQueue - root will be lesser than its children
  * 
  * @author sriram
  *
  * @param <Item>
  */
-public class MaxPQ<Item extends Comparable<Item>> implements Iterable<Item> {
+public class MinPQ<Item extends Comparable<Item>> implements Iterable<Item> {
 
     private Item[] pq;
 
     private int ptr;
 
     @SuppressWarnings("unchecked")
-    public MaxPQ(int c) {
+    public MinPQ(int c) {
 	pq = (Item[]) new Comparable[c];
 	ptr++; // skipping index 0
     }
@@ -30,7 +30,7 @@ public class MaxPQ<Item extends Comparable<Item>> implements Iterable<Item> {
 	swim(k);
     }
 
-    public Item delMax() {
+    public Item delMin() {
 	if (ptr == 1)
 	    return null;
 	int k = --ptr;
@@ -53,9 +53,9 @@ public class MaxPQ<Item extends Comparable<Item>> implements Iterable<Item> {
 	int n = pq.length;
 	while (2 * k < n) {
 	    int j = 2 * k;
-	    if (less(j, j + 1))
+	    if (greater(j, j + 1))
 		j++;
-	    if (less(j, k))
+	    if (greater(j, k))
 		break;
 	    swap(j, k);
 	    k = j;
@@ -64,17 +64,17 @@ public class MaxPQ<Item extends Comparable<Item>> implements Iterable<Item> {
 
     private void swim(int k) {
 	while (k > 1) {
-	    if (less(k, k / 2))
+	    if (greater(k, k / 2))
 		break;
 	    swap(k, k / 2);
 	    k = k / 2;
 	}
     }
 
-    private boolean less(int i, int j) {
+    private boolean greater(int i, int j) {
 	if (pq[i] == null || pq[j] == null)
 	    return false;
-	return pq[i].compareTo(pq[j]) < 0;
+	return pq[i].compareTo(pq[j]) > 0;
     }
 
     private void swap(int i, int j) {

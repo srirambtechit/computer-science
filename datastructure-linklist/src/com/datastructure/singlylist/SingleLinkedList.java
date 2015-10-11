@@ -483,7 +483,7 @@ public class SingleLinkedList {
 
     /**
      * Implement a function to check a linkedList is palindrome
-     * Time : O(n) Space: O(n)
+     * Time : O(n) Space: O(n / 2)
      * 
      * @param list
      * @return

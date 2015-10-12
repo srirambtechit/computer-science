@@ -10,7 +10,7 @@ public class BinaryTreeNode<Item> {
     public Item data;
     public BinaryTreeNode<Item> left, right;
 
-    BinaryTreeNode(Item data, BinaryTreeNode<Item> left, BinaryTreeNode<Item> right) {
+    public BinaryTreeNode(Item data, BinaryTreeNode<Item> left, BinaryTreeNode<Item> right) {
 	this.data = data;
 	this.left = left;
 	this.right = right;

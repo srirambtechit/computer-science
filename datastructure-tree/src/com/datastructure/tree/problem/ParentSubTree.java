@@ -9,6 +9,30 @@ import com.datastructure.tree.binary.CompleteBinaryTreeListImpl;
 public class ParentSubTree {
 
     public static void main(String[] args) {
+	testCompleteBinaryTree();
+	testBinaryTree();
+    }
+
+    private static void testBinaryTree() {
+	BinaryTreeNode<Integer> t1 = new BinaryTreeNode<>(8, null, null);
+	t1.left = new BinaryTreeNode<>(10, null, null);
+	t1.right = new BinaryTreeNode<>(4, null, null);
+	t1.left.left = new BinaryTreeNode<>(6, null, null);
+	t1.left.right = new BinaryTreeNode<>(9, null, null);
+	t1.left.left.left = new BinaryTreeNode<>(4, null, null);
+	t1.left.right.left = new BinaryTreeNode<>(7, null, null);
+	t1.left.right.right = new BinaryTreeNode<>(5, null, null);
+
+	BinaryTreeNode<Integer> t2 = new BinaryTreeNode<>(8, null, null);
+	t2.right = new BinaryTreeNode<>(4, null, null);
+
+	System.out.println(t1);
+	System.out.println(t2);
+	boolean result = isSubTree(t1, t2);
+	System.out.println("subtree?" + result);
+    }
+
+    private static void testCompleteBinaryTree() {
 	CompleteBinaryTreeListImpl<Integer> t1 = new CompleteBinaryTreeListImpl<>();
 	t1.add(84);
 	t1.add(24);
@@ -31,21 +55,19 @@ public class ParentSubTree {
 	t2.add(10);
 	System.out.println(t2.printLevelOrder());
 
-	boolean result = isSubTree(t1, t2);
+	boolean result = isSubTree(t1.root, t2.root);
 	System.out.println("subtree?" + result);
     }
 
-    public static boolean isSubTree(CompleteBinaryTreeListImpl<Integer> parent, CompleteBinaryTreeListImpl<Integer> child) {
-
-	BinaryTreeNode<Integer> childRoot = child.root;
+    public static boolean isSubTree(BinaryTreeNode<Integer> pRoot, BinaryTreeNode<Integer> cRoot) {
 	Queue<BinaryTreeNode<Integer>> q = new LinkedList<>();
-	q.offer(parent.root);
+	q.offer(pRoot);
 	while (!q.isEmpty()) {
 	    BinaryTreeNode<Integer> node = q.poll();
-	    if (childRoot.data == node.data) {
+	    if (cRoot.data == node.data) {
 		q.clear();
 		q.offer(node);
-		q.offer(childRoot);
+		q.offer(cRoot);
 		while (!q.isEmpty()) {
 		    BinaryTreeNode<Integer> pNode = q.poll();
 		    BinaryTreeNode<Integer> cNode = q.poll();

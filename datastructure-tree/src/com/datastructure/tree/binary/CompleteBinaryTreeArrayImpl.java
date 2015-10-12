@@ -16,14 +16,14 @@ import java.util.Arrays;
  * @author sriram
  *
  */
-public class CompleteBinaryTreeArray<Item> {
+public class CompleteBinaryTreeArrayImpl<Item> {
 
     private Item[] tree;
     private int ptr;
 
     // Construct tree by capacity
     @SuppressWarnings("unchecked")
-    public CompleteBinaryTreeArray(int c) {
+    public CompleteBinaryTreeArrayImpl(int c) {
 	tree = (Item[]) new Object[c];
     }
 

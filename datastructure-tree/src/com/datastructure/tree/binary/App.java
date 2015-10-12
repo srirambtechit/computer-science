@@ -3,14 +3,14 @@ package com.datastructure.tree.binary;
 public class App {
 
     public static void main(String[] args) {
-	CompleteBinaryTreeArray<Integer> arr = new CompleteBinaryTreeArray<>(3);
+	CompleteBinaryTreeArrayImpl<Integer> arr = new CompleteBinaryTreeArrayImpl<>(3);
 	System.out.println(arr);
 	arr.add(3);
 	arr.add(4);
 	arr.add(41);
 	System.out.println(arr);
 
-	CompleteBinaryTreeList<Integer> tree = new CompleteBinaryTreeList<>();
+	CompleteBinaryTreeListImpl<Integer> tree = new CompleteBinaryTreeListImpl<>();
 	tree.add(3);
 	tree.add(5);
 	tree.add(1);

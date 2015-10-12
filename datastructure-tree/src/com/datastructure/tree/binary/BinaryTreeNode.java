@@ -6,9 +6,9 @@ package com.datastructure.tree.binary;
  * @author sriram
  *
  */
-class BinaryTreeNode<Item> {
-    Item data;
-    BinaryTreeNode<Item> left, right;
+public class BinaryTreeNode<Item> {
+    public Item data;
+    public BinaryTreeNode<Item> left, right;
 
     BinaryTreeNode(Item data, BinaryTreeNode<Item> left, BinaryTreeNode<Item> right) {
 	this.data = data;
@@ -16,21 +16,21 @@ class BinaryTreeNode<Item> {
 	this.right = right;
     }
 
-    private void printTree(StringBuilder b) {
+    private void printPreOrderTree(StringBuilder b) {
 	b.append(data);
 	if (this.left != null) {
 	    b.append(", ");
-	    left.printTree(b);
+	    left.printPreOrderTree(b);
 	}
 	if (this.right != null) {
 	    b.append(", ");
-	    right.printTree(b);
+	    right.printPreOrderTree(b);
 	}
     }
 
     public String toString() {
 	StringBuilder sb = new StringBuilder();
-	printTree(sb);
+	printPreOrderTree(sb);
 	return sb.toString();
     }
 }

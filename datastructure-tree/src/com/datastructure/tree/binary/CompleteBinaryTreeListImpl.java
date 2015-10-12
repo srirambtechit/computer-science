@@ -9,9 +9,9 @@ import java.util.Queue;
  * @author sriram
  *
  */
-public class CompleteBinaryTreeList<Item> {
+public class CompleteBinaryTreeListImpl<Item> {
 
-    private BinaryTreeNode<Item> root;
+    public BinaryTreeNode<Item> root;
 
     /**
      * Add element to form complete binary tree
@@ -43,6 +43,30 @@ public class CompleteBinaryTreeList<Item> {
 		q.offer(node.right);
 	    }
 	}
+    }
+
+    public String printLevelOrder() {
+	if (root == null)
+	    return "[]";
+	StringBuffer sb = new StringBuffer();
+	Queue<BinaryTreeNode<Item>> q = new LinkedList<>();
+	q.offer(root);
+	sb.append("[");
+	while (!q.isEmpty()) {
+	    BinaryTreeNode<Item> node = q.poll();
+	    sb.append(node.data);
+	    if (node.left != null) {
+		q.offer(node.left);
+	    }
+	    if (node.right != null) {
+		q.offer(node.right);
+	    }
+	    if (!q.isEmpty()) {
+		sb.append(", ");
+	    }
+	}
+	sb.append("]");
+	return sb.toString();
     }
 
     public String toString() {

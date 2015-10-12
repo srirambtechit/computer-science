@@ -1,16 +1,46 @@
 package com.datastructure.tree.problem;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.datastructure.tree.binary.BinaryTreeNode;
-import com.datastructure.tree.binary.CompleteBinaryTreeListImpl;
+import com.datastructure.tree.util.SimpleBinaryTree;
 
+/**
+ * Check given tree S is sub tree of tree T
+ * 
+ * @author sriram
+ *
+ */
 public class ParentSubTree {
 
     public static void main(String[] args) {
 	testCompleteBinaryTree();
+	System.out.println();
 	testBinaryTree();
+	System.out.println();
+	testBinaryTreeTwo();
+    }
+
+    private static void testBinaryTreeTwo() {
+	BinaryTreeNode<Character> t1 = new BinaryTreeNode<>('x', null, null);
+	t1.left = new BinaryTreeNode<>('a', null, null);
+	t1.right = new BinaryTreeNode<>('b', null, null);
+	t1.left.right = new BinaryTreeNode<>('c', null, null);
+
+	BinaryTreeNode<Character> t2 = new BinaryTreeNode<>('z', null, null);
+	t2.left = new BinaryTreeNode<>('x', null, null);
+	t2.left.left = new BinaryTreeNode<>('a', null, null);
+	t2.left.right = new BinaryTreeNode<>('b', null, null);
+	t2.left.left.right = new BinaryTreeNode<>('c', null, null);
+	t2.right = new BinaryTreeNode<>('e', null, null);
+	t2.right.right = new BinaryTreeNode<>('k', null, null);
+
+	System.out.println("Binary Tree");
+	System.out.println(t1);
+	System.out.println(t2);
+	boolean result = isSubTree(t1, t2);
+	System.out.println("subtree?" + result);
     }
 
     private static void testBinaryTree() {
@@ -26,6 +56,7 @@ public class ParentSubTree {
 	BinaryTreeNode<Integer> t2 = new BinaryTreeNode<>(8, null, null);
 	t2.right = new BinaryTreeNode<>(4, null, null);
 
+	System.out.println("Binary Tree");
 	System.out.println(t1);
 	System.out.println(t2);
 	boolean result = isSubTree(t1, t2);
@@ -33,64 +64,45 @@ public class ParentSubTree {
     }
 
     private static void testCompleteBinaryTree() {
-	CompleteBinaryTreeListImpl<Integer> t1 = new CompleteBinaryTreeListImpl<>();
-	t1.add(84);
-	t1.add(24);
-	t1.add(12);
-	t1.add(83);
-	t1.add(3);
-	t1.add(5);
-	t1.add(1);
-	t1.add(7);
-	t1.add(9);
-	t1.add(10);
-	System.out.println(t1.printLevelOrder());
-
-	CompleteBinaryTreeListImpl<Integer> t2 = new CompleteBinaryTreeListImpl<>();
-	t2.add(24);
-	t2.add(83);
-	t2.add(3);
-	t2.add(7);
-	t2.add(9);
-	t2.add(10);
-	System.out.println(t2.printLevelOrder());
-
-	boolean result = isSubTree(t1.root, t2.root);
+	BinaryTreeNode<Integer> rootOne = SimpleBinaryTree.getSimpleCompleteTree(new Integer[] { 84, 24, 12, 83, 3, 5, 1, 7, 9, 10 });
+	BinaryTreeNode<Integer> rootTwo = SimpleBinaryTree.getSimpleCompleteTree(new Integer[] { 24, 83, 3, 7, 9, 10 });
+	System.out.println("Complete Binary Tree");
+	System.out.println("Tree 1 : " + rootOne);
+	System.out.println("Tree 2 : " + rootTwo);
+	boolean result = isSubTree(rootOne, rootTwo);
 	System.out.println("subtree?" + result);
     }
 
-    public static boolean isSubTree(BinaryTreeNode<Integer> pRoot, BinaryTreeNode<Integer> cRoot) {
-	Queue<BinaryTreeNode<Integer>> q = new LinkedList<>();
-	q.offer(pRoot);
-	while (!q.isEmpty()) {
-	    BinaryTreeNode<Integer> node = q.poll();
-	    if (cRoot.data == node.data) {
-		q.clear();
-		q.offer(node);
-		q.offer(cRoot);
-		while (!q.isEmpty()) {
-		    BinaryTreeNode<Integer> pNode = q.poll();
-		    BinaryTreeNode<Integer> cNode = q.poll();
-		    if ((pNode != null && cNode == null) || (pNode == null && cNode != null))
-			return false;
-		    else {
-			if (pNode != null && cNode != null && pNode.data.equals(cNode.data)) {
-			    q.offer(pNode.left);
-			    q.offer(cNode.left);
-			    q.offer(pNode.right);
-			    q.offer(cNode.right);
-			} else {
-			    return pNode == null && cNode == null;
-			}
-		    }
-		}
-	    } else {
-		if (node.left != null)
-		    q.offer(node.left);
-		if (node.right != null)
-		    q.offer(node.right);
-	    }
-	}
-	return false;
+    public static <T> boolean isSubTree(BinaryTreeNode<T> t, BinaryTreeNode<T> s) {
+	List<T> inT = new ArrayList<>();
+	List<T> preT = new ArrayList<>();
+	List<T> inS = new ArrayList<>();
+	List<T> preS = new ArrayList<>();
+	inorder(t, inT);
+	preorder(t, preT);
+	inorder(s, inS);
+	preorder(s, preS);
+	return inT.containsAll(inS) && preT.containsAll(preS);
     }
+
+    private static <T> void preorder(BinaryTreeNode<T> t, List<T> bag) {
+	if (t == null)
+	    return;
+	bag.add(t.data);
+	if (t.left != null)
+	    preorder(t.left, bag);
+	if (t.right != null)
+	    preorder(t.right, bag);
+    }
+
+    private static <T> void inorder(BinaryTreeNode<T> t, List<T> bag) {
+	if (t == null)
+	    return;
+	if (t.left != null)
+	    inorder(t.left, bag);
+	bag.add(t.data);
+	if (t.right != null)
+	    inorder(t.right, bag);
+    }
+
 }

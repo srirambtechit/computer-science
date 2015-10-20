@@ -133,7 +133,6 @@ public class STListImpl<K, V> {
 
     @Override
     public String toString() {
-	return "ST [st=" + Arrays.toString(st) + ", capacity=" + capacity + "]";
+	return "ST [size=" + size + ", st=" + Arrays.toString(st) + "]";
     }
-
 }

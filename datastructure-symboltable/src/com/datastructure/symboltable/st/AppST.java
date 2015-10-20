@@ -14,6 +14,26 @@ public class AppST {
 	st.put(8, "eight");
 	st.put(12, "twelve");
 	System.out.println(st);
+	System.out.println(st.containsKey(7));
+	System.out.println(st.containsKey(12));
+	System.out.println("size : " + st.size());
+
+	st.remove(7);
+	System.out.println(st);
+	System.out.println(st.containsKey(7));
+
+	st.remove(12);
+	System.out.println(st);
+	System.out.println(st.containsKey(12));
+	System.out.println("size : " + st.size());
+
+	st.put(12, "Number12");
+	System.out.println(st);
+	System.out.println(st.containsKey(12));
+	System.out.println("size : " + st.size());
+
+	System.out.println(st.containsValue("seven"));
+	System.out.println(st.containsValue("three"));
     }
 
 }

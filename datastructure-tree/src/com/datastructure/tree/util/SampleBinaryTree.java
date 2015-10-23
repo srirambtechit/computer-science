@@ -148,7 +148,7 @@ public class SampleBinaryTree {
 	return getCompleteTree(new Integer[] { 1, 2, 3, 4, 5, 6, 7 });
     }
 
-    private static <T> BinaryTreeNode<T> getCompleteTree(T[] nodes) {
+    public static <T> BinaryTreeNode<T> getCompleteTree(T[] nodes) {
 	CompleteBinaryTreeListImpl<T> tree = new CompleteBinaryTreeListImpl<>();
 	for (T t : nodes) {
 	    tree.add(t);

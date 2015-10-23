@@ -2,22 +2,18 @@ package com.datastructure.tree.binary;
 
 import java.util.Stack;
 
+import com.datastructure.tree.util.SampleBinaryTree;
+
 public class BinaryTreeTraversalDemo {
 
     public static void main(String[] args) {
-	BinaryTreeNode<Integer> root = newNode(1);
-	root.left = newNode(2);
-	root.right = newNode(3);
-	root.left.left = newNode(4);
-	root.left.right = newNode(5);
-	root.right.left = newNode(6);
-	root.right.right = newNode(7);
+	allTraversals(SampleBinaryTree.binaryTreeOne());
+	allTraversals(SampleBinaryTree.binaryTreeTwo());
+	allTraversals(SampleBinaryTree.leftSkewedTree());
+    }
 
-	root.left.right.left = newNode(8);
-	root.left.right.left.left = newNode(9);
-	root.left.right.left.right = newNode(10);
-
-	System.out.println(root);
+    private static <T> void allTraversals(BinaryTreeNode<T> root) {
+	System.out.println("Tree: " + root);
 
 	System.out.println("\nPost order traversal - iterative method");
 	postOrderIterative(root);
@@ -25,6 +21,70 @@ public class BinaryTreeTraversalDemo {
 	System.out.println("\nPost order traversal - recursive method");
 	postOrderRecursive(root);
 
+	System.out.println("\n\nPre order traversal - iterative method");
+	preOrderIterative(root);
+
+	System.out.println("\n\nPre order traversal - recursive method");
+	preOrderRecursive(root);
+
+	System.out.println("\n\nIn order traversal - iterative method");
+	inOrderIterative(root);
+
+	System.out.println("\n\nIn order traversal - recursive method");
+	inOrderRecursive(root);
+	System.out.println("\n----------------------------------------\n");
+    }
+
+    public static <T> void inOrderRecursive(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return;
+	inOrderRecursive(root.left);
+	System.out.printf("%d\t", root.data);
+	inOrderRecursive(root.right);
+    }
+
+    public static <T> void inOrderIterative(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return;
+	Stack<BinaryTreeNode<T>> s = new Stack<>();
+
+	while (true) {
+	    while (root != null) {
+		s.push(root);
+		root = root.left;
+	    }
+	    if (s.isEmpty())
+		break;
+	    root = s.pop();
+	    System.out.printf("%d\t", root.data);
+	    if (root.right == null)
+		root = null;
+	    else
+		root = root.right;
+	}
+    }
+
+    public static <T> void preOrderRecursive(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return;
+	System.out.printf("%d\t", root.data);
+	preOrderIterative(root.left);
+	preOrderIterative(root.right);
+    }
+
+    public static <T> void preOrderIterative(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return;
+	Stack<BinaryTreeNode<T>> s = new Stack<>();
+	s.push(root);
+	while (!s.isEmpty()) {
+	    root = s.pop();
+	    System.out.printf("%d\t", root.data);
+	    if (root.right != null)
+		s.push(root.right);
+	    if (root.left != null)
+		s.push(root.left);
+	}
     }
 
     public static <T> void postOrderRecursive(BinaryTreeNode<T> root) {

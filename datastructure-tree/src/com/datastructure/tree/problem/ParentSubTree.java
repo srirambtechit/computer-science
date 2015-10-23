@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.datastructure.tree.binary.BinaryTreeNode;
-import com.datastructure.tree.util.SimpleBinaryTree;
+import com.datastructure.tree.util.SampleBinaryTree;
 
 /**
  * Check given tree S is sub tree of tree T
@@ -64,8 +64,8 @@ public class ParentSubTree {
     }
 
     private static void testCompleteBinaryTree() {
-	BinaryTreeNode<Integer> rootOne = SimpleBinaryTree.getSimpleCompleteTree(new Integer[] { 84, 24, 12, 83, 3, 5, 1, 7, 9, 10 });
-	BinaryTreeNode<Integer> rootTwo = SimpleBinaryTree.getSimpleCompleteTree(new Integer[] { 24, 83, 3, 7, 9, 10 });
+	BinaryTreeNode<Integer> rootOne = SampleBinaryTree.getCompleteTree(new Integer[] { 84, 24, 12, 83, 3, 5, 1, 7, 9, 10 });
+	BinaryTreeNode<Integer> rootTwo = SampleBinaryTree.getCompleteTree(new Integer[] { 24, 83, 3, 7, 9, 10 });
 	System.out.println("Complete Binary Tree");
 	System.out.println("Tree 1 : " + rootOne);
 	System.out.println("Tree 2 : " + rootTwo);

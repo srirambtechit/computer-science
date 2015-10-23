@@ -120,8 +120,4 @@ public class BinaryTreeTraversalDemo {
 	System.out.println();
     }
 
-    private static BinaryTreeNode<Integer> newNode(int i) {
-	return new BinaryTreeNode<Integer>(i, null, null);
-    }
-
 }

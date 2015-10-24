@@ -12,4 +12,12 @@
  8. Find a element in a tree
  9. Find max/min element in tree
 10. Print the deepest node in tree
+
+Traversal problems:
+1. Print the which level has maximum sum
+2. Find the depth of node
+3. Find the height of the tree
+4. Print "\n" after each level
+5. Create a separate list for each level
 </pre>
+

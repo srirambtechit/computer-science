@@ -1,3 +1,4 @@
+```
 Data structure - Tree
 
 Notes:
@@ -34,5 +35,4 @@ Traversal Mechanism:-
 	- Post order
 	- Level order
 	- All traversals can be implemented in either recursive or iterative approach
-	
-	
+```

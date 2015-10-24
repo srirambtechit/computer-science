@@ -28,6 +28,50 @@ public class BinaryTreeTraversalDemo {
 	allTraversals(SampleBinaryTree.leftSkewedTree());
     }
 
+    /**
+     * <pre>
+     * Another alg: 
+     * Time O(n); Space O(n); Iterative approach
+     * This problem can be solved by two stacks s1, s2 as well
+     * - have direction flag
+     * - s1 for left to right
+     * - s2 for right to left
+     * - loop till s1 or s2 queue is not empty
+     * </pre>
+     * 
+     * @param root
+     */
+    public static <T> void levelOrderZigZag(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return;
+	Queue<BinaryTreeNode<T>> q = new LinkedList<>();
+	Stack<BinaryTreeNode<T>> s = new Stack<>();
+	int dir = 0;
+	q.offer(root);
+	while (!q.isEmpty()) {
+	    int size = q.size();
+	    for (int i = 0; i < size; i++) {
+		root = q.poll();
+		if (dir == 1) {
+		    s.push(root);
+		} else {
+		    System.out.printf("%d\t", root.data);
+		}
+		if (root.left != null)
+		    q.offer(root.left);
+		if (root.right != null)
+		    q.offer(root.right);
+	    }
+	    if (dir == 1) {
+		while (!s.isEmpty()) {
+		    System.out.printf("%d\t", s.pop().data);
+		}
+		dir = 0;
+	    } else
+		dir = 1;
+	}
+    }
+
     public static <T> void levelOrderNullMarker(BinaryTreeNode<T> root) {
 	if (root == null)
 	    return;
@@ -217,6 +261,9 @@ public class BinaryTreeTraversalDemo {
 
 	System.out.println("\n\nLevel order traversal - recursive method");
 	levelOrderRecursive(root);
+
+	System.out.println("\n\nZigZag (or) Spiral traversal - iterative method");
+	levelOrderZigZag(root);
 	System.out.println("\n----------------------------------------\n");
     }
 

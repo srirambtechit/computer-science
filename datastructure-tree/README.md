@@ -25,7 +25,7 @@ Properties:-
 	- Internal node - Non-leaf nodes
 	- External node - All leaf nodes 	
 	
-Traversal Mechanism:-
+<b>Traversal Mechanism:-</b>
 	- Two basic mechanism
 		a) BFS - Breath First Search Traversal
 		b) DFS - Depth First Search Traversal

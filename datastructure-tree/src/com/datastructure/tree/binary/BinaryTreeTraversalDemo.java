@@ -6,6 +6,20 @@ import java.util.Stack;
 
 import com.datastructure.tree.util.SampleBinaryTree;
 
+/**
+ * <pre>
+ * Tree Traversal:-
+ * Basic idea, 
+ * 	- Breath First Search(BFS)
+ *  	- Depth First Search (DFS)
+ *  Level order will be BFS
+ *  In, Pre and Post order traversals will be DFS
+ * 
+ * </pre>
+ * 
+ * @author sriram
+ *
+ */
 public class BinaryTreeTraversalDemo {
 
     public static void main(String[] args) {
@@ -36,6 +50,11 @@ public class BinaryTreeTraversalDemo {
 	}
     }
 
+    /**
+     * Time - O(n^2)
+     * 
+     * @param root
+     */
     public static <T> void levelOrderRecursive(BinaryTreeNode<T> root) {
 	for (int l = 1; l <= height(root); l++) {
 	    printLevel(root, l);
@@ -67,6 +86,11 @@ public class BinaryTreeTraversalDemo {
 	return Math.max(lh, rh) + 1;
     }
 
+    /**
+     * Time - O(n)
+     * 
+     * @param root
+     */
     public static <T> void levelOrderIterative(BinaryTreeNode<T> root) {
 	if (root == null)
 	    return;

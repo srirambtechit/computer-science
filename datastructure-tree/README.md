@@ -1,7 +1,7 @@
-```
-Data structure - Tree
+<h3>Data structure - Tree</h3>
 
-~~Notes:~~
+<b>Notes:</b>
+```
 	- Non linear data structure
 	- Different variations are there in Tree
 		a) Generic Tree
@@ -15,8 +15,10 @@ Data structure - Tree
 		d) Red-Black Tree
 		e) Splay Tree
 		f) AVL Tree
+```
 
-_Properties:-_
+<b>Properties:-</b>
+```
 	- Tree consist of nodes
 	- All nodes connected with edges or paths
 	- Root node - No parent
@@ -24,8 +26,10 @@ _Properties:-_
 	- Leaf node - No child
 	- Internal node - Non-leaf nodes
 	- External node - All leaf nodes 	
-	
-_Traversal Mechanism:-_
+```
+
+<b>Traversal Mechanism:-</b>
+```
 	- Two basic mechanism
 		a) BFS - Breath First Search Traversal
 		b) DFS - Depth First Search Traversal
@@ -36,4 +40,3 @@ _Traversal Mechanism:-_
 	- Level order
 	- All traversals can be implemented in either recursive or iterative approach
 ```
-<b>HTML form</b>

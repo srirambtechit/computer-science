@@ -15,6 +15,9 @@
 		d) Red-Black Tree
 		e) Splay Tree
 		f) AVL Tree
+		g) XOR Tree
+		h) BTree
+		i) B+Tree
 ```
 
 <b>Properties:-</b>

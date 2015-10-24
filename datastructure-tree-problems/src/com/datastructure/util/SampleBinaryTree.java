@@ -6,7 +6,7 @@ public class SampleBinaryTree {
     /**
      * <pre>
      * 			8
-     * 		10		4
+     * 		10		2
      * 	    6 	     9
      * 	  4 	   7   5
      * </pre>
@@ -16,7 +16,7 @@ public class SampleBinaryTree {
     public static BinaryTreeNode<Integer> binaryTreeOne() {
 	BinaryTreeNode<Integer> root = newNode(8);
 	root.left = newNode(10);
-	root.right = newNode(4);
+	root.right = newNode(2);
 	root.left.left = newNode(6);
 	root.left.right = newNode(9);
 	root.left.left.left = newNode(4);
@@ -154,7 +154,7 @@ public class SampleBinaryTree {
 	return tree.root;
     }
 
-    private static <T> BinaryTreeNode<T> newNode(T t) {
+    public static <T> BinaryTreeNode<T> newNode(T t) {
 	return new BinaryTreeNode<>(t, null, null);
     }
 

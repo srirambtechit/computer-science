@@ -3,7 +3,7 @@ package com.datastructure;
 import com.datastructure.util.BinaryTreeNode;
 import com.datastructure.util.SampleBinaryTree;
 
-public class HeightOfTree {
+public class HeightOfNode {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();

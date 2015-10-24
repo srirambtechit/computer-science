@@ -1,5 +1,7 @@
 package com.datastructure.tree.binary;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 import com.datastructure.tree.util.SampleBinaryTree;
@@ -12,27 +14,72 @@ public class BinaryTreeTraversalDemo {
 	allTraversals(SampleBinaryTree.leftSkewedTree());
     }
 
-    private static <T> void allTraversals(BinaryTreeNode<T> root) {
-	System.out.println("Tree: " + root);
+    public static <T> void levelOrderNullMarker(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return;
+	Queue<BinaryTreeNode<T>> q = new LinkedList<>();
+	q.offer(root);
+	q.offer(null);
+	while (!q.isEmpty()) {
+	    root = q.poll();
+	    // when root is null, one level traversed in tree
+	    if (root == null) {
+		if (q.peek() != null)
+		    q.offer(null);
+	    } else {
+		System.out.printf("%d\t", root.data);
+		if (root.left != null)
+		    q.offer(root.left);
+		if (root.right != null)
+		    q.offer(root.right);
+	    }
+	}
+    }
 
-	System.out.println("\nPost order traversal - iterative method");
-	postOrderIterative(root);
+    public static <T> void levelOrderRecursive(BinaryTreeNode<T> root) {
+	for (int l = 1; l <= height(root); l++) {
+	    printLevel(root, l);
+	}
+    }
 
-	System.out.println("\nPost order traversal - recursive method");
-	postOrderRecursive(root);
+    private static <T> void printLevel(BinaryTreeNode<T> root, int level) {
+	if (root == null)
+	    return;
+	if (level == 1)
+	    System.out.printf("%d\t", root.data);
+	else if (level > 1) {
+	    printLevel(root.left, level - 1);
+	    printLevel(root.right, level - 1);
+	}
+    }
 
-	System.out.println("\n\nPre order traversal - iterative method");
-	preOrderIterative(root);
+    /**
+     * Counts number of nodes in longest path from given node to leaf node
+     * 
+     * @param root
+     * @return
+     */
+    private static <T> int height(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return 0;
+	int lh = height(root.left);
+	int rh = height(root.right);
+	return Math.max(lh, rh) + 1;
+    }
 
-	System.out.println("\n\nPre order traversal - recursive method");
-	preOrderRecursive(root);
-
-	System.out.println("\n\nIn order traversal - iterative method");
-	inOrderIterative(root);
-
-	System.out.println("\n\nIn order traversal - recursive method");
-	inOrderRecursive(root);
-	System.out.println("\n----------------------------------------\n");
+    public static <T> void levelOrderIterative(BinaryTreeNode<T> root) {
+	if (root == null)
+	    return;
+	Queue<BinaryTreeNode<T>> q = new LinkedList<>();
+	q.offer(root);
+	while (!q.isEmpty()) {
+	    root = q.poll();
+	    System.out.printf("%d\t", root.data);
+	    if (root.left != null)
+		q.offer(root.left);
+	    if (root.right != null)
+		q.offer(root.right);
+	}
     }
 
     public static <T> void inOrderRecursive(BinaryTreeNode<T> root) {
@@ -118,6 +165,35 @@ public class BinaryTreeTraversalDemo {
 	    }
 	} while (!s.isEmpty());
 	System.out.println();
+    }
+
+    private static <T> void allTraversals(BinaryTreeNode<T> root) {
+	System.out.println("Tree: " + root);
+
+	System.out.println("\nPost order traversal - iterative method");
+	postOrderIterative(root);
+
+	System.out.println("\nPost order traversal - recursive method");
+	postOrderRecursive(root);
+
+	System.out.println("\n\nPre order traversal - iterative method");
+	preOrderIterative(root);
+
+	System.out.println("\n\nPre order traversal - recursive method");
+	preOrderRecursive(root);
+
+	System.out.println("\n\nIn order traversal - iterative method");
+	inOrderIterative(root);
+
+	System.out.println("\n\nIn order traversal - recursive method");
+	inOrderRecursive(root);
+
+	System.out.println("\n\nLevel order traversal - iterative method");
+	levelOrderIterative(root);
+
+	System.out.println("\n\nLevel order traversal - recursive method");
+	levelOrderRecursive(root);
+	System.out.println("\n----------------------------------------\n");
     }
 
 }

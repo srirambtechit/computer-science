@@ -1,6 +1,7 @@
 package com.datastructure;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class DeepestNode<T> {
@@ -28,9 +29,9 @@ public class DeepestNode<T> {
     public static void main(String[] args) {
 	DeepestNode<Integer> dn = new DeepestNode<>();
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.right.right.right = SampleBinaryTree.newNode(100);
-	root.right.right.right.right = SampleBinaryTree.newNode(101);
-	root.right.right.right.right.right = SampleBinaryTree.newNode(102);
+	root.right.right.right = BinaryTreeUtil.newNode(100);
+	root.right.right.right.right = BinaryTreeUtil.newNode(101);
+	root.right.right.right.right.right = BinaryTreeUtil.newNode(102);
 	System.out.println("Deepest node : " + dn.deep(root));
     }
 

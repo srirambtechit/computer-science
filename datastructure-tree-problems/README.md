@@ -24,7 +24,7 @@
 10. Print the deepest node in tree	[DeepestNode.java]
 
 
-Traversal problems:
+<b>Traversal problems:</b>
 
  1. Print the which level has maximum sum	[PrintingMaximumSumInLevel.java]
  
@@ -46,7 +46,7 @@ Traversal problems:
  
 10. Print the root to leaf path	[AllPaths.java]
 
-11. Print path for given sum
+11. Print path for given sum	[FindingPathOfGivenSum.java]
 
 12. Find least common ancestor	[LowestCommonAncestor.java]
 
@@ -57,13 +57,38 @@ Traversal problems:
 15. Find the sum of vertical sum
 
 
-Tree Comparisons:-
+<b>Tree comparisons problems:</b>
 
 1. Identical tree (same data and structurally equals)
 
 2. Mirror tree (Both tree has same node and children but the left exists on right side and right exists on left side)
 
 3. Isometric tree (Structurally equals, data doesn't matter)
+
+
+<b>BinarySearchTree problems:</b>
+
+ 1. Find the element in BST
+
+ 2. Find the minimum value in BST
+
+ 3. Find the maximum value in BST
+
+ 4. Write code for inserting value in BST
+ 
+ 5. Algorithm and code for deleting a node from BST
+
+ 6. Given tree is BinarySeachTree or not?
+ 
+ 7. Find a faulty node in BST
+ 
+ 8. Given sorted array build a BST
+ 
+ 9. Given Pre-order and Inorder traversal array build BST
+
+10. Given Post-order and Preorder traversal array build BST
+
+11. Given k-th element in BST 
 
 </pre>
 

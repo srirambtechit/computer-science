@@ -11,10 +11,62 @@ public class LowestCommonAncestor {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
+
 	BinaryTreeNode<Integer> nodeOne = root.left.right.left.right;
-	BinaryTreeNode<Integer> nodeTwo = root.right.left;
+	// BinaryTreeNode<Integer> nodeTwo = root.right.left;
+	BinaryTreeNode<Integer> nodeTwo = BinaryTreeUtil.newNode(83);
+
 	Integer data = find(root, nodeOne, nodeTwo);
 	System.out.printf("LCA(%d, %d) is %d%n", nodeOne.data, nodeTwo.data, data);
+	BinaryTreeNode<Integer> res = findLCA(root, nodeOne, nodeTwo);
+	System.out.printf("LCA(%d, %d) is %d%n", nodeOne.data, nodeTwo.data, res != null ? res.data : null);
+    }
+
+    static class Found {
+	boolean one = false;
+	boolean two = false;
+
+	@Override
+	public String toString() {
+	    return "Found [one=" + one + ", two=" + two + "]";
+	}
+
+    }
+
+    public static <T> BinaryTreeNode<T> findLCA(BinaryTreeNode<T> root, BinaryTreeNode<T> nodeOne, BinaryTreeNode<T> nodeTwo) {
+	System.out.println("nodeOne : " + nodeOne.data + "; nodeTwo : " + nodeTwo.data);
+	Found f = new Found();
+	BinaryTreeNode<T> res = findLCA(root, nodeOne, nodeTwo, f);
+	System.out.println("one=" + f.one + "; two=" + f.two + ";res=" + res);
+	if (!f.one || !f.two)
+	    return null;
+	return res;
+    }
+
+    /**
+     * Solution1:- Time
+     * 
+     * @param root
+     * @param nodeOne
+     * @param nodeTwo
+     * @return
+     */
+    private static <T> BinaryTreeNode<T> findLCA(BinaryTreeNode<T> root, BinaryTreeNode<T> nodeOne, BinaryTreeNode<T> nodeTwo, Found f) {
+	if (root == null)
+	    return null;
+	if (root == nodeOne) {
+	    f.one = true;
+	}
+	if (root == nodeTwo) {
+	    f.two = true;
+	}
+	if (root == nodeOne || root == nodeTwo)
+	    return root;
+	BinaryTreeNode<T> leftLCANode = findLCA(root.left, nodeOne, nodeTwo, f);
+	BinaryTreeNode<T> rightLCANode = findLCA(root.right, nodeOne, nodeTwo, f);
+	if (leftLCANode != null && rightLCANode != null)
+	    return root;
+	return rightLCANode != null ? rightLCANode : leftLCANode;
     }
 
     @SuppressWarnings("unchecked")
@@ -25,20 +77,20 @@ public class LowestCommonAncestor {
 	findPath(root, nodeOne, pathOne, t, 0);
 	findPath(root, nodeTwo, pathTwo, t, 0);
 
-	System.out.println(pathOne);
-	System.out.println(pathTwo);
+	// for debug purpose
+	// System.out.println(pathOne);
+	// System.out.println(pathTwo);
 
 	// if path is empty, given node is not present at tree
 	if (pathOne.isEmpty() || pathTwo.isEmpty())
 	    return null;
-
 	int i = 0;
-	for (; i < pathOne.size(); i++) {
-	    if (i < pathTwo.size() && pathOne.get(i) != pathTwo.get(i)) {
+	for (; i < pathOne.size() && i < pathTwo.size(); i++) {
+	    if (pathOne.get(i) != pathTwo.get(i)) {
 		break;
 	    }
 	}
-	return pathOne.get(i - 1);
+	return pathOne.size() > pathTwo.size() ? pathOne.get(i - 1) : pathTwo.get(i - 1);
     }
 
     /**

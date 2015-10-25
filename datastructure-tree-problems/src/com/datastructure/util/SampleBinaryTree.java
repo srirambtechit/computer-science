@@ -1,6 +1,5 @@
 package com.datastructure.util;
 
-
 public class SampleBinaryTree {
 
     /**
@@ -31,7 +30,7 @@ public class SampleBinaryTree {
      * 		2	    3
      * 	    4      5	 6     7
      * 		8     
-     *	      9   10
+     *       9   10
      * </pre>
      * 
      * @return
@@ -154,7 +153,7 @@ public class SampleBinaryTree {
 	return tree.root;
     }
 
-    public static <T> BinaryTreeNode<T> newNode(T t) {
+    private static <T> BinaryTreeNode<T> newNode(T t) {
 	return new BinaryTreeNode<>(t, null, null);
     }
 

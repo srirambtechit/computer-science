@@ -12,15 +12,24 @@ public class LowestCommonAncestor {
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
 
-	BinaryTreeNode<Integer> nodeOne = root.left.right.left.right;
+	// BinaryTreeNode<Integer> nodeOne = root.left.right.left.right;
 	// BinaryTreeNode<Integer> nodeTwo = root.right.left;
-	BinaryTreeNode<Integer> nodeTwo = BinaryTreeUtil.newNode(83);
+	// BinaryTreeNode<Integer> nodeTwo = BinaryTreeUtil.newNode(83);
+
+	BinaryTreeNode<Integer> nodeOne = BinaryTreeUtil.newNode(41);
+	BinaryTreeNode<Integer> nodeTwo = root.left.left;
 
 	Integer data = find(root, nodeOne, nodeTwo);
 	System.out.printf("LCA(%d, %d) is %d%n", nodeOne.data, nodeTwo.data, data);
 	BinaryTreeNode<Integer> res = findLCA(root, nodeOne, nodeTwo);
 	System.out.printf("LCA(%d, %d) is %d%n", nodeOne.data, nodeTwo.data, res != null ? res.data : null);
     }
+
+    /**
+     * ========================================================================
+     * Solution: 1
+     * ========================================================================
+     */
 
     static class Found {
 	boolean one = false;
@@ -34,40 +43,47 @@ public class LowestCommonAncestor {
     }
 
     public static <T> BinaryTreeNode<T> findLCA(BinaryTreeNode<T> root, BinaryTreeNode<T> nodeOne, BinaryTreeNode<T> nodeTwo) {
-	System.out.println("nodeOne : " + nodeOne.data + "; nodeTwo : " + nodeTwo.data);
 	Found f = new Found();
-	BinaryTreeNode<T> res = findLCA(root, nodeOne, nodeTwo, f);
-	System.out.println("one=" + f.one + "; two=" + f.two + ";res=" + res);
-	if (!f.one || !f.two)
-	    return null;
-	return res;
+	BinaryTreeNode<T> res = findLCAUtil(root, nodeOne, nodeTwo, f);
+	// System.out.printf("n1 : %d; n2 : %d; %s%n", nodeOne.data,
+	// nodeTwo.data, f);
+	if (f.one && f.two || f.two && findPresence(res, nodeOne) || f.one && findPresence(res, nodeTwo)) {
+	    return res;
+	}
+	return null;
     }
 
-    /**
-     * Solution1:- Time
-     * 
-     * @param root
-     * @param nodeOne
-     * @param nodeTwo
-     * @return
-     */
-    private static <T> BinaryTreeNode<T> findLCA(BinaryTreeNode<T> root, BinaryTreeNode<T> nodeOne, BinaryTreeNode<T> nodeTwo, Found f) {
+    private static <T> boolean findPresence(BinaryTreeNode<T> root, BinaryTreeNode<T> node) {
+	if (root == null)
+	    return false;
+	if (root == node || findPresence(root.left, node) || findPresence(root.right, node))
+	    return true;
+	return false;
+    }
+
+    private static <T> BinaryTreeNode<T> findLCAUtil(BinaryTreeNode<T> root, BinaryTreeNode<T> nodeOne, BinaryTreeNode<T> nodeTwo, Found f) {
 	if (root == null)
 	    return null;
 	if (root == nodeOne) {
 	    f.one = true;
+	    return root;
 	}
 	if (root == nodeTwo) {
 	    f.two = true;
+	    return root;
 	}
-	if (root == nodeOne || root == nodeTwo)
+	BinaryTreeNode<T> leftLCA = findLCAUtil(root.left, nodeOne, nodeTwo, f);
+	BinaryTreeNode<T> rightLCA = findLCAUtil(root.right, nodeOne, nodeTwo, f);
+	if (leftLCA != null && rightLCA != null)
 	    return root;
-	BinaryTreeNode<T> leftLCANode = findLCA(root.left, nodeOne, nodeTwo, f);
-	BinaryTreeNode<T> rightLCANode = findLCA(root.right, nodeOne, nodeTwo, f);
-	if (leftLCANode != null && rightLCANode != null)
-	    return root;
-	return rightLCANode != null ? rightLCANode : leftLCANode;
+	return rightLCA != null ? rightLCA : leftLCA;
     }
+
+    /**
+     * ========================================================================
+     * Solution: 2
+     * ========================================================================
+     */
 
     @SuppressWarnings("unchecked")
     public static <T> T find(BinaryTreeNode<T> root, BinaryTreeNode<T> nodeOne, BinaryTreeNode<T> nodeTwo) {

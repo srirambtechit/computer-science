@@ -18,7 +18,6 @@ public class LowestCommonAncestorTest {
 	BinaryTreeNode<Integer> nodeOne = root.left.left;
 	BinaryTreeNode<Integer> nodeTwo = root.left;
 	BinaryTreeNode<Integer> res = LowestCommonAncestor.findLCA(root, nodeOne, nodeTwo);
-	System.out.println(res);
 	assertEquals("anscestor equals", new Integer(2), res != null ? res.data : null);
     }
 

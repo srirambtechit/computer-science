@@ -12,8 +12,8 @@ public class NodeLevel {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
 	root.right.left.left = new BinaryTreeNode<>(14, null, null);
 	root.right.left.right = new BinaryTreeNode<>(24, null, null);
-	BinaryTreeNode<Integer> nodeOne = root.left.right;
-	BinaryTreeNode<Integer> nodeTwo = root.right;
+	BinaryTreeNode<Integer> nodeOne = root.left.left;
+	BinaryTreeNode<Integer> nodeTwo = root.right.left;
 	if (nodeOne != null && nodeTwo != null) {
 	    if (sameLevel(root, nodeOne, nodeTwo)) {
 		System.out.printf("%d, %d are at same level", nodeOne.data, nodeTwo.data);

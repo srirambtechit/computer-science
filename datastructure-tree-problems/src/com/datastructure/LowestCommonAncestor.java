@@ -12,12 +12,12 @@ public class LowestCommonAncestor {
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
 
-	// BinaryTreeNode<Integer> nodeOne = root.left.right.left.right;
-	// BinaryTreeNode<Integer> nodeTwo = root.right.left;
+	BinaryTreeNode<Integer> nodeOne = root.left.right.left.right;
+	BinaryTreeNode<Integer> nodeTwo = root.right.left;
 	// BinaryTreeNode<Integer> nodeTwo = BinaryTreeUtil.newNode(83);
 
-	BinaryTreeNode<Integer> nodeOne = BinaryTreeUtil.newNode(41);
-	BinaryTreeNode<Integer> nodeTwo = root.left.left;
+	// BinaryTreeNode<Integer> nodeOne = BinaryTreeUtil.newNode(41);
+	// BinaryTreeNode<Integer> nodeTwo = root.left.left;
 
 	Integer data = find(root, nodeOne, nodeTwo);
 	System.out.printf("LCA(%d, %d) is %d%n", nodeOne.data, nodeTwo.data, data);

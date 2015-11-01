@@ -1,6 +1,14 @@
 <h3>Data structure - Tree related problems and its solutions</h3>
 
 <pre>
+<b>Notes:</b>
+Traversals 
+	- Inorder
+	- Preorder
+	- Postorder
+	- Level order
+	- Level order with maker
+
 <b>BinaryTree problems:</b>
 
  1. Calculate height of a node in tree	[HeightOfNode.java]
@@ -26,7 +34,7 @@
 
 <b>Traversal problems:</b>
 
- 1. Print the which level has maximum sum	[PrintingMaximumSumInLevel.java]
+ 1. Print which level has maximum sum	[PrintingMaximumSumInLevel.java]
  
  2. Find the depth of node	[DepthOfNode.java]
  
@@ -38,11 +46,11 @@
  
  6. Check two nodes are same level	[NodeLevel.java]
  
- 7. Find all the ancestor of the node (FindingAncestors.java)
+ 7. Find all the ancestor of the node [FindingAncestors.java]
  
- 8. Print the level wise data in zigzag order
+ 8. Print the level wise data in zigzag order	[ZigZagPrinter.java]
  
- 9. Print the level wise data in reverse order (Right to left level traversal)
+ 9. Print the level wise data in reverse order -Right to left level traversal	[LevelPrinter.java]
  
 10. Print the root to leaf path	[AllPaths.java]
 
@@ -50,9 +58,11 @@
 
 12. Find least common ancestor	[LowestCommonAncestor.java]
 
-13. Find two nodes are cousin (They are same level but not same parent)
+13. Find two nodes are cousin	[CheckRelationship.java]
+<i>Hint:</i> They are same level but not same parent
 
-14. Find the diameter of the tree (Maximum distance between any two nodes)
+14. Find the diameter of the tree	[]
+<i>Hint:</i> Maximum distance between any two nodes
 
 15. Find the sum of vertical sum
 

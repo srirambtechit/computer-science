@@ -6,16 +6,16 @@ import java.util.Queue;
 import com.datastructure.util.BinaryTreeNode;
 import com.datastructure.util.SampleBinaryTree;
 
-public class PrintingLevel {
+public class LevelPrinter {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
 	root.right.left.left = new BinaryTreeNode<>(4, null, null);
 	root.right.left.right = new BinaryTreeNode<>(4, null, null);
-	printLevelAndNewLine(root);
+	reversePrint(root);
     }
 
-    public static <T> void printLevelAndNewLine(BinaryTreeNode<T> root) {
+    public static <T> void reversePrint(BinaryTreeNode<T> root) {
 	if (root == null)
 	    return;
 	Queue<BinaryTreeNode<T>> q = new LinkedList<>();
@@ -24,16 +24,14 @@ public class PrintingLevel {
 	while (!q.isEmpty()) {
 	    root = q.poll();
 	    if (root == null) {
-		if (q.peek() != null) {
+		if (q.peek() != null)
 		    q.offer(null);
-		    System.out.println();
-		}
 	    } else {
 		System.out.printf("%d\t", root.data);
-		if (root.left != null)
-		    q.offer(root.left);
 		if (root.right != null)
 		    q.offer(root.right);
+		if (root.left != null)
+		    q.offer(root.left);
 	    }
 	}
     }

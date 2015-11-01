@@ -59,10 +59,10 @@ Traversals
 12. Find least common ancestor	[LowestCommonAncestor.java]
 
 13. Find two nodes are cousin	[CheckRelationship.java]
-	<i>Hint:</i> They are same level but not same parent
+	<i>Hint: They are same level but not same parent</i>
 
 14. Find the diameter of the tree	[]
-	<i>Hint:</i> Maximum distance between any two nodes
+	<i>Hint: Maximum distance between any two nodes</i>
 
 15. Find the sum of vertical sum
 

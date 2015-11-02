@@ -61,7 +61,7 @@ Traversals
 13. Find two nodes are cousin	[CheckRelationship.java]
 	<i>Hint: They are same level but not same parent</i>
 
-14. Find the diameter of the tree	[]
+14. Find the diameter of the tree	[DiameterOfTree.java]
 	<i>Hint: Maximum distance between any two nodes</i>
 
 15. Find the sum of vertical sum

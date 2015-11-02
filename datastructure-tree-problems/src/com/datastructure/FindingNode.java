@@ -1,14 +1,15 @@
 package com.datastructure;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class FindingNode {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.right.left.left = new BinaryTreeNode<>(11, null, null);
-	root.right.left.right = new BinaryTreeNode<>(12, null, null);
+	root.right.left.left = BinaryTreeUtil.newNode(11);
+	root.right.left.right = BinaryTreeUtil.newNode(12);
 	ResultWrapper<Integer> rw = new ResultWrapper<>();
 	rw.element = 19;
 	findNode(root, rw);

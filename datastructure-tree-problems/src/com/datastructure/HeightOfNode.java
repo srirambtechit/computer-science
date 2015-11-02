@@ -1,13 +1,14 @@
 package com.datastructure;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class HeightOfNode {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.left.right.left.left.left = new BinaryTreeNode<>(1, null, null);
+	root.left.right.left.left.left = BinaryTreeUtil.newNode(1);
 	int count = height(root);
 	System.out.printf("No of Full nodes in a tree is %d%n", count);
     }

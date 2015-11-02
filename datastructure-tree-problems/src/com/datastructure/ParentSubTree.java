@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 /**
@@ -65,18 +66,18 @@ public class ParentSubTree {
      * Sample data to test the problem
      */
     private static void testBinaryTreeTwo() {
-	BinaryTreeNode<Character> t1 = new BinaryTreeNode<>('x', null, null);
-	t1.left = new BinaryTreeNode<>('a', null, null);
-	t1.right = new BinaryTreeNode<>('b', null, null);
-	t1.left.right = new BinaryTreeNode<>('c', null, null);
+	BinaryTreeNode<Character> t1 = BinaryTreeUtil.newNode('x');
+	t1.left = BinaryTreeUtil.newNode('a');
+	t1.right = BinaryTreeUtil.newNode('b');
+	t1.left.right = BinaryTreeUtil.newNode('c');
 
-	BinaryTreeNode<Character> t2 = new BinaryTreeNode<>('z', null, null);
-	t2.left = new BinaryTreeNode<>('x', null, null);
-	t2.left.left = new BinaryTreeNode<>('a', null, null);
-	t2.left.right = new BinaryTreeNode<>('b', null, null);
-	t2.left.left.right = new BinaryTreeNode<>('c', null, null);
-	t2.right = new BinaryTreeNode<>('e', null, null);
-	t2.right.right = new BinaryTreeNode<>('k', null, null);
+	BinaryTreeNode<Character> t2 = BinaryTreeUtil.newNode('z');
+	t2.left = BinaryTreeUtil.newNode('x');
+	t2.left.left = BinaryTreeUtil.newNode('a');
+	t2.left.right = BinaryTreeUtil.newNode('b');
+	t2.left.left.right = BinaryTreeUtil.newNode('c');
+	t2.right = BinaryTreeUtil.newNode('e');
+	t2.right.right = BinaryTreeUtil.newNode('k');
 
 	System.out.println("Binary Tree");
 	System.out.println(t1);
@@ -86,17 +87,17 @@ public class ParentSubTree {
     }
 
     private static void testBinaryTree() {
-	BinaryTreeNode<Integer> t1 = new BinaryTreeNode<>(8, null, null);
-	t1.left = new BinaryTreeNode<>(10, null, null);
-	t1.right = new BinaryTreeNode<>(4, null, null);
-	t1.left.left = new BinaryTreeNode<>(6, null, null);
-	t1.left.right = new BinaryTreeNode<>(9, null, null);
-	t1.left.left.left = new BinaryTreeNode<>(4, null, null);
-	t1.left.right.left = new BinaryTreeNode<>(7, null, null);
-	t1.left.right.right = new BinaryTreeNode<>(5, null, null);
+	BinaryTreeNode<Integer> t1 = BinaryTreeUtil.newNode(8);
+	t1.left = BinaryTreeUtil.newNode(10);
+	t1.right = BinaryTreeUtil.newNode(4);
+	t1.left.left = BinaryTreeUtil.newNode(6);
+	t1.left.right = BinaryTreeUtil.newNode(9);
+	t1.left.left.left = BinaryTreeUtil.newNode(4);
+	t1.left.right.left = BinaryTreeUtil.newNode(7);
+	t1.left.right.right = BinaryTreeUtil.newNode(5);
 
-	BinaryTreeNode<Integer> t2 = new BinaryTreeNode<>(8, null, null);
-	t2.right = new BinaryTreeNode<>(4, null, null);
+	BinaryTreeNode<Integer> t2 = BinaryTreeUtil.newNode(8);
+	t2.right = BinaryTreeUtil.newNode(4);
 
 	System.out.println("Binary Tree");
 	System.out.println(t1);

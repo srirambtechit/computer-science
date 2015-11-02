@@ -4,14 +4,15 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class NodeLevel {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.right.left.left = new BinaryTreeNode<>(14, null, null);
-	root.right.left.right = new BinaryTreeNode<>(24, null, null);
+	root.right.left.left = BinaryTreeUtil.newNode(14);
+	root.right.left.right = BinaryTreeUtil.newNode(24);
 	BinaryTreeNode<Integer> nodeOne = root.left.left;
 	BinaryTreeNode<Integer> nodeTwo = root.right.left;
 	if (nodeOne != null && nodeTwo != null) {

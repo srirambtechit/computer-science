@@ -50,6 +50,45 @@ public class SampleBinaryTree {
     }
 
     /**
+     * <pre>
+     *                          1
+     *                         /\
+     *                        /  \
+     *                       /    \
+     *                      2      3
+     *                     /\       \
+     *                    /  \       \
+     *                   4    5       6
+     *                  /\     \
+     *                 /  \     \
+     *                7    8     9
+     *                    /     / \
+     *                   10    11  12 
+     *                   /\         \
+     *                 13  14        15
+     * </pre>
+     * @return
+     */
+    public static BinaryTreeNode<Integer> binaryTreeThree() {
+	BinaryTreeNode<Integer> root = newNode(1);
+	root.left = newNode(2);
+	root.right = newNode(3);
+	root.right.right = newNode(6);
+	root.left.left = newNode(4);
+	root.left.right = newNode(5);
+	root.left.left.left = newNode(7);
+	root.left.left.right = newNode(8);
+	root.left.right.right = newNode(9);
+	root.left.left.right.left = newNode(10);
+	root.left.right.right.left = newNode(11);
+	root.left.right.right.right = newNode(12);
+	root.left.left.right.left.left = newNode(13);
+	root.left.left.right.left.right = newNode(14);
+	root.left.right.right.right.right = newNode(15);
+	return root;
+    }
+
+    /**
      * Full binary tree: A binary tree is which each node was exactly 2 or 0
      * children
      * 

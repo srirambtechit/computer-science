@@ -6,14 +6,15 @@ import java.util.List;
 import java.util.Queue;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class LevelListCreation {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.right.left.left = new BinaryTreeNode<>(4, null, null);
-	root.right.left.right = new BinaryTreeNode<>(4, null, null);
+	root.right.left.left = BinaryTreeUtil.newNode(4);
+	root.right.left.right = BinaryTreeUtil.newNode(4);
 	List<List<Integer>> allLevels = prepareLevelList(root);
 	for (List<Integer> level : allLevels) {
 	    System.out.println(level);

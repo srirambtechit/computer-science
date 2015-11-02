@@ -6,13 +6,14 @@ import java.util.List;
 import java.util.Queue;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class CountNodeWithOneChild {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.right.left.left = new BinaryTreeNode<>(14, null, null);
+	root.right.left.left = BinaryTreeUtil.newNode(14);
 	int count = countOneChildNode(root);
 	System.out.printf("No of nodes who has exactly one child in a tree is %d%n", count);
 	List<BinaryTreeNode<Integer>> nodes = getOneChildNode(root);

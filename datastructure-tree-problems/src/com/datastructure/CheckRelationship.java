@@ -1,14 +1,15 @@
 package com.datastructure;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class CheckRelationship {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.right.left.left = new BinaryTreeNode<>(4, null, null);
-	root.right.left.right = new BinaryTreeNode<>(4, null, null);
+	root.right.left.left = BinaryTreeUtil.newNode(4);
+	root.right.left.right = BinaryTreeUtil.newNode(4);
 
 	// case 1 output : 6 and 8 are not cousin
 	// BinaryTreeNode<Integer> nodeOne = root.right.left;

@@ -4,14 +4,15 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import com.datastructure.util.BinaryTreeNode;
+import com.datastructure.util.BinaryTreeUtil;
 import com.datastructure.util.SampleBinaryTree;
 
 public class DepthOfNode {
 
     public static void main(String[] args) {
 	BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();
-	root.left.right.left.left.left = new BinaryTreeNode<>(14, null, null);
-	root.left.right.left.left.left.right = new BinaryTreeNode<>(4, null, null);
+	root.left.right.left.left.left = BinaryTreeUtil.newNode(14);
+	root.left.right.left.left.left.right = BinaryTreeUtil.newNode(4);
 	BinaryTreeNode<Integer> node = root.left.right.left.right;
 	if (node != null) {
 	    int count = depth(root, node);

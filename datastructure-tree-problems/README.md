@@ -64,7 +64,7 @@ Traversals
 14. Find the diameter of the tree	[DiameterOfTree.java]
 	<i>Hint: Maximum distance between any two nodes</i>
 
-15. Find the sum of vertical sum
+15. Find the sum of vertical sum	
 
 
 <b>Tree comparisons problems:</b>

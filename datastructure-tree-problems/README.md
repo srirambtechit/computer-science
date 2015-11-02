@@ -64,16 +64,19 @@ Traversals
 14. Find the diameter of the tree	[DiameterOfTree.java]
 	<i>Hint: Maximum distance between any two nodes</i>
 
-15. Find the sum of vertical sum	
+15. Find vertical sum in tree	[VerticalOrderTraversal.java]
 
 
 <b>Tree comparisons problems:</b>
 
-1. Identical tree (same data and structurally equals)
+1. 	Identical tree	[IdentiyTreeComparison.java]
+	<i>Hint : same data and structurally equals</i>
 
-2. Mirror tree (Both tree has same node and children but the left exists on right side and right exists on left side)
+2. 	Check given binary tree is mirror of it or not	[MirrorTreeComparison.java] 
+	<i>Hint : Both tree has same node and children but the left exists on right side and right exists on left side</i>
 
-3. Isometric tree (Structurally equals, data doesn't matter)
+3. 	Isometric tree	[IsometricTreeComparison.java]
+	<i>Hint : Structurally equals, data doesn't matter</i>
 
 
 <b>BinarySearchTree problems:</b>

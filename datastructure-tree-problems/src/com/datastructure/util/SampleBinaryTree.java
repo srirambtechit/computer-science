@@ -1,5 +1,7 @@
 package com.datastructure.util;
 
+import com.datastructure.bst.BSTInsert;
+
 public class SampleBinaryTree {
 
     /**
@@ -67,6 +69,7 @@ public class SampleBinaryTree {
      *                   /\         \
      *                 13  14        15
      * </pre>
+     * 
      * @return
      */
     public static BinaryTreeNode<Integer> binaryTreeThree() {
@@ -190,6 +193,70 @@ public class SampleBinaryTree {
 	    tree.add(t);
 	}
 	return tree.root;
+    }
+
+    /**
+     * <pre>
+     *                                  1
+     *                                 /\
+     *                                /  \
+     *                               /    \
+     *                              /      \
+     *                             5        14
+     *                            / \       /\
+     *                           /   \     /  \
+     *                          2     9   12  19
+     *                               /
+     *                              /
+     *                             8
+     *                            /
+     *                           6
+     *                            \
+     *                             7
+     *
+     * </pre>
+     * 
+     * @return
+     */
+    public static BinaryTreeNode<Integer> binarySearchTreeOne() {
+	Integer[] ints = { 10, 5, 2, 14, 9, 19, 8, 6, 7, 12 };
+	return binarySearchTree(ints);
+    }
+
+    /**
+     * <pre>
+     *                                  1
+     *                                 /\
+     *                                /  \
+     *                               /    \
+     *                              /      \
+     *                             5        14
+     *                            / \       / \
+     *                           /   \     /   \
+     *                          2     9  12     19
+     *                               /   /\     /\
+     *                              /   /  \   /  \
+     *                             8   11  13 17  20  
+     *                            /
+     *                           6
+     *                            \
+     *                             7
+     *
+     * </pre>
+     * 
+     * @return
+     */
+    public static BinaryTreeNode<Integer> binarySearchTreeTwo() {
+	Integer[] ints = { 10, 5, 2, 14, 9, 19, 8, 6, 7, 12, 13, 11, 20, 17 };
+	return binarySearchTree(ints);
+    }
+
+    private static <T extends Comparable<T>> BinaryTreeNode<T> binarySearchTree(T[] t) {
+	BSTInsert<T> bst = new BSTInsert<>();
+	for (int i = 0; i < t.length; i++) {
+	    bst.insert(t[i]);
+	}
+	return bst.root;
     }
 
     private static <T> BinaryTreeNode<T> newNode(T t) {

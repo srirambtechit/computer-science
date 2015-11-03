@@ -50,7 +50,8 @@ Traversals
  
  8. Print the level wise data in zigzag order	[ZigZagPrinter.java]
  
- 9. Print the level wise data in reverse order -Right to left level traversal	[LevelPrinter.java]
+ 9. Print the level wise data in reverse order 	[LevelPrinter.java]
+ 	<i>Hint : Right to left level traversal</i>
  
 10. Print the root to leaf path	[AllPaths.java]
 
@@ -73,7 +74,8 @@ Traversals
 	<i>Hint : same data and structurally equals</i>
 
 2. 	Check given binary tree is mirror of it or not	[MirrorTreeComparison.java] 
-	<i>Hint : Both tree has same node and children but the left exists on right side and right exists on left side</i>
+	<i>Hint : Both tree has same node and children 
+	but the left exists on right side and right exists on left side</i>
 
 3. 	Isometric tree	[IsometricTreeComparison.java]
 	<i>Hint : Structurally equals, data doesn't matter</i>
@@ -81,17 +83,17 @@ Traversals
 
 <b>BinarySearchTree problems:</b>
 
- 1. Find the element in BST
+ 1. Find the element in BST		[FindingElementBST.java]
 
- 2. Find the minimum value in BST
+ 2. Find the minimum value in BST	[FindingMinMaxBST.java]
 
- 3. Find the maximum value in BST
+ 3. Find the maximum value in BST	[FindingMinMaxBST.java]
 
- 4. Write code for inserting value in BST
+ 4. Write code for inserting value in BST	[BSTInsert.java]
  
- 5. Algorithm and code for deleting a node from BST
+ 5. Algorithm and code for deleting a node from BST		[BSTDelete.java]
 
- 6. Given tree is BinarySeachTree or not?
+ 6. Given tree is BinarySeachTree or not?	[BSTCheck.java]
  
  7. Find a faulty node in BST
  

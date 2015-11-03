@@ -6,6 +6,7 @@ import com.datastructure.util.SampleBinaryTree;
 
 public class BSTCheck {
 
+    // Time O(n); Space O(1);
     static class SolutionOne<T extends Comparable<T>> {
 
 	public static <T extends Comparable<T>> boolean isBST(BinaryTreeNode<T> node) {
@@ -35,6 +36,7 @@ public class BSTCheck {
 	}
     }
 
+    // Time O(n); Space O(n) stack uses additional space
     static class SolutionTwo {
 	public static boolean isBST(BinaryTreeNode<Integer> root) {
 	    if (root == null)

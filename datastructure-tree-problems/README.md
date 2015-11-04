@@ -95,9 +95,9 @@ Traversals
 
  6. Given tree is BinarySeachTree or not?	[BSTCheck.java]
  
- 7. Find a faulty node in BST
+ 7. Find a faulty node in BST	[FaultyNodeBST.java]
  
- 8. Given sorted array build a BST
+ 8. Given sorted array build a balanced BST	[SortedArrayToBST.java]
  
  9. Given Pre-order and Inorder traversal array build BST
 

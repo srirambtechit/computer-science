@@ -27,13 +27,12 @@ public class SortedArrayToBST<T extends Comparable<T>> {
     }
 
     private BinaryTreeNode<T> constructBST(T[] ts, int lo, int hi) {
-	BinaryTreeNode<T> root = null;
-	if (lo <= hi) {
-	    int mid = lo + (hi - lo) / 2;
-	    root = BinaryTreeUtil.newNode(ts[mid]);
-	    root.left = constructBST(ts, lo, mid - 1);
-	    root.right = constructBST(ts, mid + 1, hi);
-	}
+	if (lo > hi)
+	    return null;
+	int mid = lo + (hi - lo) / 2;
+	BinaryTreeNode<T> root = BinaryTreeUtil.newNode(ts[mid]);
+	root.left = constructBST(ts, lo, mid - 1);
+	root.right = constructBST(ts, mid + 1, hi);
 	return root;
     }
 

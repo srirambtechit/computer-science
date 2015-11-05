@@ -15,14 +15,14 @@ public class SampleBinaryTree {
      * @return will returns root of tree
      */
     public static BinaryTreeNode<Integer> binaryTreeOne() {
-	BinaryTreeNode<Integer> root = newNode(8);
-	root.left = newNode(10);
-	root.right = newNode(2);
-	root.left.left = newNode(6);
-	root.left.right = newNode(9);
-	root.left.left.left = newNode(4);
-	root.left.right.left = newNode(7);
-	root.left.right.right = newNode(5);
+	BinaryTreeNode<Integer> root = newNodeUtil(8);
+	root.left = newNodeUtil(10);
+	root.right = newNodeUtil(2);
+	root.left.left = newNodeUtil(6);
+	root.left.right = newNodeUtil(9);
+	root.left.left.left = newNodeUtil(4);
+	root.left.right.left = newNodeUtil(7);
+	root.left.right.right = newNodeUtil(5);
 	return root;
     }
 
@@ -38,16 +38,16 @@ public class SampleBinaryTree {
      * @return
      */
     public static BinaryTreeNode<Integer> binaryTreeTwo() {
-	BinaryTreeNode<Integer> root = newNode(1);
-	root.left = newNode(2);
-	root.right = newNode(3);
-	root.left.left = newNode(4);
-	root.left.right = newNode(5);
-	root.right.left = newNode(6);
-	root.right.right = newNode(7);
-	root.left.right.left = newNode(8);
-	root.left.right.left.left = newNode(9);
-	root.left.right.left.right = newNode(10);
+	BinaryTreeNode<Integer> root = newNodeUtil(1);
+	root.left = newNodeUtil(2);
+	root.right = newNodeUtil(3);
+	root.left.left = newNodeUtil(4);
+	root.left.right = newNodeUtil(5);
+	root.right.left = newNodeUtil(6);
+	root.right.right = newNodeUtil(7);
+	root.left.right.left = newNodeUtil(8);
+	root.left.right.left.left = newNodeUtil(9);
+	root.left.right.left.right = newNodeUtil(10);
 	return root;
     }
 
@@ -73,21 +73,21 @@ public class SampleBinaryTree {
      * @return
      */
     public static BinaryTreeNode<Integer> binaryTreeThree() {
-	BinaryTreeNode<Integer> root = newNode(1);
-	root.left = newNode(2);
-	root.right = newNode(3);
-	root.right.right = newNode(6);
-	root.left.left = newNode(4);
-	root.left.right = newNode(5);
-	root.left.left.left = newNode(7);
-	root.left.left.right = newNode(8);
-	root.left.right.right = newNode(9);
-	root.left.left.right.left = newNode(10);
-	root.left.right.right.left = newNode(11);
-	root.left.right.right.right = newNode(12);
-	root.left.left.right.left.left = newNode(13);
-	root.left.left.right.left.right = newNode(14);
-	root.left.right.right.right.right = newNode(15);
+	BinaryTreeNode<Integer> root = newNodeUtil(1);
+	root.left = newNodeUtil(2);
+	root.right = newNodeUtil(3);
+	root.right.right = newNodeUtil(6);
+	root.left.left = newNodeUtil(4);
+	root.left.right = newNodeUtil(5);
+	root.left.left.left = newNodeUtil(7);
+	root.left.left.right = newNodeUtil(8);
+	root.left.right.right = newNodeUtil(9);
+	root.left.left.right.left = newNodeUtil(10);
+	root.left.right.right.left = newNodeUtil(11);
+	root.left.right.right.right = newNodeUtil(12);
+	root.left.left.right.left.left = newNodeUtil(13);
+	root.left.left.right.left.right = newNodeUtil(14);
+	root.left.right.right.right.right = newNodeUtil(15);
 	return root;
     }
 
@@ -105,24 +105,24 @@ public class SampleBinaryTree {
      * @return
      */
     public static BinaryTreeNode<Integer> fullBinaryTree() {
-	BinaryTreeNode<Integer> root = newNode(1);
-	root.left = newNode(2);
-	root.right = newNode(3);
+	BinaryTreeNode<Integer> root = newNodeUtil(1);
+	root.left = newNodeUtil(2);
+	root.right = newNodeUtil(3);
 
-	root.left.left = newNode(4);
-	root.left.right = newNode(5);
+	root.left.left = newNodeUtil(4);
+	root.left.right = newNodeUtil(5);
 
-	root.right.left = newNode(6);
-	root.right.right = newNode(7);
+	root.right.left = newNodeUtil(6);
+	root.right.right = newNodeUtil(7);
 
-	root.left.right.left = newNode(8);
-	root.left.right.right = newNode(9);
+	root.left.right.left = newNodeUtil(8);
+	root.left.right.right = newNodeUtil(9);
 
-	root.right.right.left = newNode(10);
-	root.right.right.right = newNode(11);
+	root.right.right.left = newNodeUtil(10);
+	root.right.right.right = newNodeUtil(11);
 
-	root.right.right.left.left = newNode(12);
-	root.right.right.left.right = newNode(13);
+	root.right.right.left.left = newNodeUtil(12);
+	root.right.right.left.right = newNodeUtil(13);
 	return root;
     }
 
@@ -142,24 +142,24 @@ public class SampleBinaryTree {
      * @return
      */
     public static BinaryTreeNode<Integer> perfectBinaryTree() {
-	BinaryTreeNode<Integer> root = newNode(1);
-	root.left = newNode(2);
-	root.right = newNode(3);
+	BinaryTreeNode<Integer> root = newNodeUtil(1);
+	root.left = newNodeUtil(2);
+	root.right = newNodeUtil(3);
 
-	root.left.left = newNode(4);
-	root.left.right = newNode(5);
+	root.left.left = newNodeUtil(4);
+	root.left.right = newNodeUtil(5);
 
-	root.right.left = newNode(6);
-	root.right.right = newNode(7);
+	root.right.left = newNodeUtil(6);
+	root.right.right = newNodeUtil(7);
 	return root;
     }
 
     public static BinaryTreeNode<Integer> rightSkewedTree() {
 	Integer[] num = { 1, 2, 3, 4, 5, 6, 7 };
-	BinaryTreeNode<Integer> root = newNode(num[0]);
+	BinaryTreeNode<Integer> root = newNodeUtil(num[0]);
 	BinaryTreeNode<Integer> t = root;
 	for (int i = 1; i < num.length; i++) {
-	    t.right = newNode(num[i]);
+	    t.right = newNodeUtil(num[i]);
 	    t = t.right;
 	}
 	return root;
@@ -167,10 +167,10 @@ public class SampleBinaryTree {
 
     public static BinaryTreeNode<Integer> leftSkewedTree() {
 	Integer[] num = { 1, 2, 3, 4, 5, 6, 7 };
-	BinaryTreeNode<Integer> root = newNode(num[0]);
+	BinaryTreeNode<Integer> root = newNodeUtil(num[0]);
 	BinaryTreeNode<Integer> t = root;
 	for (int i = 1; i < num.length; i++) {
-	    t.left = newNode(num[i]);
+	    t.left = newNodeUtil(num[i]);
 	    t = t.left;
 	}
 	return root;
@@ -197,7 +197,7 @@ public class SampleBinaryTree {
 
     /**
      * <pre>
-     *                                  1
+     *                                 10
      *                                 /\
      *                                /  \
      *                               /    \
@@ -220,12 +220,12 @@ public class SampleBinaryTree {
      */
     public static BinaryTreeNode<Integer> binarySearchTreeOne() {
 	Integer[] ints = { 10, 5, 2, 14, 9, 19, 8, 6, 7, 12 };
-	return binarySearchTree(ints);
+	return binarySearchTreeUtil(ints);
     }
 
     /**
      * <pre>
-     *                                  1
+     *                                 10
      *                                 /\
      *                                /  \
      *                               /    \
@@ -248,10 +248,10 @@ public class SampleBinaryTree {
      */
     public static BinaryTreeNode<Integer> binarySearchTreeTwo() {
 	Integer[] ints = { 10, 5, 2, 14, 9, 19, 8, 6, 7, 12, 13, 11, 20, 17 };
-	return binarySearchTree(ints);
+	return binarySearchTreeUtil(ints);
     }
 
-    private static <T extends Comparable<T>> BinaryTreeNode<T> binarySearchTree(T[] t) {
+    private static <T extends Comparable<T>> BinaryTreeNode<T> binarySearchTreeUtil(T[] t) {
 	BSTInsert<T> bst = new BSTInsert<>();
 	for (int i = 0; i < t.length; i++) {
 	    bst.insert(t[i]);
@@ -259,7 +259,7 @@ public class SampleBinaryTree {
 	return bst.root;
     }
 
-    private static <T> BinaryTreeNode<T> newNode(T t) {
+    private static <T> BinaryTreeNode<T> newNodeUtil(T t) {
 	return new BinaryTreeNode<>(t, null, null);
     }
 

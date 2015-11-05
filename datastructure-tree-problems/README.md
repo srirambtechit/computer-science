@@ -99,11 +99,13 @@ Traversals
  
  8. Given sorted array build a balanced BST	[SortedArrayToBST.java]
  
- 9. Given Pre-order and Inorder traversal array build BST
+ 9. Given Pre-order and Inorder traversal array build BST	[PreInorderToBST.java]
 
-10. Given Post-order and Preorder traversal array build BST
+10. Given Post-order and Preorder traversal array build BST	[PostInorderToBST.java]
 
-11. Given k-th element in BST 
+11. Given k-th element in BST	[FindKthElementBST.java]
+	<i>Hint: Similar to find k-th element in sorted array. 
+	So, Inorder traversal would give result to either ascending or descending order</i>
 
 </pre>
 

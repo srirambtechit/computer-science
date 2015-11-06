@@ -1,4 +1,4 @@
-package com.datastructure.graph;
+package com.datastructure.util;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

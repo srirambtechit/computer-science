@@ -2,7 +2,9 @@ package com.datastructure.graph;
 
 import java.util.Arrays;
 
-public class AdjacencyListGraph {
+import com.datastructure.util.Bucket;
+
+public class AdjacencyListGraph implements Graph {
 
     private int V;
     private Bucket<Integer>[] adj;
@@ -47,12 +49,16 @@ public class AdjacencyListGraph {
 	g.addEdge(1, 4);
 	g.addEdge(4, 5);
 	g.addEdge(3, 5);
-
 	System.out.println("No of edage : " + g.E(0));
-	Iterable<Integer> i = g.adj(0);
-	for (Integer element : i) {
-	    System.out.println(element);
+
+	for (int i = 0; i < g.V(); i++) {
+	    System.out.printf("%d - ", i);
+	    for (Integer element : g.adj(i)) {
+		System.out.printf("%d ", element);
+	    }
+	    System.out.println();
 	}
+
 	System.out.println(g);
     }
 

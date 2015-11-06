@@ -1,7 +1,7 @@
-Data structure - Graph:
+Data structure - Graph
 -----------------------
 
-<h3>Graph terminology:-</h3>
+<h3>Graph terminology</h3>
 <pre>
  - Vertex
  - Edge
@@ -10,8 +10,12 @@ Data structure - Graph:
 </pre>
 
 
-<h3>Graph representation:-</h3>
+<h3>Graph representation</h3>
  - Vertex representation
  - Set of edges representation
  - Adjacency matrix representation
  - Adjacency list representation
+ 
+<h3>Graph representation</h3>
+ - Breadth First Search - uses queue
+ - Depth First Search - uses stack

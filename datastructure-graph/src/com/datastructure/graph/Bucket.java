@@ -34,7 +34,7 @@ public class Bucket<T> implements Iterable<T> {
 	}
     }
 
-    private class BucketIterator<T> implements Iterator<T> {
+    private class BucketIterator<I> implements Iterator<T> {
 
 	private Node<T> current;
 

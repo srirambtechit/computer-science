@@ -8,8 +8,7 @@ public class AdjacencyMatrixGraph {
     private boolean[][] adj;
 
     public AdjacencyMatrixGraph(int v) {
-	// adding 1 to vertex to make starting index from 1
-	this.V = v + 1;
+	this.V = v;
 	adj = new boolean[V][V];
     }
 
@@ -29,7 +28,7 @@ public class AdjacencyMatrixGraph {
 
     public Iterable<Integer> adj(int v) {
 	Bucket<Integer> bucket = new Bucket<>();
-	for (int i = 1; i < V; i++) {
+	for (int i = 0; i < V; i++) {
 	    if (adj[v][i])
 		bucket.add(i);
 	}
@@ -51,7 +50,7 @@ public class AdjacencyMatrixGraph {
      */
     public int E(int v) {
 	int c = 0;
-	for (int i = 1; i < V; i++) {
+	for (int i = 0; i < V; i++) {
 	    if (adj[v][i])
 		c++;
 	}
@@ -71,23 +70,25 @@ public class AdjacencyMatrixGraph {
     }
 
     public static void main(String[] args) {
-	AdjacencyMatrixGraph amg = new AdjacencyMatrixGraph(6);
-	System.out.println("No of edage : " + amg.E(3));
-	amg.addEdge(1, 3);
-	amg.addEdge(1, 2);
-	amg.addEdge(2, 4);
-	amg.addEdge(2, 5);
-	amg.addEdge(2, 3);
-	amg.addEdge(4, 5);
-	amg.addEdge(4, 3);
-	amg.addEdge(3, 6);
+	AdjacencyMatrixGraph g = new AdjacencyMatrixGraph(6);
+	System.out.println("No of edage : " + g.E(0));
+	g.addEdge(0, 1);
+	g.addEdge(0, 2);
+	g.addEdge(0, 3);
+	g.addEdge(0, 5);
+	g.addEdge(1, 4);
+	g.addEdge(4, 5);
+	g.addEdge(3, 5);
+	System.out.println("No of edage : " + g.E(0));
 
-	System.out.println("No of edage : " + amg.E(3));
-	Iterable<Integer> i = amg.adj(2);
-	for (Integer element : i) {
-	    System.out.println(element);
+	for (int i = 0; i < g.V(); i++) {
+	    for (Integer element : g.adj(i)) {
+		System.out.printf("%d ", element);
+	    }
+	    System.out.println();
 	}
-	System.out.println(amg);
+
+	System.out.println(g);
     }
 
 }

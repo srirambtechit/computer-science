@@ -9,7 +9,7 @@ public class AdjacencyListGraph {
 
     @SuppressWarnings("unchecked")
     public AdjacencyListGraph(int v) {
-	this.V = v + 1;
+	this.V = v;
 	adj = new Bucket[V];
 	for (int i = 0; i < V; i++) {
 	    adj[i] = new Bucket<>();
@@ -38,23 +38,22 @@ public class AdjacencyListGraph {
     }
 
     public static void main(String[] args) {
-	AdjacencyListGraph alg = new AdjacencyListGraph(6);
-	System.out.println("No of edage : " + alg.E(3));
-	alg.addEdge(1, 3);
-	alg.addEdge(1, 2);
-	alg.addEdge(2, 4);
-	alg.addEdge(2, 5);
-	alg.addEdge(2, 3);
-	alg.addEdge(4, 5);
-	alg.addEdge(4, 3);
-	alg.addEdge(3, 6);
+	AdjacencyListGraph g = new AdjacencyListGraph(6);
+	System.out.println("No of edage : " + g.E(0));
+	g.addEdge(0, 1);
+	g.addEdge(0, 2);
+	g.addEdge(0, 3);
+	g.addEdge(0, 5);
+	g.addEdge(1, 4);
+	g.addEdge(4, 5);
+	g.addEdge(3, 5);
 
-	System.out.println("No of edage : " + alg.E(3));
-	Iterable<Integer> i = alg.adj(2);
+	System.out.println("No of edage : " + g.E(0));
+	Iterable<Integer> i = g.adj(0);
 	for (Integer element : i) {
 	    System.out.println(element);
 	}
-	System.out.println(alg);
+	System.out.println(g);
     }
 
 }

@@ -1,9 +1,10 @@
 package com.datastructure;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class MaxPQ<T extends Comparable<T>> {
+public class MaxPQ<T extends Comparable<T>> implements Iterable<T> {
 
     private T[] pq;
 
@@ -31,12 +32,40 @@ public class MaxPQ<T extends Comparable<T>> {
 
     public T delMax() {
 	if (N <= 1)
-	    throw new NoSuchElementException();
+	    return null;
 	T t = pq[1];
 	pq[1] = pq[N];
 	pq[N--] = null;
 	sink(1);
 	return t;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+	return new MaxPQIterator();
+    }
+
+    private class MaxPQIterator implements Iterator<T> {
+
+	private int cursor;
+
+	@Override
+	public boolean hasNext() {
+	    return cursor != pq.length - 1;
+	}
+
+	@Override
+	public T next() {
+	    if (!hasNext())
+		return null;
+	    return pq[++cursor];
+	}
+
+	@Override
+	public void remove() {
+	    throw new UnsupportedOperationException();
+	}
+
     }
 
     private void sink(int k) {
@@ -90,6 +119,11 @@ public class MaxPQ<T extends Comparable<T>> {
 	System.out.println("Max : " + pq.max());
 	System.out.println("delMax : " + pq.delMax());
 	System.out.println(pq);
+
+	Iterator<Integer> itr = pq.iterator();
+	while (itr.hasNext()) {
+	    System.out.print(itr.next() + "\t");
+	}
 
 	System.out.println("\n" + pq);
 	System.out.println("delMax : " + pq.delMax());

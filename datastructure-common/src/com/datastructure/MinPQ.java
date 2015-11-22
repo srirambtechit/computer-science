@@ -98,45 +98,45 @@ public class MinPQ<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public static void main(String[] args) {
-	MinPQ<Integer> q = new MinPQ<>(10);
+	MinPQ<Integer> pq = new MinPQ<>(10);
 
-	q.add(7);
-	q.add(4);
-	q.add(3);
-	q.add(6);
-	q.add(5);
-	q.add(9);
-	q.add(0);
-	q.add(8);
-	q.add(1);
+	pq.add(7);
+	pq.add(4);
+	pq.add(3);
+	pq.add(6);
+	pq.add(5);
+	pq.add(9);
+	pq.add(0);
+	pq.add(8);
+	pq.add(1);
 
-	System.out.println("Min : " + q.min());
+	System.out.println("Min : " + pq.min());
 
-	Iterator<Integer> itr = q.iterator();
+	Iterator<Integer> itr = pq.iterator();
 	while (itr.hasNext()) {
 	    System.out.print(itr.next() + "\t");
 	}
 
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
-	System.out.println("\n" + q);
-	System.out.println("delMin : " + q.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
+	System.out.println("\n" + pq);
+	System.out.println("delMin : " + pq.delMin());
     }
 
 }

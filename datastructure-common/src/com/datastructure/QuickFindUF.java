@@ -6,13 +6,13 @@ package com.datastructure;
  * @author sriram
  *
  */
-public class UF {
+public class QuickFindUF {
 
     private int[] id;
 
     private int N;
 
-    public UF(int n) {
+    public QuickFindUF(int n) {
 	this.N = n;
 	id = new int[N];
 	for (int i = 0; i < N; i++) {
@@ -42,7 +42,7 @@ public class UF {
     }
 
     public static void main(String[] args) {
-	UF uf = new UF(10);
+	QuickFindUF uf = new QuickFindUF(10);
 	System.out.println(uf.connected(1, 8));
 	uf.union(1, 8);
 	System.out.println(uf.connected(1, 8));

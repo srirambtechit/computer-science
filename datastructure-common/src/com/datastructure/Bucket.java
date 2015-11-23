@@ -24,6 +24,10 @@ public class Bucket<T> implements Iterable<T> {
 	return new BucketIterator<>(head);
     }
 
+    public boolean isEmpty() {
+	return size == 0;
+    }
+
     private static class Node<T> {
 	private T t;
 	private Node<T> next;

@@ -2,7 +2,7 @@ package com.datastructure.graph;
 
 import java.util.Arrays;
 
-import com.datastructure.util.Bucket;
+import com.datastructure.Bucket;
 
 public class AdjacencyListGraph implements Graph {
 

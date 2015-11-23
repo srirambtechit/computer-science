@@ -1,6 +1,6 @@
 package com.datastructure.graph;
 
-import com.datastructure.util.Bucket;
+import com.datastructure.Bucket;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;

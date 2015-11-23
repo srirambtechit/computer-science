@@ -2,7 +2,7 @@ package com.datastructure.graph;
 
 import java.util.Arrays;
 
-import com.datastructure.util.Queue;
+import com.datastructure.Queue;
 
 public class BFSGraphTraversal {
 

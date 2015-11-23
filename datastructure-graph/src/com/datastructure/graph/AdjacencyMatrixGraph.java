@@ -1,6 +1,6 @@
 package com.datastructure.graph;
 
-import com.datastructure.util.Bucket;
+import com.datastructure.Bucket;
 
 public class AdjacencyMatrixGraph implements Graph {
     // Number of vertices

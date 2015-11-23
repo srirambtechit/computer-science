@@ -1,7 +1,7 @@
 package com.datastructure.graph;
 
-import com.datastructure.util.Bucket;
-import com.datastructure.util.Stack;
+import com.datastructure.Bucket;
+import com.datastructure.Stack;
 
 public class DFSGraphPath {
 

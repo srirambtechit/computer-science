@@ -1,13 +1,17 @@
 package com.datastructure;
 
-public class QuickUnionUF {
+public class UFWeightedQuickUnion {
 
     private int[] id;
+    private int[] sz;
 
-    public QuickUnionUF(int n) {
-	id = new int[n];
-	for (int i = 0; i < n; i++)
+    public UFWeightedQuickUnion(int N) {
+	id = new int[N];
+	sz = new int[N];
+	for (int i = 0; i < N; i++) {
 	    id[i] = i;
+	    sz[i] = 1;
+	}
     }
 
     public boolean connected(int p, int q) {
@@ -15,12 +19,19 @@ public class QuickUnionUF {
     }
 
     public void union(int p, int q) {
-	int proot = find(p);
-	int qroot = find(q);
+	int i = find(p);
+	int j = find(q);
 
-	if (proot == qroot)
+	if (i == j)
 	    return;
-	id[qroot] = proot;
+
+	if (sz[i] > sz[j]) {
+	    id[j] = i;
+	    sz[i] += sz[j];
+	} else {
+	    id[i] = j;
+	    sz[j] += sz[i];
+	}
     }
 
     private int find(int p) {
@@ -31,7 +42,7 @@ public class QuickUnionUF {
     }
 
     public static void main(String[] args) {
-	QuickUnionUF uf = new QuickUnionUF(10);
+	UFWeightedQuickUnion uf = new UFWeightedQuickUnion(10);
 	System.out.println(uf.connected(1, 8));
 	uf.union(1, 8);
 	System.out.println(uf.connected(1, 8));
@@ -43,5 +54,4 @@ public class QuickUnionUF {
 	System.out.println(uf.connected(7, 8));
 	System.out.println(uf.connected(8, 7));
     }
-    
 }

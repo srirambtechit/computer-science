@@ -1,11 +1,17 @@
 package com.datastructure;
 
-public class WeightedQuickUnionUF {
+/**
+ * Weighted Path Compression Quick Union Find algorithm
+ * 
+ * @author sriram
+ *
+ */
+public class UFWeightedPathCompressionQuickUnion {
 
     private int[] id;
     private int[] sz;
 
-    public WeightedQuickUnionUF(int N) {
+    public UFWeightedPathCompressionQuickUnion(int N) {
 	id = new int[N];
 	sz = new int[N];
 	for (int i = 0; i < N; i++) {
@@ -36,13 +42,17 @@ public class WeightedQuickUnionUF {
 
     private int find(int p) {
 	while (p != id[p]) {
+
+	    // path compression
+	    id[p] = id[id[p]];
+
 	    p = id[p];
 	}
 	return p;
     }
 
     public static void main(String[] args) {
-	WeightedQuickUnionUF uf = new WeightedQuickUnionUF(10);
+	UFWeightedPathCompressionQuickUnion uf = new UFWeightedPathCompressionQuickUnion(10);
 	System.out.println(uf.connected(1, 8));
 	uf.union(1, 8);
 	System.out.println(uf.connected(1, 8));
@@ -54,4 +64,5 @@ public class WeightedQuickUnionUF {
 	System.out.println(uf.connected(7, 8));
 	System.out.println(uf.connected(8, 7));
     }
+
 }

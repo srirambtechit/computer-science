@@ -1,23 +1,13 @@
 package com.datastructure;
 
-/**
- * Weighted Path Compression Quick Union Find algorithm
- * 
- * @author sriram
- *
- */
-public class WPCQuickUF {
+public class UFQuickUnion {
 
     private int[] id;
-    private int[] sz;
 
-    public WPCQuickUF(int N) {
-	id = new int[N];
-	sz = new int[N];
-	for (int i = 0; i < N; i++) {
+    public UFQuickUnion(int n) {
+	id = new int[n];
+	for (int i = 0; i < n; i++)
 	    id[i] = i;
-	    sz[i] = 1;
-	}
     }
 
     public boolean connected(int p, int q) {
@@ -25,34 +15,23 @@ public class WPCQuickUF {
     }
 
     public void union(int p, int q) {
-	int i = find(p);
-	int j = find(q);
+	int proot = find(p);
+	int qroot = find(q);
 
-	if (i == j)
+	if (proot == qroot)
 	    return;
-
-	if (sz[i] > sz[j]) {
-	    id[j] = i;
-	    sz[i] += sz[j];
-	} else {
-	    id[i] = j;
-	    sz[j] += sz[i];
-	}
+	id[qroot] = proot;
     }
 
     private int find(int p) {
 	while (p != id[p]) {
-
-	    // path compression
-	    id[p] = id[id[p]];
-
 	    p = id[p];
 	}
 	return p;
     }
 
     public static void main(String[] args) {
-	WPCQuickUF uf = new WPCQuickUF(10);
+	UFQuickUnion uf = new UFQuickUnion(10);
 	System.out.println(uf.connected(1, 8));
 	uf.union(1, 8);
 	System.out.println(uf.connected(1, 8));
@@ -64,5 +43,5 @@ public class WPCQuickUF {
 	System.out.println(uf.connected(7, 8));
 	System.out.println(uf.connected(8, 7));
     }
-
+    
 }

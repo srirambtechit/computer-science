@@ -39,6 +39,10 @@ public class Digraph implements Graph {
 	return adj[v];
     }
 
+    public boolean hasEdge(int v) {
+	return !adj[v].isEmpty();
+    }
+
     public static void main(String[] args) {
 	In in = new In(args[0]);
 	// reads # of vertices
@@ -56,7 +60,9 @@ public class Digraph implements Graph {
 
 	// display DirectedGraph
 	for (int i = 0; i < g.V(); i++) {
-	    StdOut.printf("%d - %s%n", i, g.adj(i));
+	    if (g.hasEdge(i)) {
+		StdOut.printf("%d - %s%n", i, g.adj(i));
+	    }
 	}
     }
 

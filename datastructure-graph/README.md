@@ -29,7 +29,7 @@ Applications:
  - food web
  - word net
  - scheduling
- - finacial
+ - financial
  - cell phone
  - infectious disease
  - gaming

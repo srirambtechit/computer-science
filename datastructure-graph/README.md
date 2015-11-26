@@ -23,7 +23,7 @@ Data structure - Graph
 
 <h3>Directed Graph:-</h3>
 <pre>
-Applications:
+<i>Applications</i>
  - transportation
  - web and its hyper links
  - food web
@@ -37,7 +37,7 @@ Applications:
  - inheritance hierarchy
  - control flow - coding
 
-Problems:
+<i>Problems</i>
  - <b>Path</b> Is there a directed path from s to t?
  - <b>Shortest path</b> What is the shortest path from s to t?
  - <b>Topological sort</b> Can you draw a digraph so that all edges point upwards?

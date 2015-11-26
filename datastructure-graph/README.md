@@ -25,6 +25,21 @@ Data structure - Graph
  - DAG (or) Directed Acyclic Graph
 
 <h3>Undirected Graph:-</h3>
+<pre>
+
+<i><b>Problems</b></i>
+ - <b>Bipartite</b> Is a graph bipartite?
+ - <b>Cycle</b> Find a cycle.
+ - <b>Euler tour</b> Is there a (general) cycle that uses each edge exactly once?
+ 	<i>Answer: A connected graph is Eulerian if all vertices have even degree</i>
+ - <b>Cycle detection</b> Find a cycle that visits every vertex exactly once.
+ 	<i>Answer: Hamiltonian cycle (classic NP-complete problem). Intractable No efficient solution so far</i>
+ - <b>Are two graphs identical except for the vertex names?</b>
+ 	<i>Answer: No one knows</i> 
+ - <b>Lay out a graph in the plane without crossing edges?</b>
+ - <b></b>
+</pre>
+
 
 <h3>Directed Graph:-</h3>
 <pre>
@@ -51,6 +66,7 @@ Data structure - Graph
  - <b>PageRank</b> What is the importance of web page?
  - <b>Cycle</b> Given a digraph, find a directed cycle?
  - <b>Reverse Graph<b> Reverse the given Graph.
+ 
  
 <i><b>Definition</b><i>
 <p><b>Topological order: </b> Linear ordering of its vertices such that for every directed

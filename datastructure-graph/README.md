@@ -1,7 +1,6 @@
 Data structure - Graph
 -----------------------
-
-<h3>Graph terminology</h3>
+<h5>Graph terminology</h5>
 <pre>
  - Vertex
  - Edge
@@ -10,20 +9,20 @@ Data structure - Graph
 </pre>
 
 
-<h3>Graph representation</h3>
+<h5>Graph representation</h5>
  - Vertex representation
  - Set of edges representation
  - Adjacency matrix representation
  - Adjacency list representation
  
-<h3>Graph representation</h3>
+<h5>Graph Traversal</h5>
  - Breadth First Search - uses queue
  - Depth First Search - uses stack
 
 
 <h3>Directed Graph:-</h3>
 <pre>
-<i>Applications</i>
+<i><b>Applications</b></i>
  - transportation
  - web and its hyper links
  - food web
@@ -37,7 +36,7 @@ Data structure - Graph
  - inheritance hierarchy
  - control flow - coding
 
-<i>Problems</i>
+<i><b>Problems</b></i>
  - <b>Path</b> Is there a directed path from s to t?
  - <b>Shortest path</b> What is the shortest path from s to t?
  - <b>Topological sort</b> Can you draw a digraph so that all edges point upwards?

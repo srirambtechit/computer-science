@@ -20,10 +20,10 @@ Data structure - Graph
  - Breadth First Search - uses queue
  - Depth First Search - uses stack
 
-Directed Graph:-
---------------
+
+<h3>Directed Graph:-</h3>
 <pre>
-applications:
+Applications:
  - transportation
  - web and its hyper links
  - food web
@@ -36,12 +36,12 @@ applications:
  - object graph
  - inheritance hierarchy
  - control flow - coding
- 
-problems:
- - Path : Is there a directed path from s to t?
- - Shortest path : What is the shortest path from s to t?
- - Topological sort : Can you draw a digraph so that all edges point upwards?
- - Strong connectivity : Is there a directed path between all pairs of vertices?
- - Transitive closure : For which vertices v and w is there a path from v and w?
- - PageRank : What is the importance of web page?  
+
+Problems:
+ - <b>Path</b> Is there a directed path from s to t?
+ - <b>Shortest path</b> What is the shortest path from s to t?
+ - <b>Topological sort</b> Can you draw a digraph so that all edges point upwards?
+ - <b>Strong connectivity</b> Is there a directed path between all pairs of vertices?
+ - <b>Transitive closure</b> For which vertices v and w is there a path from v and w?
+ - <b>PageRank</b> What is the importance of web page?  
 </pre> 

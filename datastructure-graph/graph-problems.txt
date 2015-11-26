@@ -1,28 +1,5 @@
-Data structure - Graph
------------------------
-
-<h3>Graph terminology</h3>
-<pre>
- - Vertex
- - Edge
- - Cycle graph
- - Degree
-</pre>
-
-
-<h3>Graph representation</h3>
- - Vertex representation
- - Set of edges representation
- - Adjacency matrix representation
- - Adjacency list representation
- 
-<h3>Graph representation</h3>
- - Breadth First Search - uses queue
- - Depth First Search - uses stack
-
 Directed Graph:-
 --------------
-<pre>
 applications:
  - transportation
  - web and its hyper links
@@ -43,5 +20,4 @@ problems:
  - Topological sort : Can you draw a digraph so that all edges point upwards?
  - Strong connectivity : Is there a directed path between all pairs of vertices?
  - Transitive closure : For which vertices v and w is there a path from v and w?
- - PageRank : What is the importance of web page?  
-</pre> 
+ - PageRank : What is the importance of web page? 

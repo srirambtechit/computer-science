@@ -13,16 +13,17 @@ public class Edge {
 	this.w = w;
     }
 
-    public double getWeight() {
+    public double weight() {
 	return weight;
     }
-    
+
     public int edge() {
 	return v;
     }
-    
+
     public int other(int v) {
-	if(this.v == v)return w;
+	if (this.v == v)
+	    return w;
 	return this.v;
     }
 

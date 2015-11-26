@@ -49,6 +49,8 @@ Data structure - Graph
  - <b>Strong connectivity</b> Is there a directed path between all pairs of vertices?
  - <b>Transitive closure</b> For which vertices v and w is there a path from v and w?
  - <b>PageRank</b> What is the importance of web page?
+ - <b>Cycle</b> Given a digraph, find a directed cycle?
+ - <b>Reverse Graph<b> Reverse the given Graph.
  
 <i><b>Definition</b><i>
 <p><b>Topological order: </b> Linear ordering of its vertices such that for every directed

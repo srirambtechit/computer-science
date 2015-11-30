@@ -49,6 +49,22 @@ public class Digraph {
 	return !adj[v].isEmpty();
     }
 
+    public String toString() {
+	StringBuilder sb = new StringBuilder();
+	sb.append("# of Vertices : " + V + "\n");
+
+	int E = 0;
+	for (int i = 0; i < V(); i++) {
+	    E = E + adj[i].size();
+	}
+	sb.append("# of Edges : " + E + "\n");
+
+	for (int i = 0; i < V(); i++) {
+	    sb.append(i + " -> " + adj(i) + "\n");
+	}
+	return sb.toString();
+    }
+
     public static void main(String[] args) {
 	Digraph g = new Digraph(4);
 	g.addEdge(1, 2);

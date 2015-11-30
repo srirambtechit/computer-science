@@ -1,4 +1,4 @@
-package com.datastructure.graph;
+package com.datastructure.graph.directed;
 
 public class DirectedDFS {
 

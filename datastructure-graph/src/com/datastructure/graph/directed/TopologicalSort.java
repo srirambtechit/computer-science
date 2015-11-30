@@ -1,4 +1,4 @@
-package com.datastructure.graph;
+package com.datastructure.graph.directed;
 
 import com.datastructure.Stack;
 
@@ -10,7 +10,7 @@ public class TopologicalSort {
     private boolean[] visited;
     private Stack<Integer> stack;
 
-    public TopologicalSort(Graph g) {
+    public TopologicalSort(Digraph g) {
 	visited = new boolean[g.V()];
 	stack = new Stack<>();
 	for (int v = 0; v < g.V(); v++) {
@@ -20,7 +20,7 @@ public class TopologicalSort {
 	}
     }
 
-    private void dfs(Graph g, int v) {
+    private void dfs(Digraph g, int v) {
 	visited[v] = true;
 	for (int w : g.adj(v)) {
 	    if (!visited[w])

@@ -56,8 +56,7 @@ public class KosarajuSharirSCC {
     }
 
     public static void main(String[] args) {
-	String file = "/home/sriram/git/computer-science/datastructure-graph/data/scc2.txt";
-	Digraph g = DSUtil.createDigraph(file);
+	Digraph g = DSUtil.createDigraph(args[0]);
 	StdOut.println(g);
 
 	KosarajuSharirSCC cc = new KosarajuSharirSCC(g);
@@ -71,37 +70,6 @@ public class KosarajuSharirSCC {
 	    int w = e.other(v);
 	    StdOut.printf("connected(%d, %d) : %b%n", v, w, cc.connected(v, w));
 	}
-	//
-	// args = new String[1];
-	// args[0] = new
-	// String("/home/sriram/git/computer-science/datastructure-graph/data/scc2.txt");
-	// for (String arg : args) {
-	// StdOut.println("Input : " + arg);
-	// In in = new In(arg);
-	// int V = in.readInt();
-	// int E = in.readInt();
-	// System.out.println("Edge count : " + E);
-	// Digraph g = new Digraph(V);
-	// for (int i = 0; i < E; i++) {
-	// int v = in.readInt();
-	// int w = in.readInt();
-	// g.addEdge(v, w);
-	// }
-	//
-	// StdOut.println(g);
-	//
-	// KosarajuSharirSCC cc = new KosarajuSharirSCC(g);
-	// StdOut.println("# of connected components : " + cc.count());
-	//
-	// // No. of queries
-	// int q = in.readInt();
-	// for (int i = 0; i < q; i++) {
-	// int v = in.readInt();
-	// int w = in.readInt();
-	// StdOut.printf("connected(%d, %d) : %b%n", v, w, cc.connected(v, w));
-	// }
-	// StdOut.println();
-	// }
     }
 
 }

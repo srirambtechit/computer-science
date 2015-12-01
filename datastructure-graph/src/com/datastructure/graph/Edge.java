@@ -6,6 +6,12 @@ public class Edge {
     private int v;
     private int w;
 
+    public Edge(int v, int w) {
+	super();
+	this.v = v;
+	this.w = w;
+    }
+
     public Edge(double weight, int v, int w) {
 	super();
 	this.weight = weight;
@@ -17,7 +23,7 @@ public class Edge {
 	return weight;
     }
 
-    public int edge() {
+    public int either() {
 	return v;
     }
 

@@ -1,6 +1,9 @@
 package com.datastructure.graph.directed;
 
-import edu.princeton.cs.algs4.In;
+import java.util.Iterator;
+
+import com.datastructure.graph.Edge;
+
 import edu.princeton.cs.algs4.StdOut;
 
 /**
@@ -25,9 +28,8 @@ public class KosarajuSharirSCC {
     public KosarajuSharirSCC(Digraph g) {
 	id = new Integer[g.V()];
 	visited = new boolean[g.V()];
-	Digraph r = g.reverse();
-	TopologicalSort ts = new TopologicalSort(r);
-	for (int i : ts.order()) {
+	DepthFirstSearch dfs = new DepthFirstSearch(g.reverse());
+	for (int i : dfs.reversePost()) {
 	    if (!visited[i]) {
 		dfs(g, i);
 		count++;
@@ -54,30 +56,52 @@ public class KosarajuSharirSCC {
     }
 
     public static void main(String[] args) {
-	for (String arg : args) {
-	    StdOut.println("Input : " + arg);
-	    In in = new In(arg);
-	    int n = in.readInt();
-	    System.out.println("# of Edges : " + n);
-	    Digraph g = new Digraph(n);
-	    for (int i = 0; i < n; i++) {
-		int v = in.readInt();
-		int w = in.readInt();
-		g.addEdge(v, w);
-	    }
+	String file = "/home/sriram/git/computer-science/datastructure-graph/data/scc2.txt";
+	Digraph g = DSUtil.createDigraph(file);
+	StdOut.println(g);
 
-	    KosarajuSharirSCC cc = new KosarajuSharirSCC(g);
-	    StdOut.println("# of connected components : " + cc.count());
+	KosarajuSharirSCC cc = new KosarajuSharirSCC(g);
+	StdOut.println("# of connected components : " + cc.count());
 
-	    // No. of queries
-	    int q = in.readInt();
-	    for (int i = 0; i < q; i++) {
-		int v = in.readInt();
-		int w = in.readInt();
-		StdOut.printf("connected(%d, %d) : %b%n", v, w, cc.connected(v, w));
-	    }
-	    StdOut.println();
+	StdOut.println("Querying graph");
+	Iterator<Edge> itr = DSUtil.data.iterator();
+	while (itr.hasNext()) {
+	    Edge e = itr.next();
+	    int v = e.either();
+	    int w = e.other(v);
+	    StdOut.printf("connected(%d, %d) : %b%n", v, w, cc.connected(v, w));
 	}
+	//
+	// args = new String[1];
+	// args[0] = new
+	// String("/home/sriram/git/computer-science/datastructure-graph/data/scc2.txt");
+	// for (String arg : args) {
+	// StdOut.println("Input : " + arg);
+	// In in = new In(arg);
+	// int V = in.readInt();
+	// int E = in.readInt();
+	// System.out.println("Edge count : " + E);
+	// Digraph g = new Digraph(V);
+	// for (int i = 0; i < E; i++) {
+	// int v = in.readInt();
+	// int w = in.readInt();
+	// g.addEdge(v, w);
+	// }
+	//
+	// StdOut.println(g);
+	//
+	// KosarajuSharirSCC cc = new KosarajuSharirSCC(g);
+	// StdOut.println("# of connected components : " + cc.count());
+	//
+	// // No. of queries
+	// int q = in.readInt();
+	// for (int i = 0; i < q; i++) {
+	// int v = in.readInt();
+	// int w = in.readInt();
+	// StdOut.printf("connected(%d, %d) : %b%n", v, w, cc.connected(v, w));
+	// }
+	// StdOut.println();
+	// }
     }
 
 }

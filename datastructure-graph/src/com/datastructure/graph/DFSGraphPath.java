@@ -1,6 +1,6 @@
 package com.datastructure.graph;
 
-import com.datastructure.Bucket;
+import com.datastructure.Bag;
 import com.datastructure.Stack;
 
 public class DFSGraphPath {
@@ -44,7 +44,7 @@ public class DFSGraphPath {
 	for (; edgeTo[v] != null; v = edgeTo[v])
 	    s.push(v);
 	s.push(src);
-	Bucket<Integer> b = new Bucket<>();
+	Bag<Integer> b = new Bag<>();
 	while (!s.isEmpty()) {
 	    b.add(s.pop());
 	}

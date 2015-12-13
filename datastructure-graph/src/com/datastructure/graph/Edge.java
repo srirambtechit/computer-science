@@ -1,6 +1,6 @@
 package com.datastructure.graph;
 
-public class Edge {
+public class Edge implements Comparable<Edge> {
 
     private double weight;
     private int v;
@@ -36,6 +36,15 @@ public class Edge {
     @Override
     public String toString() {
 	return String.format("(%2d-%-2d %.2f)", v, w, weight);
+    }
+
+    @Override
+    public int compareTo(Edge e) {
+	if (weight == e.weight)
+	    return 0;
+	else if (weight > e.weight)
+	    return 1;
+	return -1;
     }
 
 }

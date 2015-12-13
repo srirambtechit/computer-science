@@ -20,13 +20,17 @@ public class MinPQ<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public T min() {
-	if (N <= 1)
+	if (N < 1)
 	    throw new NoSuchElementException();
 	return pq[1];
     }
 
+    public boolean isEmpty() {
+	return N == 0;
+    }
+
     public T delMin() {
-	if (N <= 1)
+	if (N < 1)
 	    throw new NoSuchElementException();
 	T m = pq[1];
 	pq[1] = pq[N];
@@ -99,8 +103,12 @@ public class MinPQ<T extends Comparable<T>> implements Iterable<T> {
 
     public static void main(String[] args) {
 	MinPQ<Integer> pq = new MinPQ<>(10);
+	System.out.println("isEmpty : " + pq.isEmpty());
 
 	pq.add(7);
+	System.out.println("N : " + pq.N);
+	System.out.println("isEmpty : " + pq.isEmpty());
+
 	pq.add(4);
 	pq.add(3);
 	pq.add(6);
@@ -110,33 +118,30 @@ public class MinPQ<T extends Comparable<T>> implements Iterable<T> {
 	pq.add(8);
 	pq.add(1);
 
+	System.out.println("isEmpty : " + pq.isEmpty());
+
 	System.out.println("Min : " + pq.min());
 
 	Iterator<Integer> itr = pq.iterator();
 	while (itr.hasNext()) {
 	    System.out.print(itr.next() + "\t");
 	}
+	try {
+	    System.out.println();
 
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
-	System.out.println("\n" + pq);
-	System.out.println("delMin : " + pq.delMin());
+	    for (int i = 0; i < 10; i++) {
+		System.out.println("before : " + pq);
+		System.out.println("delMin   : " + pq.delMin());
+		System.out.println("after  : " + pq);
+		System.out.println("N        : " + pq.N);
+		System.out.println("\n");
+	    }
+
+	} catch (Exception e) {
+	    System.out.println();
+	}
+	System.out.println("isEmpty : " + pq.isEmpty());
+	System.out.println("N : " + pq.N);
     }
 
 }

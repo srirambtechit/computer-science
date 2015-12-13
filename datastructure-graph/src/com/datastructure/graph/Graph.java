@@ -1,50 +1,72 @@
 package com.datastructure.graph;
 
-import com.datastructure.Bucket;
+import com.datastructure.Bag;
 import com.datastructure.graph.util.DSUtil;
+
+import edu.princeton.cs.algs4.StdOut;
 
 public class Graph {
 
     private int V;
-    private Bucket<Edge>[] adj;
+    private int E;
+    private Bag<Edge>[] adj;
 
     @SuppressWarnings("unchecked")
     public Graph(int n) {
 	this.V = n;
-	adj = new Bucket[n];
+	adj = new Bag[n];
 	for (int i = 0; i < n; i++) {
-	    adj[i] = new Bucket<>();
+	    adj[i] = new Bag<>();
 	}
     }
 
+    // returns no. of vertices in Graph
     public int V() {
 	return V;
     }
 
-    public int E(int v) {
-	return adj[v].size();
+    // returns no. of neighbors for given vertex
+    public int E() {
+	return E;
     }
 
+    // connect to vertices
     public void addEdge(Edge e) {
 	int v = e.either();
 	int w = e.other(v);
 	adj[v].add(e);
 	adj[w].add(e);
+	E++;
     }
 
+    // returns neighbor edges
     public Iterable<Edge> adj(int v) {
 	return adj[v];
+    }
+
+    // returns all edges in Graph
+    public Iterable<Edge> edges() {
+	Bag<Edge> edges = new Bag<>();
+	for (int v = 0; v < V; v++) {
+	    int selfEdge = 0;
+	    for (Edge e : adj(v)) {
+		if (e.other(v) > v) {
+		    edges.add(e);
+		} else if (e.other(v) == v) {
+		    if (selfEdge % 2 == 0)
+			edges.add(e);
+		    selfEdge++;
+		}
+	    }
+	}
+	return edges;
     }
 
     public String toString() {
 	StringBuilder sb = new StringBuilder();
 	sb.append("# of Vertices : " + V + "\n");
 
-	int E = 0;
-	for (int i = 0; i < V(); i++) {
-	    E = E + adj[i].size();
-	}
-	sb.append("# of Edges : " + E / 2 + "\n");
+	sb.append("# of Edges : " + E + "\n");
 
 	for (int i = 0; i < V(); i++) {
 	    sb.append(i + " -> " + adj(i) + "\n");
@@ -54,8 +76,9 @@ public class Graph {
 
     public static void main(String[] args) {
 	Graph g = DSUtil.createEdgeWeightedGraph("/home/sriram/git/computer-science/datastructure-graph/data/EWG.txt");
-	System.out.println("Graph: ");
-	System.out.println(g);
+	StdOut.println("Graph: ");
+	StdOut.println(g);
+	StdOut.println(g.edges());
     }
 
 }

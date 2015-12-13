@@ -1,6 +1,6 @@
 package com.datastructure.graph.util;
 
-import com.datastructure.Bucket;
+import com.datastructure.Bag;
 import com.datastructure.graph.Edge;
 import com.datastructure.graph.Graph;
 import com.datastructure.graph.directed.Digraph;
@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.In;
 
 public class DSUtil {
 
-    public static Bucket<Edge> query = new Bucket<>();
+    public static Bag<Edge> query = new Bag<>();
 
     public static Graph createGraph(String file) {
 	In in = new In(file);

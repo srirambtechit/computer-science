@@ -3,7 +3,7 @@ package com.datastructure;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Bucket<T> implements Iterable<T> {
+public class Bag<T> implements Iterable<T> {
 
     private Node<T> head;
 
@@ -82,7 +82,7 @@ public class Bucket<T> implements Iterable<T> {
     }
 
     public static void main(String[] args) {
-	Bucket<Integer> b = new Bucket<>();
+	Bag<Integer> b = new Bag<>();
 	b.add(3);
 	b.add(8);
 	b.add(9);

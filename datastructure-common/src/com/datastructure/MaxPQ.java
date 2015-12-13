@@ -20,7 +20,7 @@ public class MaxPQ<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public T max() {
-	if (N <= 1)
+	if (N < 1)
 	    throw new NoSuchElementException();
 	return pq[1];
     }
@@ -31,7 +31,7 @@ public class MaxPQ<T extends Comparable<T>> implements Iterable<T> {
     }
 
     public T delMax() {
-	if (N <= 1)
+	if (N < 1)
 	    return null;
 	T t = pq[1];
 	pq[1] = pq[N];

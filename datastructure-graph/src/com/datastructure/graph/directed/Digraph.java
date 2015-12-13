@@ -1,6 +1,6 @@
 package com.datastructure.graph.directed;
 
-import com.datastructure.Bucket;
+import com.datastructure.Bag;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
@@ -8,14 +8,14 @@ import edu.princeton.cs.algs4.StdOut;
 public class Digraph {
 
     private int V;
-    private Bucket<Integer>[] adj;
+    private Bag<Integer>[] adj;
 
     @SuppressWarnings("unchecked")
     public Digraph(int n) {
 	this.V = n;
-	adj = new Bucket[V];
+	adj = new Bag[V];
 	for (int i = 0; i < V; i++) {
-	    adj[i] = new Bucket<>();
+	    adj[i] = new Bag<>();
 	}
     }
 

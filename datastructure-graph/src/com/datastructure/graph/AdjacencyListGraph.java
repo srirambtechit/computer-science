@@ -2,19 +2,19 @@ package com.datastructure.graph;
 
 import java.util.Arrays;
 
-import com.datastructure.Bucket;
+import com.datastructure.Bag;
 
 public class AdjacencyListGraph {
 
     private int V;
-    private Bucket<Integer>[] adj;
+    private Bag<Integer>[] adj;
 
     @SuppressWarnings("unchecked")
     public AdjacencyListGraph(int v) {
 	this.V = v;
-	adj = new Bucket[V];
+	adj = new Bag[V];
 	for (int i = 0; i < V; i++) {
-	    adj[i] = new Bucket<>();
+	    adj[i] = new Bag<>();
 	}
     }
 

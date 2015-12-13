@@ -1,6 +1,6 @@
 package com.datastructure.graph;
 
-import com.datastructure.Bucket;
+import com.datastructure.Bag;
 
 public class AdjacencyMatrixGraph {
     // Number of vertices
@@ -29,7 +29,7 @@ public class AdjacencyMatrixGraph {
     }
 
     public Iterable<Integer> adj(int v) {
-	Bucket<Integer> bucket = new Bucket<>();
+	Bag<Integer> bucket = new Bag<>();
 	for (int i = 0; i < V; i++) {
 	    if (adj[v][i])
 		bucket.add(i);

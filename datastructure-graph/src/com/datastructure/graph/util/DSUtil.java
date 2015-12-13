@@ -1,25 +1,26 @@
-package com.datastructure.graph.directed;
+package com.datastructure.graph.util;
 
 import com.datastructure.Bucket;
-import com.datastructure.graph.AdjacencyListGraph;
 import com.datastructure.graph.Edge;
 import com.datastructure.graph.Graph;
+import com.datastructure.graph.directed.Digraph;
 
 import edu.princeton.cs.algs4.In;
 
 public class DSUtil {
 
-    public static Bucket<Edge> data = new Bucket<>();
+    public static Bucket<Edge> query = new Bucket<>();
 
     public static Graph createGraph(String file) {
 	In in = new In(file);
 	int V = in.readInt();
 	int E = in.readInt();
-	Graph g = new AdjacencyListGraph(V);
+	Graph g = new Graph(V);
 	for (int i = 0; i < E; i++) {
 	    int v = in.readInt();
 	    int w = in.readInt();
-	    g.addEdge(v, w);
+	    Edge e = new Edge(v, w);
+	    g.addEdge(e);
 	}
 	if (!in.isEmpty()) {
 	    int N = in.readInt();
@@ -27,7 +28,31 @@ public class DSUtil {
 		int v = in.readInt();
 		int w = in.readInt();
 		Edge e = new Edge(v, w);
-		data.add(e);
+		query.add(e);
+	    }
+	}
+	return g;
+    }
+
+    public static Graph createEdgeWeightedGraph(String file) {
+	In in = new In(file);
+	int V = in.readInt();
+	int E = in.readInt();
+	Graph g = new Graph(V);
+	for (int i = 0; i < E; i++) {
+	    int v = in.readInt();
+	    int w = in.readInt();
+	    double wt = in.readDouble();
+	    Edge e = new Edge(wt, v, w);
+	    g.addEdge(e);
+	}
+	if (!in.isEmpty()) {
+	    int N = in.readInt();
+	    for (int i = 0; i < N; i++) {
+		int v = in.readInt();
+		int w = in.readInt();
+		Edge e = new Edge(v, w);
+		query.add(e);
 	    }
 	}
 	return g;
@@ -47,7 +72,7 @@ public class DSUtil {
 	    int N = in.readInt();
 	    for (int i = 0; i < N; i++) {
 		Edge e = new Edge(in.readInt(), in.readInt());
-		data.add(e);
+		query.add(e);
 	    }
 	}
 	return g;

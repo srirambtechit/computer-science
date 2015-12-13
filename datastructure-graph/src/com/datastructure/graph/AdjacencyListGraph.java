@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import com.datastructure.Bucket;
 
-public class AdjacencyListGraph implements Graph {
+public class AdjacencyListGraph {
 
     private int V;
     private Bucket<Integer>[] adj;

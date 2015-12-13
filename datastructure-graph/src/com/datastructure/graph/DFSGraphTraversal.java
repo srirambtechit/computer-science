@@ -7,7 +7,7 @@ public class DFSGraphTraversal {
     private boolean[] visited;
     private Integer[] edgeTo;
 
-    public DFSGraphTraversal(Graph graph, int src) {
+    public DFSGraphTraversal(AdjacencyListGraph graph, int src) {
 	this.visited = new boolean[graph.V()];
 	this.edgeTo = new Integer[graph.V()];
 
@@ -17,7 +17,7 @@ public class DFSGraphTraversal {
 	System.out.println("edage of vertices : " + Arrays.toString(edgeTo));
     }
 
-    public void dfs(Graph graph, int v) {
+    public void dfs(AdjacencyListGraph graph, int v) {
 	visited[v] = true;
 	for (int w : graph.adj(v)) {
 	    if (!visited[w]) {

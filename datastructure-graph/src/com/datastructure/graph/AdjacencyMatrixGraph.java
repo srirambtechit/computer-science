@@ -2,7 +2,7 @@ package com.datastructure.graph;
 
 import com.datastructure.Bucket;
 
-public class AdjacencyMatrixGraph implements Graph {
+public class AdjacencyMatrixGraph {
     // Number of vertices
     private int V;
 

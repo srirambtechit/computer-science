@@ -9,7 +9,7 @@ public class CC {
     private boolean[] visited;
     private int count;
 
-    public CC(Graph g) {
+    public CC(AdjacencyListGraph g) {
 	id = new int[g.V()];
 	visited = new boolean[g.V()];
 	for (int i = 0; i < g.V(); i++) {
@@ -20,7 +20,7 @@ public class CC {
 	}
     }
 
-    private void dfs(Graph g, int v) {
+    private void dfs(AdjacencyListGraph g, int v) {
 	visited[v] = true;
 	id[v] = count;
 	for (int w : g.adj(v)) {
@@ -42,7 +42,7 @@ public class CC {
 	In in = new In(args[0]);
 	int n = in.readInt();
 	System.out.println("# of vertices : " + n);
-	Graph g = new AdjacencyListGraph(n);
+	AdjacencyListGraph g = new AdjacencyListGraph(n);
 	for (int i = 0; i < n; i++) {
 	    int v = in.readInt();
 	    int w = in.readInt();

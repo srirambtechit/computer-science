@@ -9,7 +9,7 @@ public class BFSGraphTraversal {
     private boolean[] visited;
     private Integer[] edgeTo;
 
-    public BFSGraphTraversal(Graph g, Integer src) {
+    public BFSGraphTraversal(AdjacencyListGraph g, Integer src) {
 	this.visited = new boolean[g.V()];
 	this.edgeTo = new Integer[g.V()];
 	bfs(g, src);
@@ -17,7 +17,7 @@ public class BFSGraphTraversal {
 	System.out.println(Arrays.toString(edgeTo));
     }
 
-    private void bfs(Graph g, Integer v) {
+    private void bfs(AdjacencyListGraph g, Integer v) {
 	visited[v] = true;
 	Queue<Integer> q = new Queue<>();
 	q.enqueue(v);

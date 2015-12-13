@@ -9,7 +9,7 @@ public class BFSGraphDistanceTracker {
     private Integer[] edgeTo;
     private Integer[] distTo;
 
-    public BFSGraphDistanceTracker(Graph g, int src) {
+    public BFSGraphDistanceTracker(AdjacencyListGraph g, int src) {
 	this.edgeTo = new Integer[g.V()];
 	this.distTo = new Integer[g.V()];
 	bfs(g, src);
@@ -17,7 +17,7 @@ public class BFSGraphDistanceTracker {
 	System.out.println(Arrays.toString(distTo));
     }
 
-    public void bfs(Graph g, Integer v) {
+    public void bfs(AdjacencyListGraph g, Integer v) {
 	int dist = 0;
 	Queue<Integer> q = new Queue<>();
 	q.enqueue(v);

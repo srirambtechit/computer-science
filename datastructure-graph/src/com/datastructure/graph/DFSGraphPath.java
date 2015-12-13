@@ -9,7 +9,7 @@ public class DFSGraphPath {
     private Integer[] edgeTo;
     private int src;
 
-    public DFSGraphPath(Graph graph, int src) {
+    public DFSGraphPath(AdjacencyListGraph graph, int src) {
 	super();
 	this.src = src;
 	this.visited = new boolean[graph.V()];
@@ -21,7 +21,7 @@ public class DFSGraphPath {
 	return src;
     }
 
-    private void dfs(Graph g, int v) {
+    private void dfs(AdjacencyListGraph g, int v) {
 	visited[v] = true;
 	for (Integer w : g.adj(v)) {
 	    if (!visited[w]) {

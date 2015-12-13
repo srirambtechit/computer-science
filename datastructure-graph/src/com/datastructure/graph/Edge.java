@@ -33,4 +33,9 @@ public class Edge {
 	return this.v;
     }
 
+    @Override
+    public String toString() {
+	return String.format("(%2d-%-2d %.2f)", v, w, weight);
+    }
+
 }

@@ -3,6 +3,7 @@ package com.datastructure.graph.directed;
 import java.util.Iterator;
 
 import com.datastructure.graph.Edge;
+import com.datastructure.graph.util.DSUtil;
 
 import edu.princeton.cs.algs4.StdOut;
 
@@ -63,7 +64,7 @@ public class KosarajuSharirSCC {
 	StdOut.println("# of connected components : " + cc.count());
 
 	StdOut.println("Querying graph");
-	Iterator<Edge> itr = DSUtil.data.iterator();
+	Iterator<Edge> itr = DSUtil.query.iterator();
 	while (itr.hasNext()) {
 	    Edge e = itr.next();
 	    int v = e.either();

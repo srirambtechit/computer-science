@@ -1,7 +1,7 @@
 package com.datastructure.graph;
 
-import com.datastructure.Bag;
 import com.datastructure.MinPQ;
+import com.datastructure.Queue;
 import com.datastructure.UFQuickUnion;
 import com.datastructure.graph.util.DSUtil;
 
@@ -22,11 +22,11 @@ import edu.princeton.cs.algs4.StdOut;
  */
 public class KruskalMST {
 
-    private Bag<Edge> edges;
+    private Queue<Edge> edges;
     private double wt;
 
     public KruskalMST(Graph g) {
-	edges = new Bag<>();
+	edges = new Queue<>();
 
 	// put all edges to PQ to sort
 	MinPQ<Edge> pq = new MinPQ<>(g.E());
@@ -36,13 +36,13 @@ public class KruskalMST {
 
 	// dynamic connectivity for already processed vertex
 	UFQuickUnion uf = new UFQuickUnion(g.V());
-	while (!pq.isEmpty()) {
+	while (!pq.isEmpty() && edges.size() < g.V() - 1) {
 	    Edge e = pq.delMin();
 	    int v = e.either();
 	    int w = e.other(v);
 	    if (!uf.connected(v, w)) {
 		uf.union(v, w);
-		edges.add(e);
+		edges.enqueue(e);
 		wt += e.weight();
 	    }
 	}

@@ -14,7 +14,7 @@ public class MinPQ<T extends Comparable<T>> implements Iterable<T> {
 	pq = (T[]) new Comparable[capacity + 1];
     }
 
-    public void add(T t) {
+    public void insert(T t) {
 	pq[++N] = t;
 	swim(N);
     }
@@ -105,18 +105,18 @@ public class MinPQ<T extends Comparable<T>> implements Iterable<T> {
 	MinPQ<Integer> pq = new MinPQ<>(10);
 	System.out.println("isEmpty : " + pq.isEmpty());
 
-	pq.add(7);
+	pq.insert(7);
 	System.out.println("N : " + pq.N);
 	System.out.println("isEmpty : " + pq.isEmpty());
 
-	pq.add(4);
-	pq.add(3);
-	pq.add(6);
-	pq.add(5);
-	pq.add(9);
-	pq.add(0);
-	pq.add(8);
-	pq.add(1);
+	pq.insert(4);
+	pq.insert(3);
+	pq.insert(6);
+	pq.insert(5);
+	pq.insert(9);
+	pq.insert(0);
+	pq.insert(8);
+	pq.insert(1);
 
 	System.out.println("isEmpty : " + pq.isEmpty());
 

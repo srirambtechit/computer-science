@@ -31,7 +31,7 @@ public class KruskalMST {
 	// put all edges to PQ to sort
 	MinPQ<Edge> pq = new MinPQ<>(g.E());
 	for (Edge e : g.edges()) {
-	    pq.add(e);
+	    pq.insert(e);
 	}
 
 	// dynamic connectivity for already processed vertex

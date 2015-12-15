@@ -25,7 +25,7 @@ public class MaxPQ<T extends Comparable<T>> implements Iterable<T> {
 	return pq[1];
     }
 
-    public void add(T t) {
+    public void insert(T t) {
 	pq[++N] = t;
 	swim(N);
     }
@@ -105,14 +105,14 @@ public class MaxPQ<T extends Comparable<T>> implements Iterable<T> {
 
     public static void main(String[] args) {
 	MaxPQ<Integer> pq = new MaxPQ<>(10);
-	pq.add(4);
-	pq.add(3);
-	pq.add(9);
-	pq.add(6);
-	pq.add(1);
-	pq.add(5);
-	pq.add(10);
-	pq.add(2);
+	pq.insert(4);
+	pq.insert(3);
+	pq.insert(9);
+	pq.insert(6);
+	pq.insert(1);
+	pq.insert(5);
+	pq.insert(10);
+	pq.insert(2);
 	System.out.println(pq);
 
 	System.out.println("size : " + pq.size());

@@ -40,7 +40,7 @@ public class PrimsLazyMST {
 	marked[v] = true;
 	for (Edge e : g.adj(v)) {
 	    if (!marked[e.other(v)])
-		pq.add(e);
+		pq.insert(e);
 	}
     }
 

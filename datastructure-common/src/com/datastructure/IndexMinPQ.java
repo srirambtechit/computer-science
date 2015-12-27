@@ -69,7 +69,7 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Key> {
 	return p[k] != -1;
     }
 
-    public Key delMin() {
+    public int delMin() {
 	if (N == 0)
 	    throw new NoSuchElementException("Priority queue underflow");
 	int min = hp[1];
@@ -77,9 +77,7 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Key> {
 	sink(1);
 	p[min] = -1;
 	hp[N + 1] = 0;
-	Key k = keys[min];
-	keys[min] = null;
-	return k;
+	return min;
     }
 
     public Key keyIndexOf(int k) {
@@ -194,7 +192,8 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Key> {
 	public Key next() {
 	    if (!hasNext())
 		throw new NoSuchElementException();
-	    return copy.delMin();
+	    int k = copy.delMin();
+	    return keys[k];
 	}
     }
 
@@ -211,14 +210,14 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Key> {
 	    System.out.println(pq);
 	}
 
-	 System.out.println();
-	 System.out.println(pq.delMin());
+	System.out.println();
+	System.out.println(pq.delMin());
 
 	System.out.println(pq.minIndex());
 	System.out.println(pq.minKey());
 
 	pq.decreaseKey(3, 'P');
-	
+
 	System.out.println(pq);
     }
 

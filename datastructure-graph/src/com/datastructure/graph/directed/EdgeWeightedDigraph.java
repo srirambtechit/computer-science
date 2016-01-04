@@ -1,6 +1,9 @@
 package com.datastructure.graph.directed;
 
+import java.util.Iterator;
+
 import com.datastructure.Bag;
+import com.datastructure.Queue;
 
 import edu.princeton.cs.algs4.StdOut;
 
@@ -23,6 +26,10 @@ public class EdgeWeightedDigraph {
 	return V;
     }
 
+    public int E() {
+	return E;
+    }
+
     public int E(int v) {
 	return adj[v].size();
     }
@@ -34,6 +41,17 @@ public class EdgeWeightedDigraph {
 
     public Iterable<DirectedEdge> adj(int v) {
 	return adj[v];
+    }
+
+    public Iterable<DirectedEdge> edges() {
+	Queue<DirectedEdge> allEdges = new Queue<>();
+	for (Bag<DirectedEdge> bag : adj) {
+	    Iterator<DirectedEdge> itr = bag.iterator();
+	    while (itr.hasNext()) {
+		allEdges.enqueue(itr.next());
+	    }
+	}
+	return allEdges;
     }
 
     public String toString() {

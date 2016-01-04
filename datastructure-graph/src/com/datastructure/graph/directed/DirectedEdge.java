@@ -20,6 +20,10 @@ public class DirectedEdge implements Comparable<DirectedEdge> {
 	return w;
     }
 
+    public double weight() {
+	return wt;
+    }
+
     @Override
     public int compareTo(DirectedEdge o) {
 	return (wt == o.wt) ? 0 : (wt > o.wt) ? 1 : -1;
@@ -28,7 +32,7 @@ public class DirectedEdge implements Comparable<DirectedEdge> {
 
     @Override
     public String toString() {
-	return "(" + wt + ", " + v + ", " + w + ")";
+	return "[(" + v + ", " + w + ") --> " + wt + "]";
     }
 
 }

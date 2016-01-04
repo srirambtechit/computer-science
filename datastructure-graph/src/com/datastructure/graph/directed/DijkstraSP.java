@@ -3,8 +3,6 @@ package com.datastructure.graph.directed;
 import com.datastructure.IndexMinPQ;
 import com.datastructure.Stack;
 
-import edu.princeton.cs.algs4.StdOut;
-
 public class DijkstraSP {
 
     private IndexMinPQ<Double> pq;

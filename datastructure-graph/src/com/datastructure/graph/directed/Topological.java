@@ -5,12 +5,12 @@ import com.datastructure.Stack;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
-public class TopologicalSort {
+public class Topological {
 
     private boolean[] visited;
     private Stack<Integer> stack;
 
-    public TopologicalSort(Digraph g) {
+    public Topological(Digraph g) {
 	visited = new boolean[g.V()];
 	stack = new Stack<>();
 	for (int v = 0; v < g.V(); v++) {
@@ -38,8 +38,9 @@ public class TopologicalSort {
     public static void main(String[] args) {
 	In in = new In(args[0]);
 	int n = in.readInt();
+	int e = in.readInt();
 	Digraph g = new Digraph(n);
-	while (!in.isEmpty()) {
+	for (int i = 0; i < e; i++) {
 	    int v = in.readInt();
 	    int w = in.readInt();
 	    g.addEdge(v, w);
@@ -47,7 +48,7 @@ public class TopologicalSort {
 
 	System.out.println(g);
 	System.out.println("Topological sort: ");
-	TopologicalSort t = new TopologicalSort(g);
+	Topological t = new Topological(g);
 	for (Integer v : t.order()) {
 	    StdOut.printf("%d\t", v);
 	}
@@ -55,3 +56,15 @@ public class TopologicalSort {
     }
 
 }
+// 7
+// 0 5
+// 0 1
+// 3 5
+// 5 2
+// 6 0
+// 1 4
+// 0 2
+// 3 6
+// 3 4
+// 6 4
+// 3 2

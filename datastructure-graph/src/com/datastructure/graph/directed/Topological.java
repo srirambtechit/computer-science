@@ -7,27 +7,29 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class Topological {
 
-    private boolean[] visited;
     private Stack<Integer> stack;
+    private boolean[] marked;
 
     public Topological(Digraph g) {
-	visited = new boolean[g.V()];
+    }
+
+    public Topological(EdgeWeightedDigraph g) {
 	stack = new Stack<>();
-	for (int v = 0; v < g.V(); v++) {
-	    if (!visited[v]) {
+	marked = new boolean[g.V()];
+	for (int v = 0; v < g.V() - 1; v++) {
+	    if (!marked[v])
 		dfs(g, v);
-	    }
 	}
     }
 
-    private void dfs(Digraph g, int v) {
-	visited[v] = true;
-	for (int w : g.adj(v)) {
-	    if (!visited[w])
+    private void dfs(EdgeWeightedDigraph g, int v) {
+	marked[v] = true;
+	for (DirectedEdge e : g.adj(v)) {
+	    int w = e.to();
+	    if (!marked[w]) {
 		dfs(g, w);
+	    }
 	}
-	// since performing DFS, stack gets added with element
-	// in reverse order
 	stack.push(v);
     }
 
@@ -36,35 +38,22 @@ public class Topological {
     }
 
     public static void main(String[] args) {
-	In in = new In(args[0]);
-	int n = in.readInt();
-	int e = in.readInt();
-	Digraph g = new Digraph(n);
-	for (int i = 0; i < e; i++) {
+	In in = new In("/home/sriram/git/computer-science/datastructure-graph/data/topo_sp.txt");
+	int V = in.readInt();
+	int E = in.readInt();
+	EdgeWeightedDigraph g = new EdgeWeightedDigraph(V);
+	for (int i = 0; i < E; i++) {
 	    int v = in.readInt();
 	    int w = in.readInt();
-	    g.addEdge(v, w);
+	    double wt = in.readDouble();
+	    // StdOut.printf("%d - %d  %.2f%n", v, w, wt);
+	    DirectedEdge e = new DirectedEdge(v, w, wt);
+	    g.addEdge(e);
 	}
-
-	System.out.println(g);
-	System.out.println("Topological sort: ");
+	// StdOut.println(g);
 	Topological t = new Topological(g);
-	for (Integer v : t.order()) {
-	    StdOut.printf("%d\t", v);
-	}
-	StdOut.println();
+	Iterable<Integer> order = t.order();
+	StdOut.println(order);
     }
 
 }
-// 7
-// 0 5
-// 0 1
-// 3 5
-// 5 2
-// 6 0
-// 1 4
-// 0 2
-// 3 6
-// 3 4
-// 6 4
-// 3 2

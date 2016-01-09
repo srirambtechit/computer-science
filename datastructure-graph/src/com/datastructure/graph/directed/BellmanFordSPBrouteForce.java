@@ -5,35 +5,34 @@ import com.datastructure.Queue;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
-public class TopologicalSP {
+public class BellmanFordSPBrouteForce {
 
     private double[] distTo;
     private DirectedEdge[] edgeTo;
 
-    public TopologicalSP(EdgeWeightedDigraph g, int s) {
+    public BellmanFordSPBrouteForce(EdgeWeightedDigraph g, int s) {
 	distTo = new double[g.V()];
 	edgeTo = new DirectedEdge[g.V()];
 
-	for (int i = 0; i < distTo.length; i++) {
+	for (int i = 0; i < g.V(); i++) {
 	    distTo[i] = Double.POSITIVE_INFINITY;
 	}
 
 	distTo[s] = 0.0;
-	Topological t = new Topological(g);
-	StdOut.println("Topo : " + t.order());
-	for (Integer v : t.order()) {
-	    for (DirectedEdge e : g.adj(v)) {
-		relax(e);
+	for (int i = 0; i < g.V(); i++) {
+	    for (int v = 0; v < g.V(); v++) {
+		for (DirectedEdge e : g.adj(v))
+		    relax(e);
 	    }
 	}
     }
 
-    public void relax(DirectedEdge e) {
+    private void relax(DirectedEdge e) {
 	int v = e.from();
 	int w = e.to();
 	if (distTo[w] > distTo[v] + e.weight()) {
-	    edgeTo[w] = e;
 	    distTo[w] = distTo[v] + e.weight();
+	    edgeTo[w] = e;
 	}
     }
 
@@ -41,14 +40,13 @@ public class TopologicalSP {
 	return distTo[v];
     }
 
-    private boolean hasPathTo(int v) {
+    private boolean hasPath(int v) {
 	return distTo[v] < Double.POSITIVE_INFINITY;
     }
 
     public Iterable<DirectedEdge> pathTo(int v) {
-	if (!hasPathTo(v)) {
+	if (!hasPath(v))
 	    return null;
-	}
 	Queue<DirectedEdge> queue = new Queue<>();
 	for (DirectedEdge e = edgeTo[v]; e != null; e = edgeTo[e.from()]) {
 	    queue.enqueue(e);
@@ -71,7 +69,7 @@ public class TopologicalSP {
 	}
 	// StdOut.println(g);
 
-	TopologicalSP sp = new TopologicalSP(g, 0);
+	BellmanFordSPBrouteForce sp = new BellmanFordSPBrouteForce(g, 0);
 	StdOut.println(sp.pathTo(4));
 	StdOut.println(sp.distTo(4));
 

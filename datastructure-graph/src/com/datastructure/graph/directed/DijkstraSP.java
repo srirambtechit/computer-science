@@ -3,6 +3,9 @@ package com.datastructure.graph.directed;
 import com.datastructure.IndexMinPQ;
 import com.datastructure.Stack;
 
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
+
 public class DijkstraSP {
 
     private IndexMinPQ<Double> pq;
@@ -65,6 +68,33 @@ public class DijkstraSP {
     }
 
     public static void main(String[] args) {
+	In in = new In("/home/sriram/git/computer-science/datastructure-graph/data/sp.txt");
+	int V = in.readInt();
+	int E = in.readInt();
+	EdgeWeightedDigraph g = new EdgeWeightedDigraph(V);
+	for (int i = 0; i < E; i++) {
+	    int v = in.readInt();
+	    int w = in.readInt();
+	    double wt = in.readDouble();
+	    // StdOut.printf("%d - %d  %.2f%n", v, w, wt);
+	    DirectedEdge e = new DirectedEdge(v, w, wt);
+	    g.addEdge(e);
+	}
+	// StdOut.println(g);
+
+	DijkstraSP sp = new DijkstraSP(g, 0);
+	StdOut.println(sp.pathTo(4));
+	StdOut.println(sp.distTo(4));
+
+	StdOut.println(sp.pathTo(3));
+	StdOut.println(sp.distTo(3));
+
+	StdOut.println(sp.pathTo(1));
+	StdOut.println(sp.distTo(1));
+
+    }
+
+    public static void main0(String[] args) {
 	EdgeWeightedDigraph g = new EdgeWeightedDigraph(6);
 	g.addEdge(new DirectedEdge(0, 3, 0.2));
 	g.addEdge(new DirectedEdge(0, 1, 0.6));
@@ -76,17 +106,17 @@ public class DijkstraSP {
 	g.addEdge(new DirectedEdge(4, 5, 0.3));
 	g.addEdge(new DirectedEdge(5, 1, 0.3));
 
-	System.out.println(g);
+	StdOut.println(g);
 
 	DijkstraSP sp = new DijkstraSP(g, 0);
-	System.out.println(sp.pathTo(4));
-	System.out.println(sp.distTo(4));
+	StdOut.println(sp.pathTo(4));
+	StdOut.println(sp.distTo(4));
 
-	System.out.println(sp.pathTo(3));
-	System.out.println(sp.distTo(3));
+	StdOut.println(sp.pathTo(3));
+	StdOut.println(sp.distTo(3));
 
-	System.out.println(sp.pathTo(1));
-	System.out.println(sp.distTo(1));
+	StdOut.println(sp.pathTo(1));
+	StdOut.println(sp.distTo(1));
 
     }
 

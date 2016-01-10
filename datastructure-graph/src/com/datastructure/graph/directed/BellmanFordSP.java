@@ -11,6 +11,8 @@ public class BellmanFordSP {
     private DirectedEdge[] edgeTo;
     private boolean[] onQueue;
     private Queue<Integer> queue;
+    private int cost;
+    private Iterable<DirectedEdge> cycle;
 
     public BellmanFordSP(EdgeWeightedDigraph g, int s) {
 	distTo = new double[g.V()];
@@ -24,7 +26,7 @@ public class BellmanFordSP {
 	onQueue = new boolean[g.V()];
 	queue = new Queue<>();
 	queue.enqueue(s);
-	while (!queue.isEmpty()) {
+	while (!queue.isEmpty() && !hasNegativeCycle()) {
 	    Integer v = queue.dequeue();
 	    onQueue[v] = false;
 	    relax(g, v);
@@ -42,7 +44,29 @@ public class BellmanFordSP {
 		    queue.enqueue(w);
 		}
 	    }
+
+	    if (cost++ % g.V() == 0) {
+		findNegativeCycle();
+		if (hasNegativeCycle())
+		    return;
+	    }
 	}
+    }
+
+    public boolean hasNegativeCycle() {
+	return cycle != null;
+    }
+
+    private void findNegativeCycle() {
+	int V = edgeTo.length;
+	EdgeWeightedDigraph spt = new EdgeWeightedDigraph(V);
+	for (int i = 0; i < V; i++) {
+	    if (edgeTo[i] != null)
+		spt.addEdge(edgeTo[i]);
+	}
+
+	EdgeWeightedDirectedCycleDetector finder = new EdgeWeightedDirectedCycleDetector(spt);
+	cycle = finder.cycle();
     }
 
     public double distTo(int v) {
@@ -51,6 +75,10 @@ public class BellmanFordSP {
 
     private boolean hasPath(int v) {
 	return distTo[v] < Double.POSITIVE_INFINITY;
+    }
+
+    public Iterable<DirectedEdge> negativeCycle() {
+	return cycle;
     }
 
     public Iterable<DirectedEdge> pathTo(int v) {

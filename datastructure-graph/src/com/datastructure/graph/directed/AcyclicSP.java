@@ -5,12 +5,12 @@ import com.datastructure.Queue;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
-public class TopologicalSP {
+public class AcyclicSP {
 
     private double[] distTo;
     private DirectedEdge[] edgeTo;
 
-    public TopologicalSP(EdgeWeightedDigraph g, int s) {
+    public AcyclicSP(EdgeWeightedDigraph g, int s) {
 	distTo = new double[g.V()];
 	edgeTo = new DirectedEdge[g.V()];
 
@@ -71,7 +71,7 @@ public class TopologicalSP {
 	}
 	// StdOut.println(g);
 
-	TopologicalSP sp = new TopologicalSP(g, 0);
+	AcyclicSP sp = new AcyclicSP(g, 0);
 	StdOut.println(sp.pathTo(4));
 	StdOut.println(sp.distTo(4));
 

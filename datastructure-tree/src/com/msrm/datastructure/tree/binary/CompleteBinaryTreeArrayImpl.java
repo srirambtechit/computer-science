@@ -18,27 +18,27 @@ import java.util.Arrays;
  */
 public class CompleteBinaryTreeArrayImpl<Item> {
 
-    private Item[] tree;
-    private int ptr;
+	private Item[] tree;
+	private int ptr;
 
-    // Construct tree by capacity
-    @SuppressWarnings("unchecked")
-    public CompleteBinaryTreeArrayImpl(int c) {
-	tree = (Item[]) new Object[c];
-    }
-
-    public void add(Item e) {
-	if (ptr == tree.length) {
-	    System.out.println("Tree is full");
-	    return;
+	// Construct tree by capacity
+	@SuppressWarnings("unchecked")
+	public CompleteBinaryTreeArrayImpl(int c) {
+		tree = (Item[]) new Object[c];
 	}
-	tree[ptr++] = e;
-    }
 
-    public String toString() {
-	if (ptr == 0)
-	    return "[]";
-	return Arrays.toString(tree);
-    }
+	public void add(Item e) {
+		if (ptr == tree.length) {
+			System.out.println("Tree is full");
+			return;
+		}
+		tree[ptr++] = e;
+	}
+
+	public String toString() {
+		if (ptr == 0)
+			return "[]";
+		return Arrays.toString(tree);
+	}
 
 }

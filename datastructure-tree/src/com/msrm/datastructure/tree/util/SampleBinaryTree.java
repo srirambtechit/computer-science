@@ -32,11 +32,18 @@ public class SampleBinaryTree {
 
 	/**
 	 * <pre>
-	 * 		       1
-	 * 		2	    3
-	 * 	    4      5	 6     7
-	 * 		8     
-	 *	      9   10
+	 *          1
+	 *        /   \
+	 *      2       3
+	 *    /   \    /  \
+	 *   4     5  6    7
+	 *       /
+	 *      8
+	 *     / \
+	 *    9  10
+	 * 
+	 * 
+	 * 
 	 * </pre>
 	 * 
 	 * @return
@@ -60,10 +67,18 @@ public class SampleBinaryTree {
 	 * children
 	 * 
 	 * <pre>
-	 *                      1
-	 * 	            2             3
-	 *           4     5      6       7
-	 *               8   9        10    11
+	 *                1
+	 *              /   \
+	 *            2       3
+	 *          /  \    /  \
+	 *         4    5  6    7
+	 *             / \    /   \ 
+	 *            8   9  10   11 
+	 *                  /  \
+	 *                 12  13
+	 * 
+	 * 
+	 * 
 	 * </pre>
 	 * 
 	 * @return
@@ -101,6 +116,12 @@ public class SampleBinaryTree {
 	 * 	height = 0 -> 1 node
 	 * 	height = 1 -> 3 node
 	 * 	height = 2 -> 7 node
+	 * 
+	 *          1
+	 *        /   \
+	 *       2      3
+	 *     /  \   /  \
+	 *    4    5 6    7
 	 * </pre>
 	 * 
 	 * @return
@@ -118,6 +139,27 @@ public class SampleBinaryTree {
 		return root;
 	}
 
+	/**
+	 * <pre>
+	 *  Right Skewed Tree
+	 *    1
+	 *     \
+	 *      2
+	 *       \
+	 *        3
+	 *         \
+	 *          4
+	 *           \
+	 *            5
+	 *             \
+	 *              6
+	 *               \
+	 *                7
+	 * 
+	 * </pre>
+	 * 
+	 * @return
+	 */
 	public static BinaryTreeNode<Integer> rightSkewedTree() {
 		Integer[] num = {1, 2, 3, 4, 5, 6, 7};
 		BinaryTreeNode<Integer> root = newNode(num[0]);
@@ -129,6 +171,27 @@ public class SampleBinaryTree {
 		return root;
 	}
 
+	/**
+	 * <pre>
+	 * Left Skewed Tree
+	 *                   1
+	 *                  /
+	 *                 2
+	 *                /
+	 *               3
+	 *              /
+	 *             4
+	 *            /
+	 *           5
+	 *          /
+	 *         6
+	 *        /
+	 *       7
+	 * 
+	 * </pre>
+	 * 
+	 * @return
+	 */
 	public static BinaryTreeNode<Integer> leftSkewedTree() {
 		Integer[] num = {1, 2, 3, 4, 5, 6, 7};
 		BinaryTreeNode<Integer> root = newNode(num[0]);
@@ -144,7 +207,14 @@ public class SampleBinaryTree {
 	 * Complete binary tree: A binary tree in which every level, except possibly
 	 * the deepest is completely filled. At depth n, the height of the tree, all
 	 * nodes are as far left as possible
+	 * <pre>
+	 *              1
+	 *            /   \
+	 *           2     3
+	 *          / \   / \
+	 *         4   5 6   7
 	 * 
+	 * <pre>
 	 * @return
 	 */
 	public static BinaryTreeNode<Integer> completeBinaryTree() {

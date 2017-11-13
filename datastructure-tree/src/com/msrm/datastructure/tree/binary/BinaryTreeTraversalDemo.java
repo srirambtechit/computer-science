@@ -239,6 +239,10 @@ public class BinaryTreeTraversalDemo {
 
 	private static final int SPACE_COUNT = 10;
 
+	/**
+	 * 
+	 * @param node
+	 */
 	public static <T> void print2D(BinaryTreeNode<T> node) {
 		print2D(node, 0);
 	}
@@ -258,13 +262,46 @@ public class BinaryTreeTraversalDemo {
 		print2D(node.left, space);
 	}
 
+	/**
+	 * At each level, first element will be taken to consideration till the end
+	 * of tree.
+	 * 
+	 * <pre>
+	 *         8
+	 *       /   \
+	 *      10    14
+	 *     /  \
+	 *    6    9
+	 *   /    /  \
+	 *  4    7    5
+	 * </pre>
+	 * 
+	 * above tree's left view will be considered as follows... 8 10 6 4.
+	 */
+	private static int maxLevel;
+
+	public static <T> void printLeftViewOfTree(BinaryTreeNode<T> node) {
+		int level = 1;
+		maxLevel = 0;
+		printLeftViewOfTreeUtil(node, level);
+	}
+
+	private static <T> void printLeftViewOfTreeUtil(BinaryTreeNode<T> node, int level) {
+		if (node == null)
+			return;
+		if (maxLevel < level) {
+			System.out.printf("%d\t", node.data);
+			maxLevel = level;
+		}
+
+		printLeftViewOfTreeUtil(node.left, level + 1);
+		printLeftViewOfTreeUtil(node.right, level + 1);
+	}
+
 	public static void main(String[] args) {
-		// allTraversals(SampleBinaryTree.binaryTreeOne());
-		// allTraversals(SampleBinaryTree.binaryTreeTwo());
-		// allTraversals(SampleBinaryTree.leftSkewedTree());
-		reverseInOrderRecursive(SampleBinaryTree.binaryTreeOne());
-		System.out.println();
-		print2D(SampleBinaryTree.binaryTreeOne());
+		 allTraversals(SampleBinaryTree.binaryTreeOne());
+		 allTraversals(SampleBinaryTree.binaryTreeTwo());
+		 allTraversals(SampleBinaryTree.leftSkewedTree());
 	}
 
 	private static <T> void allTraversals(BinaryTreeNode<T> root) {
@@ -296,6 +333,15 @@ public class BinaryTreeTraversalDemo {
 
 		System.out.println("\n\nZigZag (or) Spiral traversal - iterative method");
 		levelOrderZigZag(root);
+
+		System.out.println("\n\nReverse In order traversal - recursive method");
+		reverseInOrderRecursive(root);
+
+		System.out.println("\n\nPrinting left view of the binary tree - recursive method");
+		printLeftViewOfTree(root);
+		
+		System.out.println("\n\nprint2D view of the binary tree");
+		print2D(root);
 		System.out.println("\n----------------------------------------\n");
 	}
 

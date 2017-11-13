@@ -41,9 +41,6 @@ public class SampleBinaryTree {
 	 *      8
 	 *     / \
 	 *    9  10
-	 * 
-	 * 
-	 * 
 	 * </pre>
 	 * 
 	 * @return
@@ -67,18 +64,15 @@ public class SampleBinaryTree {
 	 * children
 	 * 
 	 * <pre>
-	 *                1
-	 *              /   \
-	 *            2       3
-	 *          /  \    /  \
-	 *         4    5  6    7
-	 *             / \    /   \ 
-	 *            8   9  10   11 
-	 *                  /  \
-	 *                 12  13
-	 * 
-	 * 
-	 * 
+	 *          1
+	 *        /   \
+	 *      2       3
+	 *    /  \    /  \
+	 *   4    5  6    7
+	 *       / \    /   \ 
+	 *      8   9  10   11 
+	 *            /  \
+	 *           12  13
 	 * </pre>
 	 * 
 	 * @return
@@ -117,11 +111,11 @@ public class SampleBinaryTree {
 	 * 	height = 1 -> 3 node
 	 * 	height = 2 -> 7 node
 	 * 
-	 *          1
-	 *        /   \
-	 *       2      3
-	 *     /  \   /  \
-	 *    4    5 6    7
+	 *         1
+	 *       /   \
+	 *      2      3
+	 *    /  \   /  \
+	 *   4    5 6    7
 	 * </pre>
 	 * 
 	 * @return
@@ -155,7 +149,6 @@ public class SampleBinaryTree {
 	 *              6
 	 *               \
 	 *                7
-	 * 
 	 * </pre>
 	 * 
 	 * @return
@@ -174,20 +167,19 @@ public class SampleBinaryTree {
 	/**
 	 * <pre>
 	 * Left Skewed Tree
-	 *                   1
-	 *                  /
-	 *                 2
-	 *                /
-	 *               3
+	 *               1
 	 *              /
-	 *             4
+	 *             2
 	 *            /
-	 *           5
+	 *           3
 	 *          /
-	 *         6
+	 *         4
 	 *        /
-	 *       7
-	 * 
+	 *       5
+	 *      /
+	 *     6
+	 *    /
+	 *   7
 	 * </pre>
 	 * 
 	 * @return
@@ -208,12 +200,11 @@ public class SampleBinaryTree {
 	 * the deepest is completely filled. At depth n, the height of the tree, all
 	 * nodes are as far left as possible
 	 * <pre>
-	 *              1
-	 *            /   \
-	 *           2     3
-	 *          / \   / \
-	 *         4   5 6   7
-	 * 
+	 *       1
+	 *     /   \
+	 *    2     3
+	 *   / \   / \
+	 *  4   5 6   7
 	 * <pre>
 	 * @return
 	 */

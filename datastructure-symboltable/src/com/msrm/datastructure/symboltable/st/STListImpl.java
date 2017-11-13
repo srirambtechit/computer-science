@@ -19,120 +19,119 @@ import java.util.Arrays;
  */
 public class STListImpl<K, V> {
 
-    private Object[] st;
+	private Object[] st;
 
-    private int capacity;
+	private int capacity;
 
-    private int size;
+	private int size;
 
-    public STListImpl(int c) {
-	st = new Object[c];
-	this.capacity = c;
-    }
-
-    public int size() {
-	return size;
-    }
-
-    public void put(K k, V v) {
-	if (k == null || v == null)
-	    return;
-	size++;
-	int i = hash(k);
-	Node p = getNode(i);
-	for (; p != null; p = p.next) {
-	    if (p.key.equals(k)) {
-		p.value = v;
-		return;
-	    } else if (p.next == null) {
-		p.next = new Node(k, v);
-		return;
-	    }
+	public STListImpl(int c) {
+		st = new Object[c];
+		this.capacity = c;
 	}
-	st[i] = new Node(k, v);
-    }
 
-    public V remove(K k) {
-	if (k == null)
-	    return null;
-	int i = hash(k);
-	for (Node p = getNode(i); p != null; p = p.next) {
-	    if (p.key.equals(k)) {
-		V v = p.value;
-		if (p.next != null) {
-		    p.key = p.next.key;
-		    p.value = p.next.value;
-		    p.next = p.next.next;
-		} else {
-		    p.value = null;
+	public int size() {
+		return size;
+	}
+
+	public void put(K k, V v) {
+		if (k == null || v == null)
+			return;
+		size++;
+		int i = hash(k);
+		Node p = getNode(i);
+		for (; p != null; p = p.next) {
+			if (p.key.equals(k)) {
+				p.value = v;
+				return;
+			} else if (p.next == null) {
+				p.next = new Node(k, v);
+				return;
+			}
 		}
-		size--;
-		return v;
-	    }
+		st[i] = new Node(k, v);
 	}
-	return null;
-    }
 
-    // Time - O(n)
-    public boolean containsKey(K k) {
-	int i = hash(k);
-	for (Node p = getNode(i); p != null; p = p.next) {
-	    if (p.key.equals(k) && p.value != null) {
-		return true;
-	    }
-	}
-	return false;
-    }
-
-    // Time - O(n^2)
-    public boolean containsValue(V v) {
-	for (int i = 0; i < capacity; i++) {
-	    for (Node p = getNode(i); p != null; p = p.next) {
-		if (p.value.equals(v)) {
-		    return true;
+	public V remove(K k) {
+		if (k == null)
+			return null;
+		int i = hash(k);
+		for (Node p = getNode(i); p != null; p = p.next) {
+			if (p.key.equals(k)) {
+				V v = p.value;
+				if (p.next != null) {
+					p.key = p.next.key;
+					p.value = p.next.value;
+					p.next = p.next.next;
+				} else {
+					p.value = null;
+				}
+				size--;
+				return v;
+			}
 		}
-	    }
+		return null;
 	}
-	return false;
-    }
 
-    @SuppressWarnings("unchecked")
-    private Node getNode(int i) {
-	return (Node) st[i];
-    }
+	// Time - O(n)
+	public boolean containsKey(K k) {
+		int i = hash(k);
+		for (Node p = getNode(i); p != null; p = p.next) {
+			if (p.key.equals(k) && p.value != null) {
+				return true;
+			}
+		}
+		return false;
+	}
 
-    private int hash(Object k) {
-	return (k.hashCode() & 0x7fffffff) % capacity;
-    }
+	// Time - O(n^2)
+	public boolean containsValue(V v) {
+		for (int i = 0; i < capacity; i++) {
+			for (Node p = getNode(i); p != null; p = p.next) {
+				if (p.value.equals(v)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
-    private class Node {
-	private K key;
-	private V value;
-	private Node next;
+	@SuppressWarnings("unchecked")
+	private Node getNode(int i) {
+		return (Node) st[i];
+	}
 
-	private Node(K key, V value) {
-	    this.key = key;
-	    this.value = value;
+	private int hash(Object k) {
+		return (k.hashCode() & 0x7fffffff) % capacity;
+	}
+
+	private class Node {
+		private K key;
+		private V value;
+		private Node next;
+
+		private Node(K key, V value) {
+			this.key = key;
+			this.value = value;
+		}
+
+		@Override
+		public String toString() {
+			StringBuffer buf = new StringBuffer();
+			buf.append("Node [key=").append(key).append(", value=").append(value).append(" next = [");
+			for (Node n = next; n != null; n = n.next) {
+				buf.append("Node [key=").append(n.key).append(", value=").append(n.value).append("]");
+				if (n.next != null)
+					buf.append(",");
+			}
+			buf.append("]");
+			return buf.toString();
+		}
+
 	}
 
 	@Override
 	public String toString() {
-
-	    StringBuffer buf = new StringBuffer();
-	    buf.append("Node [key=").append(key).append(", value=").append(value).append(" next = [");
-	    for (Node n = next; n != null; n = n.next) {
-		buf.append("Node [key=").append(n.key).append(", value=").append(n.value).append("]");
-		if (n.next != null)
-		    buf.append(",");
-	    }
-	    buf.append("]");
-	    return buf.toString();
+		return "ST [size=" + size + ", st=" + Arrays.toString(st) + "]";
 	}
-
-    }
-
-    @Override
-    public String toString() {
-	return "ST [size=" + size + ", st=" + Arrays.toString(st) + "]";
-    }
 }

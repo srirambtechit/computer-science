@@ -1,4 +1,4 @@
-package com.msrm.datastructure.tree.binary;
+package com.msrm.datastructure.util;
 
 public class App {
 

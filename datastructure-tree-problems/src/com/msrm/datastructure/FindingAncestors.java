@@ -26,19 +26,16 @@ public class FindingAncestors {
 		return ancestors;
 	}
 
-	private static <T> boolean findAncestors(BinaryTreeNode<T> root, BinaryTreeNode<T> node, List<T> ancestors, T[] t, int len) {
+	private static <T> void findAncestors(BinaryTreeNode<T> root, BinaryTreeNode<T> node, List<T> ancestors, T[] t, int len) {
 		if (root == null || node == null)
-			return true;
+			return;
 		t[len++] = root.data;
 		if (root == node) {
 			for (int i = 0; i < len - 1; i++)
 				ancestors.add(t[i]);
 		}
-		boolean flag = findAncestors(root.left, node, ancestors, t, len);
-		if (flag) {
-			flag = findAncestors(root.right, node, ancestors, t, len);
-		}
-		return flag;
+		findAncestors(root.left, node, ancestors, t, len);
+		findAncestors(root.right, node, ancestors, t, len);
 	}
 
 }

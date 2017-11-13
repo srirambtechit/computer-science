@@ -3,7 +3,11 @@ package com.msrm.algorithms.bitmanipulation;
 public class BitOperations {
 
     public static void main(String[] args) {
-	System.out.println(bitOffAt(0b1101, 1));
+	int number = 0b11101;
+	int bitPosition = 3;
+	System.out.println("Input : " + Integer.toBinaryString(number));
+	System.out.println("Off   : " + Integer.toBinaryString(offBitAt(number, bitPosition)));
+	System.out.println("On    : " + Integer.toBinaryString(onBitAt(number, bitPosition)));
     }
 
     /**
@@ -19,8 +23,12 @@ public class BitOperations {
      *            - starts at 0
      * @return
      */
-    public static int bitOffAt(int number, int bitPosition) {
+    public static int offBitAt(int number, int bitPosition) {
 	return number & ~(1 << (bitPosition - 1));
+    }
+
+    public static int onBitAt(int number, int bitPosition) {
+	return number | (1 << (bitPosition - 1));
     }
 
 }

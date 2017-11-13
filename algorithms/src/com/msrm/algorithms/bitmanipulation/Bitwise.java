@@ -12,8 +12,12 @@ public class Bitwise {
 	System.out.println(result + " : " + Integer.toBinaryString(result));
 
 	System.out.println("\nCount no of 1s in " + n);
-	int count = bit.countNoOfOnes1(n);
-	System.out.println("No of 1's are " + count);
+	int onesCount = bit.countNumOnes(n);
+	System.out.println("No of 1's are " + onesCount);
+
+	System.out.println("\nCount no of 1s in " + n);
+	int zerosCount = bit.countNumZeros(n);
+	System.out.println("No of 1's are " + zerosCount);
 
 	int a = 0b11001;
 	int b = 0b10110; // want convert b as a
@@ -29,8 +33,8 @@ public class Bitwise {
 	System.out.println(n + " is power of two? " + (bit.isPowerOfTwo(n) ? "yes" : "no"));
 
 	System.out.println("\nNumber power of four");
-	System.out.println("256 is power of two? " + (bit.isPowerOfFour(256) ? "yes" : "no"));
-	System.out.println("128 is power of two? " + (bit.isPowerOfFour(128) ? "yes" : "no"));
+	System.out.println("256 is power of four? " + (bit.isPowerOfFour(256) ? "yes" : "no"));
+	System.out.println("128 is power of four? " + (bit.isPowerOfFour(128) ? "yes" : "no"));
 
 	System.out.println("\nGetting last three bits of an integer");
 	n = 0b1101100101;
@@ -80,9 +84,9 @@ public class Bitwise {
 
     /**
      * <pre>
-     * @param n       - number to be used
-     * @param intSize - size of integer type
-     * @param k       - no of highest bits
+     * &#64;param n       - number to be used
+     * &#64;param intSize - size of integer type
+     * &#64;param k       - no of highest bits
      * </pre>
      * 
      * @return
@@ -116,7 +120,9 @@ public class Bitwise {
     }
 
     public boolean isPowerOfTwo(int n) {
-	return (n & (n - 1)) == 0;
+	// suppose n is 0, logic won't
+	// work, to handle added n != 0
+	return n != 0 && (n & (n - 1)) == 0;
     }
 
     public int noOfBitForNumberConvertion(int a, int b) {
@@ -129,7 +135,7 @@ public class Bitwise {
 	return count;
     }
 
-    public int countNoOfOnes1(int n) {
+    public int countNumOnes(int n) {
 	int count = 0;
 	while (n != 0) {
 	    count = count + (n & 1);
@@ -138,7 +144,7 @@ public class Bitwise {
 	return count;
     }
 
-    public int countNoOfOnes0(int n) {
+    public int countNumZeros(int n) {
 	int count = 0;
 	while (n != 0) {
 	    count++;

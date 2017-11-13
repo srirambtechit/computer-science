@@ -3,7 +3,7 @@ package com.msrm.algorithms.bitmanipulation;
 public class DisplayBits {
 
     public static void main(String[] args) {
-	int n = 100;
+	int n = 141;
 	System.out.printf("%d is %s%n", n, displayBinaryForm(n));
 	System.out.println("Binary form : " + Integer.toBinaryString(n));
     }

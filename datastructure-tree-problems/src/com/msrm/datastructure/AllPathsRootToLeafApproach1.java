@@ -7,7 +7,7 @@ import com.msrm.datastructure.util.BinaryTreeNode;
 import com.msrm.datastructure.util.BinaryTreeUtil;
 import com.msrm.datastructure.util.SampleBinaryTree;
 
-public class AllPaths {
+public class AllPathsRootToLeafApproach1 {
 
 	public static void main(String[] args) {
 		BinaryTreeNode<Integer> root = SampleBinaryTree.binaryTreeTwo();

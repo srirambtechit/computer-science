@@ -31,6 +31,8 @@ public class MirrorTreeComparison {
 	private static boolean areMirrors(BinaryTreeNode<Integer> t1, BinaryTreeNode<Integer> t2) {
 		if (t1 == null && t2 == null)
 			return true;
+		if (t1 == null || t2 == null)
+			return false;
 		return t1 != null && t2 != null && t1.data.equals(t2.data) && areMirrors(t1.left, t2.right) && areMirrors(t1.right, t2.left);
 	}
 

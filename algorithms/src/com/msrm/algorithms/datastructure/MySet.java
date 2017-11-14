@@ -23,13 +23,6 @@ public class MySet {
 	}
 
 	int index = hash(data);
-	if (size == 0) {
-	    Entry entry = new Entry(data, null);
-	    table[index] = entry;
-	    size++;
-	    return true;
-	}
-
 	Entry e = get(index);
 	if (e == null) {
 	    // no value found at index, add it to table

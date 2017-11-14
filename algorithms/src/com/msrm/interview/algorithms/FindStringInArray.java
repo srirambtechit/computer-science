@@ -27,19 +27,13 @@ import java.util.Arrays;
 public class FindStringInArray {
 
     public static void main(String[] args) {
-
 	char[] arr = "ABCDEFGHIJKLMN".toCharArray();
-
-	char[][] arr2d = formArray(arr);
-
-	System.out.println(Arrays.deepToString(arr2d));
-
+	char[][] arr2d = convertTo2DArray(arr);
 	String[] strs = { "ABC", "ABCD", "ABDC", "FJN", "CG", "CGK", "AEIM", "MIE", "XYZ" };
 
+	print2D(arr2d);
 	for (String str : strs) {
-
 	    Result result = find(arr2d, str.toCharArray());
-
 	    if (result != null && result.found) {
 		System.out.printf("string : %s", str);
 		System.out.printf("; start index: <%d, %d>", result.startX, result.startY);
@@ -47,9 +41,22 @@ public class FindStringInArray {
 	    } else {
 		System.out.println("Not found : " + str);
 	    }
-
 	}
+    }
 
+    private static void print2D(char[][] arr) {
+	System.out.printf("\t");
+	for (int i = 0; i < arr.length; i++)
+	    System.out.printf("%d\t", i);
+	System.out.println("\n");
+
+	for (int i = 0; i < arr.length; i++) {
+	    System.out.printf("%d\t", i);
+	    for (int j = 0; j < arr.length; j++) {
+		System.out.printf("%c\t", arr[i][j]);
+	    }
+	    System.out.println("\n");
+	}
     }
 
     private static Result find(char[][] arr2d, char[] str) {
@@ -142,7 +149,7 @@ public class FindStringInArray {
 	return result;
     }
 
-    private static char[][] formArray(char[] arr) {
+    private static char[][] convertTo2DArray(char[] arr) {
 	int len = arr.length;
 
 	// calculating maximum index for 2D array

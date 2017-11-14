@@ -59,12 +59,11 @@ public class MyStack<E> {
 	StringBuffer buf = new StringBuffer();
 	buf.append("[");
 	int t = top;
-	while (t != -1) {
-	    buf.append(table[t]);
-	    t--;
-	    if (t != -1) {
-		buf.append(", ");
-	    }
+	while (true) {
+	    buf.append(table[t--]);
+	    if (t == -1)
+		break;
+	    buf.append(", ");
 	}
 	buf.append("]");
 	return buf.toString();

@@ -12,16 +12,17 @@ public class ExapndingCompressedString {
 
     public static void main(String[] args) {
 	ExapndingCompressedString obj = new ExapndingCompressedString();
-	String str = "140812";
-	System.out.println(obj.validateInput(str));
-	System.out.println(obj.calculateSize(str));
+	String[] strs = { "140812", "a3b6c4", "a3", "z2c" };
 
-	if (obj.validateInput(str)) {
-	    String output = obj.decompress(str);
-	    System.out.println("compressed str : " + str);
-	    System.out.println("decompressed str : " + output);
-	} else {
-	    System.out.printf("Wrong string input [%s]", str);
+	for (String str : strs) {
+	    if (obj.validateInput(str)) {
+		String output = obj.decompress(str);
+		System.out.println("compressed str : " + str);
+		System.out.println("decompressed str : " + output);
+	    } else {
+		System.out.printf("Wrong string input [%s]", str);
+	    }
+	    System.out.println();
 	}
     }
 

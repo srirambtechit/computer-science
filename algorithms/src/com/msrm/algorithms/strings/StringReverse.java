@@ -31,10 +31,10 @@ public class StringReverse {
 
     public String reverseRecursive(String str) {
 	char[] arr = str.toCharArray();
-	return new String(reverseRec(arr, -1, str.length()));
+	return new String(recursive(arr, -1, str.length()));
     }
 
-    private char[] reverseRec(char[] arr, int left, int right) {
+    private char[] recursive(char[] arr, int left, int right) {
 	if (left > right) {
 	    swap(arr, left, right);
 	    return arr;
@@ -42,7 +42,7 @@ public class StringReverse {
 	left++;
 	right--;
 	swap(arr, left, right);
-	return reverseRec(arr, left, right);
+	return recursive(arr, left, right);
     }
 
     private void swap(char[] arr, int first, int last) {

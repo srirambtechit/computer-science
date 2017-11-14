@@ -15,7 +15,7 @@ public class StringValidation {
 	StringValidation strValidation = new StringValidation();
 
 	for (String string : inputs) {
-	    System.out.printf("%d occurred in %s%n", strValidation.occurrence(string, searchString), string);
+	    System.out.printf("Searching '%s'... %d occurred in %s%n", searchString, strValidation.occurrence(string, searchString), string);
 	}
     }
 
@@ -37,16 +37,22 @@ public class StringValidation {
     }
 
     private boolean checkStr(int startIndex, char[] inputCharArray, char[] searchCharArray) {
-	int endIndex = startIndex;
-	for (char c : searchCharArray) {
-	    if (c == inputCharArray[endIndex]) {
-		endIndex++;
-	    } else {
-		endIndex--;
-		break;
-	    }
+	for (int i = 0; i < searchCharArray.length; i++) {
+	    if (inputCharArray[startIndex + i] != searchCharArray[i])
+		return false;
 	}
-	return (endIndex - startIndex) == searchCharArray.length;
+	return true;
+
+	// int endIndex = startIndex;
+	// for (char c : searchCharArray) {
+	// if (c == inputCharArray[endIndex]) {
+	// endIndex++;
+	// } else {
+	// endIndex--;
+	// break;
+	// }
+	// }
+	// return (endIndex - startIndex) == searchCharArray.length;
     }
 
 }

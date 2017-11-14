@@ -41,9 +41,8 @@ public class MyMinStack {
 	return value;
     }
 
-    public Integer getMinimum() {
+    public Integer min() {
 	if (isEmpty()) {
-	    System.out.println("Stack is empty");
 	    return null;
 	}
 	return table[top].min;

@@ -66,7 +66,7 @@ public class SampleBinaryTree {
 	 *      /  \     \
 	 *     4    5     6
 	 *    / \    \
- 	 *   7   8    9
+	 *   7   8    9
 	 *      /    / \
 	 *     10  11   12 
 	 *    / \         \ 
@@ -96,6 +96,37 @@ public class SampleBinaryTree {
 	}
 
 	/**
+	 * <pre>
+	 *      1
+	 *    /  \
+	 *   2    3
+	 *       / \
+	 *      4   5
+	 *     /   /
+	 *    7   6
+	 *   / \
+	 *  8   9
+	 *       \
+	 *        10
+	 * </pre>
+	 * 
+	 * @return
+	 */
+	public static BinaryTreeNode<Integer> binaryTreeFour() {
+		BinaryTreeNode<Integer> root = newNodeUtil(1);
+		root.left = newNodeUtil(2);
+		root.right = newNodeUtil(3);
+		root.right.left = newNodeUtil(4);
+		root.right.right = newNodeUtil(5);
+		root.right.right.left = newNodeUtil(6);
+		root.right.left.left = newNodeUtil(7);
+		root.right.left.left.left = newNodeUtil(8);
+		root.right.left.left.right = newNodeUtil(9);
+		root.right.left.left.right.right = newNodeUtil(10);
+		return root;
+	}
+
+	/**
 	 * Full binary tree: A binary tree is which each node was exactly 2 or 0
 	 * children
 	 * 
@@ -117,19 +148,14 @@ public class SampleBinaryTree {
 		BinaryTreeNode<Integer> root = newNodeUtil(1);
 		root.left = newNodeUtil(2);
 		root.right = newNodeUtil(3);
-
 		root.left.left = newNodeUtil(4);
 		root.left.right = newNodeUtil(5);
-
 		root.right.left = newNodeUtil(6);
 		root.right.right = newNodeUtil(7);
-
 		root.left.right.left = newNodeUtil(8);
 		root.left.right.right = newNodeUtil(9);
-
 		root.right.right.left = newNodeUtil(10);
 		root.right.right.right = newNodeUtil(11);
-
 		root.right.right.left.left = newNodeUtil(12);
 		root.right.right.left.right = newNodeUtil(13);
 		return root;
@@ -160,10 +186,8 @@ public class SampleBinaryTree {
 		BinaryTreeNode<Integer> root = newNodeUtil(1);
 		root.left = newNodeUtil(2);
 		root.right = newNodeUtil(3);
-
 		root.left.left = newNodeUtil(4);
 		root.left.right = newNodeUtil(5);
-
 		root.right.left = newNodeUtil(6);
 		root.right.right = newNodeUtil(7);
 		return root;

@@ -9,7 +9,7 @@ public class BinarySearchTree extends BinaryTree {
      * otherwise element will be added to left subtree
      * Duplicate data will be added to left sub tree
      * 
-     * @param element
+     * &#64;param element
      * </pre>
      */
     public void add(Integer element) {

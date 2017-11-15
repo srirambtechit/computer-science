@@ -143,7 +143,8 @@ public class SingleLinkedListTest {
     public void testSortedInsert_pass_case2() {
 	list.sortedInsert(5);
 	list.sortedInsert(3);
-	// print("testSortedInsert_pass_case2: head.data is greater than input data",
+	// print("testSortedInsert_pass_case2: head.data is greater than input
+	// data",
 	// list);
     }
 

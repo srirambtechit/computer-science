@@ -36,8 +36,8 @@ public class SingleLinkedList {
      * insert data to the list according to the index given.
      * if size == 0, index should be 0
      * if size == 3, index can be of 0, 1, 2
-     * @param data - data to be added
-     * @param index - range from 0 to (size - 1)
+     * &#64;param data - data to be added
+     * &#64;param index - range from 0 to (size - 1)
      * </pre>
      */
     public void addAt(Integer data, int index) {
@@ -158,8 +158,8 @@ public class SingleLinkedList {
 
     /**
      * <pre>
-     * @param n  - is an index of element in the list
-     * @return - element present at index, null if not
+     * &#64;param n  - is an index of element in the list
+     * &#64;return - element present at index, null if not
      * </pre>
      */
     public Integer getNth(int n) {
@@ -223,8 +223,8 @@ public class SingleLinkedList {
      * So FrontBackSplit() on the list {2, 3, 5, 7, 11} should yield the two
      * lists {2, 3, 5} and {7, 11}.
      * 
-     * @param listOne
-     * @return - list of sublists
+     * &#64;param listOne
+     * &#64;return - list of sublists
      * </pre>
      */
     public static List<SingleLinkedList> frontBackSplit(SingleLinkedList listOne) {

@@ -18,11 +18,11 @@ public class DeepestNode<T> {
 		if (root == null)
 			return root;
 		find(root.left, ++level);
-		if (this.level < level) {
+		find(root.right, ++level);
+		if (level > this.level) {
 			this.level = level;
 			deepNode = root;
 		}
-		find(root.right, ++level);
 		return root;
 	}
 

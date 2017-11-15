@@ -22,49 +22,49 @@ import edu.princeton.cs.algs4.StdOut;
  */
 public class KruskalMST {
 
-    private Queue<Edge> edges;
-    private double wt;
+	private Queue<Edge> edges;
+	private double wt;
 
-    public KruskalMST(Graph g) {
-	edges = new Queue<>();
+	public KruskalMST(Graph g) {
+		edges = new Queue<>();
 
-	// put all edges to PQ to sort
-	MinPQ<Edge> pq = new MinPQ<>(g.E());
-	for (Edge e : g.edges()) {
-	    pq.insert(e);
+		// put all edges to PQ to sort
+		MinPQ<Edge> pq = new MinPQ<>(g.E());
+		for (Edge e : g.edges()) {
+			pq.insert(e);
+		}
+
+		// dynamic connectivity for already processed vertex
+		UFQuickUnion uf = new UFQuickUnion(g.V());
+		while (!pq.isEmpty() && edges.size() < g.V() - 1) {
+			Edge e = pq.delMin();
+			int v = e.either();
+			int w = e.other(v);
+			if (!uf.connected(v, w)) {
+				uf.union(v, w);
+				edges.enqueue(e);
+				wt += e.weight();
+			}
+		}
 	}
 
-	// dynamic connectivity for already processed vertex
-	UFQuickUnion uf = new UFQuickUnion(g.V());
-	while (!pq.isEmpty() && edges.size() < g.V() - 1) {
-	    Edge e = pq.delMin();
-	    int v = e.either();
-	    int w = e.other(v);
-	    if (!uf.connected(v, w)) {
-		uf.union(v, w);
-		edges.enqueue(e);
-		wt += e.weight();
-	    }
+	public Iterable<Edge> edges() {
+		return edges;
 	}
-    }
 
-    public Iterable<Edge> edges() {
-	return edges;
-    }
+	public double weight() {
+		return wt;
+	}
 
-    public double weight() {
-	return wt;
-    }
+	public static void main(String[] args) {
+		Graph g = DSUtil.createEdgeWeightedGraph("/home/sriram/git/computer-science/datastructure-graph/data/EWG.txt");
+		StdOut.println("Graph: ");
+		StdOut.println(g);
+		StdOut.println("Edges : " + g.edges());
 
-    public static void main(String[] args) {
-	Graph g = DSUtil.createEdgeWeightedGraph("/home/sriram/git/computer-science/datastructure-graph/data/EWG.txt");
-	StdOut.println("Graph: ");
-	StdOut.println(g);
-	StdOut.println("Edges : " + g.edges());
-
-	KruskalMST mst = new KruskalMST(g);
-	StdOut.println("MST Edges : " + mst.edges());
-	StdOut.println("Cost : " + mst.weight());
-    }
+		KruskalMST mst = new KruskalMST(g);
+		StdOut.println("MST Edges : " + mst.edges());
+		StdOut.println("Cost : " + mst.weight());
+	}
 
 }
